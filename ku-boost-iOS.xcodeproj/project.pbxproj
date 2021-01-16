@@ -12,6 +12,14 @@
 		B1989EDB25B1AB6600BC612D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989EDA25B1AB6600BC612D /* ContentView.swift */; };
 		B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDC25B1AB6600BC612D /* Assets.xcassets */; };
 		B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */; };
+		B1A577A225B3665100311B30 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577A125B3665100311B30 /* LoginHandler.swift */; };
+		B1A577A525B3668400311B30 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577A425B3668400311B30 /* APIHandler.swift */; };
+		B1A577A825B3694700311B30 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577A725B3694700311B30 /* LoginView.swift */; };
+		B1A577AB25B3696900311B30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577AA25B3696900311B30 /* MainView.swift */; };
+		B1A577AE25B3699C00311B30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577AD25B3699C00311B30 /* LoginViewModel.swift */; };
+		B1A577C925B36C8200311B30 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577C625B36C8200311B30 /* TextFields.swift */; };
+		B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577C725B36C8200311B30 /* LoadingIndicator.swift */; };
+		B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577C825B36C8200311B30 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		B1989EDC25B1AB6600BC612D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B1989EE125B1AB6600BC612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1A577A125B3665100311B30 /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
+		B1A577A425B3668400311B30 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		B1A577A725B3694700311B30 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B1A577AA25B3696900311B30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B1A577AD25B3699C00311B30 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B1A577C625B36C8200311B30 /* TextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
+		B1A577C725B36C8200311B30 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		B1A577C825B36C8200311B30 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ku_boost_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E1C2EDFC0D762BA47414A9 /* Pods-ku-boost-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ku-boost-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +132,9 @@
 		B1A5779B25B3608B00311B30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B1A577B525B36C1100311B30 /* ResusableViews */,
+				B1A577A725B3694700311B30 /* LoginView.swift */,
+				B1A577AA25B3696900311B30 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +142,7 @@
 		B1A5779C25B3609100311B30 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B1A577AD25B3699C00311B30 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -137,8 +157,20 @@
 		B1A5779E25B3609D00311B30 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B1A577A125B3665100311B30 /* LoginHandler.swift */,
+				B1A577A425B3668400311B30 /* APIHandler.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B1A577B525B36C1100311B30 /* ResusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				B1A577C725B36C8200311B30 /* LoadingIndicator.swift */,
+				B1A577C825B36C8200311B30 /* LoadingView.swift */,
+				B1A577C625B36C8200311B30 /* TextFields.swift */,
+			);
+			path = ResusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,8 +286,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */,
+				B1A577A225B3665100311B30 /* LoginHandler.swift in Sources */,
+				B1A577AB25B3696900311B30 /* MainView.swift in Sources */,
+				B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */,
 				B1989EDB25B1AB6600BC612D /* ContentView.swift in Sources */,
 				B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */,
+				B1A577A825B3694700311B30 /* LoginView.swift in Sources */,
+				B1A577A525B3668400311B30 /* APIHandler.swift in Sources */,
+				B1A577AE25B3699C00311B30 /* LoginViewModel.swift in Sources */,
+				B1A577C925B36C8200311B30 /* TextFields.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
