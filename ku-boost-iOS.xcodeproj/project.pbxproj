@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -44,7 +44,6 @@
 				D2E1C2EDFC0D762BA47414A9 /* Pods-ku-boost-iOS.debug.xcconfig */,
 				A195609F6A6805C21BAA0298 /* Pods-ku-boost-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,10 +76,12 @@
 		B1989ED725B1AB6600BC612D /* ku-boost-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */,
-				B1989EDA25B1AB6600BC612D /* ContentView.swift */,
-				B1989EDC25B1AB6600BC612D /* Assets.xcassets */,
-				B1989EE125B1AB6600BC612D /* Info.plist */,
+				B1A5779925B3606300311B30 /* Main */,
+				B1A5779D25B3609600311B30 /* Models */,
+				B1A5779B25B3608B00311B30 /* Views */,
+				B1A5779C25B3609100311B30 /* ViewModels */,
+				B1A5779E25B3609D00311B30 /* Utilities */,
+				B1A5779A25B3607A00311B30 /* Resources */,
 				B1989EDE25B1AB6600BC612D /* Preview Content */,
 			);
 			path = "ku-boost-iOS";
@@ -92,6 +93,52 @@
 				B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B1A5779925B3606300311B30 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B1989EDA25B1AB6600BC612D /* ContentView.swift */,
+				B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B1A5779A25B3607A00311B30 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B1989EE125B1AB6600BC612D /* Info.plist */,
+				B1989EDC25B1AB6600BC612D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1A5779B25B3608B00311B30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B1A5779C25B3609100311B30 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B1A5779D25B3609600311B30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B1A5779E25B3609D00311B30 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -321,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -341,7 +388,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ku-boost-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = QW2GW32H77;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "ku-boost-iOS/Info.plist";
+				INFOPLIST_FILE = "ku-boost-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -364,7 +411,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ku-boost-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = QW2GW32H77;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "ku-boost-iOS/Info.plist";
+				INFOPLIST_FILE = "ku-boost-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
