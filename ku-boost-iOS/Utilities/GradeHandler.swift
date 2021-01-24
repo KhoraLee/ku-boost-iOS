@@ -10,7 +10,7 @@ import Combine
 import SwiftyJSON
 
 class GradeHandler {
-    //학기 : 1 -> 1학기, 2 -> 2학기, 3 -> 여름 계절, 4 -> 겨울 꼐절
+    //학기 : 1 -> 1학기, 2 -> 2학기, 3 -> 여름 계절, 4 -> 겨울 계절
     var Alamo = GradeService.shared.session
     
     func fetchGraduationSimulation(){
