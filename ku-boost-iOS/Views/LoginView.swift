@@ -17,13 +17,13 @@ struct LoginView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Text("Login").foregroundColor(.white).fontWeight(.bold)
+                    Text("로그인").foregroundColor(.white).fontWeight(.bold)
                     Spacer()
                 }
                 Spacer()
             }.frame(minHeight: 55.0, maxHeight: 55.0)
-                .background(Color.blue)
-                .cornerRadius(2.5)
+                .background(Color.green)
+                .cornerRadius(15)
                 .padding(.top, 77.0)
             
         }.simultaneousGesture(TapGesture().onEnded{
@@ -32,20 +32,18 @@ struct LoginView: View {
     }
     
     var placeHolderTextView: some View {
-        PlaceholderTextField(placeholder: Text("Username"), text: $viewModel.username)
+        PlaceholderTextField(placeholder: Text("포탈 아이디"), text: $viewModel.username)
             .padding(.top, 32.0)
     }
     
     var passwordTextView: some View {
-        SecurePlaceholderTextField(placeholder: Text("Password"), text: $viewModel.password)
+        SecurePlaceholderTextField(placeholder: Text("비밀번호"), text: $viewModel.password)
             .padding(.top, 32.0)
     }
     
     var titleView: some View {
         VStack(alignment: .leading) {
-            Text("Welcome to")
-                .tracking(1.0)
-            Text("RandomDog App").fontWeight(.bold)
+            Text("건국대학교 부스트").fontWeight(.bold).foregroundColor(.green)
         }.padding(EdgeInsets(top: 44.0, leading: .zero, bottom: .zero, trailing: .zero))
     }
     

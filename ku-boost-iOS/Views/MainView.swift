@@ -20,13 +20,9 @@ struct MainView: View {
             Text(cookie).padding()
             Text(sid).padding()
             Button(action: {
-                let reqheaders: HTTPHeaders = ["cookie" : cookie]
-                let URL = "https://kuis.konkuk.ac.kr/Main/onLoad.do"
-                AF.request(URL, method: .get, headers: reqheaders).responseJSON(){ response in
-                    let json = JSON(response.data)
-                    sid = json["dmUserInfo"]["USER_ID"].string!
-                    print(json)
-                }
+                let gh = GradeHandler()
+                gh.fetchRegularGrade(year: 2020, semester: 1)
+                gh.fetchRegularGrade(year: 2020, semester: 2)
             }, label: {
                 Text("Get info")
                     .padding(10)
