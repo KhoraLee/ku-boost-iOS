@@ -9,20 +9,17 @@ import Combine
 import Alamofire
 import SwiftyJSON
 
-class LoginHandler: APIHandler {
+class LoginHandler {
 
     @Published var isLoading = false
     @Published var cookie = ""
     @Published var isLogon = false
 
-    func getCookie() {
-
-    }
-    
     func doLogin(id:String, passwd:String) {
         isLoading = true
         let cookieURL = "https://kuis.konkuk.ac.kr/index.do"
         let loginURL = "https://kuis.konkuk.ac.kr/Login/login.do?%40d1%23SINGLE_ID=" + id + "&%40d1%23PWD=" + passwd + "&%40d1%23default.locale=ko&%40d%23=%40d1%23&%40d1%23=dsParam&%40d1%23tp=dm&"
+        let infoURL = "https://kuis.konkuk.ac.kr/Main/onLoad.do"
         let reqheaders: HTTPHeaders = ["cookie":""]
 
         
@@ -35,6 +32,7 @@ class LoginHandler: APIHandler {
                 return
             }
             weakSelf.cookie = cookie
+            UserDefaults.standard.set(cookie, forKey: "Cookie")
             // Getting Cookie End
             // Start login process
             let reqheaders: HTTPHeaders = ["cookie" : cookie]
@@ -42,9 +40,18 @@ class LoginHandler: APIHandler {
                 guard let weakSelf = self else { return }
                 let json = JSON(response.data)
                 if(json["_METADATA_"]["success"].boolValue){
-                    weakSelf.isLogon = true
-                    weakSelf.isLoading = false
-                    return
+                    AF.request(infoURL,method:.get,headers:reqheaders).responseJSON(){ [weak self] (response2) in
+                        let json2 = JSON(response2.data)
+                        print("Getting User input")
+                        if let stdNo = json2["dmUserInfo"]["USER_ID"].string{
+                            UserDefaults.standard.set(json2["dmUserInfo"]["SHREG_CD"].string, forKey: "shreg")
+                            UserDefaults.standard.set(stdNo, forKey: "stdNo")
+
+                            weakSelf.isLogon = true
+                            weakSelf.isLoading = false
+                            return
+                        }
+                    }
                 }
                 weakSelf.isLoading = false
                 return
