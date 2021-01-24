@@ -11,14 +11,11 @@ import Alamofire
 import SwiftyJSON
 
 struct MainView: View {
-    @State var sid = ""
-    var cookie: String
     
     var body: some View {
         VStack(alignment: .center) {
             Text("Logon Successfully").padding()
-            Text(cookie).padding()
-            Text(sid).padding()
+            Text(UserDefaults.standard.string(forKey: "stdNo")!).padding()
             Button(action: {
                 let gh = GradeHandler()
                 gh.fetchRegularGrade(year: 2020, semester: 1)
@@ -36,6 +33,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(cookie: "-")
+        MainView()
     }
 }
