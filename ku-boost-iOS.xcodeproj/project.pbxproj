@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5B2C4FEA4AE9C7018B73E033 /* Pods_ku_boost_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */; };
 		B183136725BDDC2A00625375 /* GradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136625BDDC2A00625375 /* GradeService.swift */; };
+		B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136B25BDF4CA00625375 /* GradeInterceptor.swift */; };
+		B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136E25BDF4E500625375 /* GradeLogger.swift */; };
+		B183137225BDF50B00625375 /* GradeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183137125BDF50B00625375 /* GradeRouter.swift */; };
 		B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */; };
 		B1989EDB25B1AB6600BC612D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989EDA25B1AB6600BC612D /* ContentView.swift */; };
 		B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDC25B1AB6600BC612D /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		A195609F6A6805C21BAA0298 /* Pods-ku-boost-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ku-boost-iOS.release.xcconfig"; path = "Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		B183136625BDDC2A00625375 /* GradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeService.swift; sourceTree = "<group>"; };
+		B183136B25BDF4CA00625375 /* GradeInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeInterceptor.swift; sourceTree = "<group>"; };
+		B183136E25BDF4E500625375 /* GradeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeLogger.swift; sourceTree = "<group>"; };
+		B183137125BDF50B00625375 /* GradeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeRouter.swift; sourceTree = "<group>"; };
 		B1989ED525B1AB6600BC612D /* ku-boost-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ku-boost-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ku_boost_iOSApp.swift; sourceTree = "<group>"; };
 		B1989EDA25B1AB6600BC612D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,9 +84,28 @@
 		B183136525BDDBB100625375 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B183136625BDDC2A00625375 /* GradeService.swift */,
+				B183136A25BDF4A400625375 /* Library */,
+				B183136925BDF49B00625375 /* Grade */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		B183136925BDF49B00625375 /* Grade */ = {
+			isa = PBXGroup;
+			children = (
+				B183136625BDDC2A00625375 /* GradeService.swift */,
+				B183136B25BDF4CA00625375 /* GradeInterceptor.swift */,
+				B183136E25BDF4E500625375 /* GradeLogger.swift */,
+				B183137125BDF50B00625375 /* GradeRouter.swift */,
+			);
+			path = Grade;
+			sourceTree = "<group>";
+		};
+		B183136A25BDF4A400625375 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		B1989ECC25B1AB6600BC612D = {
@@ -300,12 +325,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B183137225BDF50B00625375 /* GradeRouter.swift in Sources */,
 				B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */,
 				B183136725BDDC2A00625375 /* GradeService.swift in Sources */,
 				B1A577A225B3665100311B30 /* LoginHandler.swift in Sources */,
 				B1A577AB25B3696900311B30 /* MainView.swift in Sources */,
 				B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */,
+				B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */,
 				B1989EDB25B1AB6600BC612D /* ContentView.swift in Sources */,
+				B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */,
 				B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */,
 				B1A577A825B3694700311B30 /* LoginView.swift in Sources */,
 				B1A577D225B385E000311B30 /* GradeHandler.swift in Sources */,

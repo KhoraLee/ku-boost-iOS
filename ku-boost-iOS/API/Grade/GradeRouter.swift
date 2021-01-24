@@ -1,5 +1,5 @@
 //
-//  GradeService.swift
+//  GradeRouter.swift
 //  ku-boost-iOS
 //
 //  Created by 승윤이 on 2021/01/25.
@@ -8,65 +8,11 @@
 import Foundation
 import Alamofire
 
-final class GradeService {
-
-    // Singleton
-    static let shared = GradeService()
-
-    // Intercepter
-    let interceptors = Interceptor(interceptors :
-                        [ GradeInterceptor()
-                        ])
-    // Logger
-    let monitors = [GradeLogger()] as [EventMonitor]
-
-
-    // Session
-    var session : Session
-
-    private init(){
-        session = Session(interceptor:interceptors, eventMonitors: monitors)
-    }
-}
-
-class GradeInterceptor : RequestInterceptor {
-
-    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
-        print("GradeInterceptor - adapt() called")
-
-        var request = urlRequest
-        request.addValue("Cookie", forHTTPHeaderField: UserDefaults.standard.string(forKey: "Cookie")!)
-
-        completion(.success(request))
-    }
-
-    func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
-        print("GradeInterceptor - retry() called")
-        completion(.doNotRetry)
-    }
-}
-
-class GradeLogger : EventMonitor {
-
-    let queue = DispatchQueue(label: "GradeLog")
-
-    func requestDidResume(_ request: Request) {
-        print("GradeLogger - requestDidResume() called")
-        debugPrint(request)
-    }
-
-    func request(_ request: DataRequest, didParseResponse response: DataResponse<Data?, AFError>) {
-        print("GradeLogger - request.didParseResponse() called")
-        debugPrint(request)
-    }
-
-}
-
 enum GradeRouter: URLRequestConvertible {
 
     case GradeSimul
     case RegularGrade(year: Int, semester: Int)
-//    case ValidGrade()
+    // Todo: case ValidGrade()
 
     var baseURL: URL {
         return URL(string: "https://kuis.konkuk.ac.kr")!
