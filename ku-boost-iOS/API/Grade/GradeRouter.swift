@@ -12,7 +12,7 @@ enum GradeRouter: URLRequestConvertible {
 
     case GradeSimul
     case RegularGrade(year: Int, semester: Int)
-    // Todo: case ValidGrade()
+    case ValidGrade(year: Int, semester: Int)
 
     var baseURL: URL {
         return URL(string: "https://kuis.konkuk.ac.kr")!
@@ -28,6 +28,8 @@ enum GradeRouter: URLRequestConvertible {
             return "GrdtStdSimul/findSearch2.do"
         case .RegularGrade:
             return "GradNowShtmGradeInq/find.do"
+        case .ValidGrade:
+            return "GradGiveUpApp/findUpDown.do"
         }
     }
 
@@ -48,6 +50,13 @@ enum GradeRouter: URLRequestConvertible {
                     "basiShtm": "B0101"+String(semester),
                     "curDate":format.string(from: Date()),
                     "_AUTH_MENU_KEY":"1140302"]
+            
+        case let .ValidGrade(year, semester):
+            return ["argStdNo":UserDefaults.standard.string(forKey: "stdNo")!,
+                    "argYy": String(year),
+                    "argShtm": "B0101"+String(semester),
+                    "_AUTH_MENU_KEY":"1140606"]
+            
         }
     }
 

@@ -26,7 +26,9 @@ class GradeHandler {
     }
     
     func fetchValidGrades(year:Int, semester:Int, stdNo:Int){
-        
+        Alamo.request(GradeRouter.ValidGrade(year: year, semester: semester)).responseJSON { (response) in
+            debugPrint(response)
+        }
     }
     
 }
