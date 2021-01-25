@@ -15,49 +15,34 @@ class LoginHandler {
     @Published var cookie = ""
     @Published var isLogon = false
 
+    let Alamo : Session
+
+    init(){
+        Alamo = AuthService.shared.session
+    }
+    
+    
     func doLogin(id:String, passwd:String) {
         isLoading = true
-        let cookieURL = "https://kuis.konkuk.ac.kr/index.do"
-        let loginURL = "https://kuis.konkuk.ac.kr/Login/login.do?%40d1%23SINGLE_ID=" + id + "&%40d1%23PWD=" + passwd + "&%40d1%23default.locale=ko&%40d%23=%40d1%23&%40d1%23=dsParam&%40d1%23tp=dm&"
-        let infoURL = "https://kuis.konkuk.ac.kr/Main/onLoad.do"
-        let reqheaders: HTTPHeaders = ["cookie":""]
-
-        
-        AF.request(cookieURL, method: .get, headers: reqheaders).responseJSON{ [weak self] (response) in
+               
+        Alamo.request(AuthRouter.Login(id: id, pw: passwd)).responseJSON{ [weak self] (login) in
             guard let weakSelf = self else { return }
-            response.response?.allHeaderFields
-            let headers = response.response?.allHeaderFields as? [String: Any]
-            guard let cookie = headers?["Set-Cookie"] as? String else {
-                weakSelf.isLoading = false
-                return
-            }
-            weakSelf.cookie = cookie
-            UserDefaults.standard.set(cookie, forKey: "Cookie")
-            // Getting Cookie End
-            // Start login process
-            let reqheaders: HTTPHeaders = ["cookie" : cookie]
-            AF.request(loginURL, method: .get, headers: reqheaders).responseJSON(){ [weak self] (response) in
-                guard let weakSelf = self else { return }
-                let json = JSON(response.data)
-                if(json["_METADATA_"]["success"].boolValue){
-                    AF.request(infoURL,method:.get,headers:reqheaders).responseJSON(){ [weak self] (response2) in
-                        let json2 = JSON(response2.data)
-                        print("Getting User input")
-                        if let stdNo = json2["dmUserInfo"]["USER_ID"].string{
-                            UserDefaults.standard.set(json2["dmUserInfo"]["SHREG_CD"].string, forKey: "shreg")
-                            UserDefaults.standard.set(stdNo, forKey: "stdNo")
+            let loginJSON = JSON(login.data)
+            if(loginJSON["_METADATA_"]["success"].boolValue){
+                weakSelf.Alamo.request(AuthRouter.UserInfo).responseJSON{ info in
+                    let infoJSON = JSON(info.data)
+                    if let stdNo = infoJSON["dmUserInfo"]["USER_ID"].string {
+                        UserDefaults.standard.set(infoJSON["dmUserInfo"]["SHREG_CD"].string, forKey: "shreg")
+                        UserDefaults.standard.set(stdNo, forKey: "stdNo")
 
-                            weakSelf.isLogon = true
-                            weakSelf.isLoading = false
-                            return
-                        }
+                        weakSelf.isLogon = true
+                        weakSelf.isLoading = false
+                        return
                     }
                 }
-                weakSelf.isLoading = false
-                return
             }
+            weakSelf.isLoading = false
+            return
         }
-        
-
     }
 }
