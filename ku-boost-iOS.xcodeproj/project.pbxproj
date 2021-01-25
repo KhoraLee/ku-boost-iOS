@@ -14,7 +14,6 @@
 		B183137225BDF50B00625375 /* GradeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183137125BDF50B00625375 /* GradeRouter.swift */; };
 		B183137525BDF72600625375 /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183137425BDF72600625375 /* LibraryService.swift */; };
 		B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */; };
-		B1989EDB25B1AB6600BC612D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989EDA25B1AB6600BC612D /* ContentView.swift */; };
 		B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDC25B1AB6600BC612D /* Assets.xcassets */; };
 		B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */; };
 		B1A577A225B3665100311B30 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577A125B3665100311B30 /* LoginHandler.swift */; };
@@ -39,7 +38,6 @@
 		B183137425BDF72600625375 /* LibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
 		B1989ED525B1AB6600BC612D /* ku-boost-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ku-boost-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ku_boost_iOSApp.swift; sourceTree = "<group>"; };
-		B1989EDA25B1AB6600BC612D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B1989EDC25B1AB6600BC612D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B1989EE125B1AB6600BC612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 		B1A5779925B3606300311B30 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B1989EDA25B1AB6600BC612D /* ContentView.swift */,
 				B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */,
 			);
 			path = Main;
@@ -350,7 +347,6 @@
 				B183137525BDF72600625375 /* LibraryService.swift in Sources */,
 				B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */,
 				B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */,
-				B1989EDB25B1AB6600BC612D /* ContentView.swift in Sources */,
 				B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */,
 				B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */,
 				B1A577A825B3694700311B30 /* LoginView.swift in Sources */,
