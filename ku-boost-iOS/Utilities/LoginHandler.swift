@@ -15,14 +15,10 @@ class LoginHandler {
     @Published var cookie = ""
     @Published var isLogon = false
 
-    let Alamo : Session
-
-    init(){
-        Alamo = AuthService.shared.session
-    }
-    
+    let Alamo = AuthService.shared.session
     
     func doLogin(id:String, passwd:String) {
+        print("LoginHandler - doLogin() called")
         isLoading = true
                
         Alamo.request(AuthRouter.Login(id: id, pw: passwd)).responseJSON{ [weak self] (login) in

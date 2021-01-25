@@ -15,7 +15,7 @@ final class AuthInterceptor : RequestInterceptor {
 
         var request = urlRequest
         request.addValue("Cookie", forHTTPHeaderField: UserDefaults.standard.string(forKey: "Cookie")!)
-
+        print("AuthInterceptor - Cookie : " + UserDefaults.standard.string(forKey: "Cookie")!)
         completion(.success(request))
     }
 

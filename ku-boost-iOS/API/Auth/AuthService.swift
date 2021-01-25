@@ -22,24 +22,27 @@ final class AuthService {
 
 
     // Session
-    var session = Session()
+    var session: Session
 
     private init(){
-        //Session 생성
-        getCookie{
-            self.session = Session(interceptor: self.interceptors /*, eventMonitors: monitors*/)
-        }
-    }
-    
-    func getCookie(completion: @escaping (() -> Void)){
+        print("AuthService - init() called")
+        
         // Set-Cookie 해더를 불러와서 UserDefaults에 저장
-        AF.request("https://kuis.konkuk.ac.kr/index.do",method: .get).responseJSON{ response in
-            print("reuqested cookie")
-    
+        let queue = DispatchQueue(label: "com.konkuk.auth-queue", qos: .utility, attributes: [.concurrent]) // AF request를 수행하기 위한 큐
+        let semaphore = DispatchSemaphore(value: 0) // 메인 스레드 정지를 위한 세마포어
+        AF.request("https://kuis.konkuk.ac.kr/index.do",method: .get).responseJSON(queue: queue){ response in
             let headers = response.response?.allHeaderFields as? [String: Any]
             guard let cookie = headers?["Set-Cookie"] as? String else { return }
             UserDefaults.standard.set(cookie, forKey: "Cookie")
-            completion()
+            print("AuthService - Cookie : " + cookie)
+            semaphore.signal() // 세마포어에 시그널을 보내 스레드 제게
         }
+        semaphore.wait() // 세마포어를 통한 메인 스레드 정지
+        
+        //Session 생성
+        session = Session(interceptor: interceptors /*, eventMonitors: monitors*/)
+        print("AuthService - Auth Session created with interceptors")
+        
     }
+    
 }
