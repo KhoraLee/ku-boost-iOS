@@ -62,11 +62,12 @@ class LoginViewModel: ObservableObject, Identifiable {
             .receive(on: RunLoop.main)
             .assign(to: \.cookie, on: self)
             .store(in: &disposables)
-        var isAutoLogin = UserDefaults.standard.bool(forKey: "autologin")
+        let isAutoLogin = UserDefaults.standard.bool(forKey: "autologin")
         
         if isAutoLogin {
             username = UserDefaults.standard.string(forKey: "id")!
             password = UserDefaults.standard.string(forKey: "pw")!
+            doLogin()
         }
         
     }
@@ -74,7 +75,7 @@ class LoginViewModel: ObservableObject, Identifiable {
     func doLogin(){
         loginHandler.doLogin(id:username, passwd:password)
         
-        var ud = UserDefaults.standard
+        let ud = UserDefaults.standard
         ud.set(username, forKey: "id")
         ud.set(password,forKey: "pw")
         ud.set(true, forKey: "autologin")
