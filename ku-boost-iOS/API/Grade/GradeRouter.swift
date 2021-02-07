@@ -12,7 +12,7 @@ enum GradeRouter: URLRequestConvertible {
 
     case GradeSimul
     case RegularGrade(year: Int, semester: Int)
-    case ValidGrade(year: Int, semester: Int)
+    case ValidGrade
 
     var baseURL: URL {
         return URL(string: "https://kuis.konkuk.ac.kr")!
@@ -47,14 +47,17 @@ enum GradeRouter: URLRequestConvertible {
 
             return ["stdNo":UserDefaults.standard.string(forKey: "stdNo")!,
                     "basiYy": String(year),
-                    "basiShtm": "B0101"+String(semester),
-                    "curDate":format.string(from: Date()),
+                    "basiShtm": "B0101" + String(semester),
+                    "curDate": format.string(from: Date()),
                     "_AUTH_MENU_KEY":"1140302"]
             
-        case let .ValidGrade(year, semester):
+        case .ValidGrade:
+            let format = DateFormatter()
+            format.dateFormat = "yyyy"
+            
             return ["argStdNo":UserDefaults.standard.string(forKey: "stdNo")!,
-                    "argYy": String(year),
-                    "argShtm": "B0101"+String(semester),
+                    "argYy": format.string(from: Date()),
+                    "argShtm": "B01012", // TODO: 년도 및 학기 관련 찾아보고 수정
                     "_AUTH_MENU_KEY":"1140606"]
             
         }
