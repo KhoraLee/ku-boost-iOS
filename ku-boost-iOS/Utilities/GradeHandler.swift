@@ -42,9 +42,24 @@ class GradeHandler {
         }
     }
     
-    func fetchValidGrades(year:Int, semester:Int, stdNo:Int){
-        Alamo.request(GradeRouter.ValidGrade(year: year, semester: semester)).responseJSON { (response) in
-//            debugPrint(response)
+    func fetchValidGrades(){
+        Alamo.request(GradeRouter.ValidGrade).responseJSON { [weak self] (response) in
+            guard let weakSelf = self else { return }
+            switch response.result{
+            case .success(let data):
+                do{
+                    let validJson = try JSONDecoder().decode(ValidGradeResponse.self, from: JSONSerialization.data(withJSONObject: data))
+                    for validGrade in validJson.validGrades{
+                        // TODO : DB에 데이터 삽입
+                        print(validGrade) // 테스트 로깅
+                    }
+                } catch(let error){
+                    debugPrint(error)
+                }
+            case .failure(let err):
+                debugPrint(err)
+            }
+            return
         }
     }
     
