@@ -36,7 +36,7 @@ enum GradeRouter: URLRequestConvertible {
     var parameters : [String: String] {
         switch self {
         case .GradeSimul:
-            return ["shregCd":UserDefaults.standard.string(forKey: "shreg")!,
+            return ["shregCd":UserDefaults.standard.string(forKey: "code")!,
                     "corsYy":"2020",
                     "stdNo":UserDefaults.standard.string(forKey: "stdNo")!,
                     "_AUTH_MENU_KEY":"1170201"]
