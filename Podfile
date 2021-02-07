@@ -8,7 +8,7 @@ target 'ku-boost-iOS' do
   # Pods for lazyVGrid_tutorial
   pod 'Alamofire', '~> 5.2'
   pod 'Charts'
-  pod 'SwiftyJSON', '~>4.0'
   pod 'SwiftLint'
   pod 'Moya', '~> 14.0'
+  pod 'RealmSwift', '=10.1.4'
 end
