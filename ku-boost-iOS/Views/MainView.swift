@@ -8,18 +8,17 @@
 import SwiftUI
 import Combine
 import Alamofire
-import SwiftyJSON
 
 struct MainView: View {
     
     var body: some View {
         VStack(alignment: .center) {
             Text("Logon Successfully").padding()
-            Text(UserDefaults.standard.string(forKey: "stdNo")!).padding()
             Button(action: {
-                let gh = GradeHandler()
-                gh.fetchRegularGrade(year: 2020, semester: 1)
-                gh.fetchRegularGrade(year: 2020, semester: 2)
+//                let gh = GradeHandler()
+//                gh.fetchRegularGrade(year: 2020, semester: 1)
+//                gh.fetchRegularGrade(year: 2020, semester: 2)
+                AuthHandler.shared.fetchUserInformation()
             }, label: {
                 Text("Get info")
                     .padding(10)

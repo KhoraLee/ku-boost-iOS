@@ -15,33 +15,23 @@ class LoginViewModel: ObservableObject, Identifiable {
     
     @Published var isLogon = false
     @Published var isLoading = false
-    
-    @Published var cookie = ""
-    
+      
     @Published var shouldNavigate = false
     
     private var disposables: Set<AnyCancellable> = []
     
-    var loginHandler = LoginHandler()
+    var authHandler = AuthHandler.shared
     
   
     private var isLoadingPublisher: AnyPublisher<Bool, Never> {
-        loginHandler.$isLoading
+        authHandler.$isLoading
             .receive(on: RunLoop.main)
             .map { $0 }
             .eraseToAnyPublisher()
     }
     
     private var isAuthenticatedPublisher: AnyPublisher<Bool, Never> {
-        loginHandler.$isLogon
-            .receive(on: RunLoop.main)
-            .map { $0 }
-            .eraseToAnyPublisher()
-    }
-    
-    private var cookiePublisher: AnyPublisher<String, Never> {
-     
-        loginHandler.$cookie
+        authHandler.$isLogon
             .receive(on: RunLoop.main)
             .map { $0 }
             .eraseToAnyPublisher()
@@ -58,10 +48,6 @@ class LoginViewModel: ObservableObject, Identifiable {
             .assign(to: \.isLogon, on: self)
             .store(in: &disposables)
         
-        cookiePublisher
-            .receive(on: RunLoop.main)
-            .assign(to: \.cookie, on: self)
-            .store(in: &disposables)
         let isAutoLogin = UserDefaults.standard.bool(forKey: "autologin")
         
         if isAutoLogin {
@@ -73,12 +59,7 @@ class LoginViewModel: ObservableObject, Identifiable {
     }
     
     func doLogin(){
-        loginHandler.doLogin(id:username, passwd:password)
-        
-        let ud = UserDefaults.standard
-        ud.set(username, forKey: "id")
-        ud.set(password,forKey: "pw")
-        ud.set(true, forKey: "autologin")
+        authHandler.login(id:username, passwd:password)
     }
     
 }
