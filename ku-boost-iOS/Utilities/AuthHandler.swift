@@ -59,7 +59,24 @@ class AuthHandler {
             case .success(let data):
                 do{
                     let infoJson = try JSONDecoder().decode(UserInfo.self, from: JSONSerialization.data(withJSONObject: data))
+                    
+                    // UserDefaults에 기본 정보 저장
+                    let ud = UserDefaults.standard
+                    let info = infoJson.dmUserInfo
+                    guard let name = info.name,
+                          let stdNo = info.stdNo,
+                          let state = info.state,
+                          let dept = info.dept,
+                          let code = info.code else { return }
+                    
+                    ud.setValue(name, forKey: "name")
+                    ud.setValue(stdNo, forKey: "stdNo")
+                    ud.setValue(state, forKey: "state")
+                    ud.setValue(dept, forKey: "dept")
+                    ud.setValue(code, forKey: "code")
+                    
                     print(infoJson)
+                    print("\n")
                 } catch(let error){
                     debugPrint(error)
                 }
