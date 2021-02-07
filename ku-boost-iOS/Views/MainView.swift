@@ -15,10 +15,10 @@ struct MainView: View {
         VStack(alignment: .center) {
             Text("Logon Successfully").padding()
             Button(action: {
-//                let gh = GradeHandler()
-//                gh.fetchRegularGrade(year: 2020, semester: 1)
-//                gh.fetchRegularGrade(year: 2020, semester: 2)
                 AuthHandler.shared.fetchUserInformation()
+                GradeHandler.shared.fetchRegularGrade(year: 2020, semester: 2)
+                GradeHandler.shared.fetchValidGrades()
+                GradeHandler.shared.fetchGraduationSimulation()
             }, label: {
                 Text("Get info")
                     .padding(10)

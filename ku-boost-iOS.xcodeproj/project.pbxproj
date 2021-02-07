@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5B2C4FEA4AE9C7018B73E033 /* Pods_ku_boost_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */; };
-		B139CF3625CF0BF600BD8D7E /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B139CF3525CF0BF600BD8D7E /* RealmDB.swift */; };
-		B139CF3A25CF0E1800BD8D7E /* testObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B139CF3925CF0E1800BD8D7E /* testObject.swift */; };
 		B183136725BDDC2A00625375 /* GradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136625BDDC2A00625375 /* GradeService.swift */; };
 		B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136B25BDF4CA00625375 /* GradeInterceptor.swift */; };
 		B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136E25BDF4E500625375 /* GradeLogger.swift */; };
@@ -19,7 +17,6 @@
 		B18B804F25D03F7700662FC1 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B804E25D03F7700662FC1 /* LoginSuccess.swift */; };
 		B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805225D03F8900662FC1 /* LoginFailure.swift */; };
 		B18B805625D0478200662FC1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805525D0478200662FC1 /* UserInfo.swift */; };
-		B18FEBAD25BF1A3200DB6C22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B18FEBAC25BF1A3200DB6C22 /* LaunchScreen.storyboard */; };
 		B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */; };
 		B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDC25B1AB6600BC612D /* Assets.xcassets */; };
 		B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */; };
@@ -34,12 +31,16 @@
 		B1A6E82025BEC6AA001A2911 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E81F25BEC6AA001A2911 /* AuthService.swift */; };
 		B1A6E82325BEC6E4001A2911 /* AuthIntetceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E82225BEC6E4001A2911 /* AuthIntetceptor.swift */; };
 		B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E82525BEC80D001A2911 /* AuthRouter.swift */; };
+		B1C489AA25D0713F00702617 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489A925D0713F00702617 /* Grade.swift */; };
+		B1C489AD25D0714D00702617 /* GradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489AC25D0714D00702617 /* GradeResponse.swift */; };
+		B1C489B025D0715500702617 /* ValidGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489AF25D0715500702617 /* ValidGrade.swift */; };
+		B1C489B325D0715B00702617 /* ValidGradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489B225D0715B00702617 /* ValidGradeResponse.swift */; };
+		B1C489B625D0718100702617 /* GraduationSimulationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489B525D0718100702617 /* GraduationSimulationResponse.swift */; };
+		B1C489B925D0718800702617 /* GraduationSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489B825D0718800702617 /* GraduationSimulation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A195609F6A6805C21BAA0298 /* Pods-ku-boost-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ku-boost-iOS.release.xcconfig"; path = "Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		B139CF3525CF0BF600BD8D7E /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
-		B139CF3925CF0E1800BD8D7E /* testObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testObject.swift; sourceTree = "<group>"; };
 		B183136625BDDC2A00625375 /* GradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeService.swift; sourceTree = "<group>"; };
 		B183136B25BDF4CA00625375 /* GradeInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeInterceptor.swift; sourceTree = "<group>"; };
 		B183136E25BDF4E500625375 /* GradeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeLogger.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		B18B804E25D03F7700662FC1 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		B18B805225D03F8900662FC1 /* LoginFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailure.swift; sourceTree = "<group>"; };
 		B18B805525D0478200662FC1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		B18FEBAC25BF1A3200DB6C22 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1989ED525B1AB6600BC612D /* ku-boost-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ku-boost-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ku_boost_iOSApp.swift; sourceTree = "<group>"; };
 		B1989EDC25B1AB6600BC612D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +66,12 @@
 		B1A6E81F25BEC6AA001A2911 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B1A6E82225BEC6E4001A2911 /* AuthIntetceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthIntetceptor.swift; sourceTree = "<group>"; };
 		B1A6E82525BEC80D001A2911 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		B1C489A925D0713F00702617 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
+		B1C489AC25D0714D00702617 /* GradeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeResponse.swift; sourceTree = "<group>"; };
+		B1C489AF25D0715500702617 /* ValidGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidGrade.swift; sourceTree = "<group>"; };
+		B1C489B225D0715B00702617 /* ValidGradeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidGradeResponse.swift; sourceTree = "<group>"; };
+		B1C489B525D0718100702617 /* GraduationSimulationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraduationSimulationResponse.swift; sourceTree = "<group>"; };
+		B1C489B825D0718800702617 /* GraduationSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraduationSimulation.swift; sourceTree = "<group>"; };
 		BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ku_boost_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E1C2EDFC0D762BA47414A9 /* Pods-ku-boost-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ku-boost-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,15 +103,6 @@
 				BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B139CF3425CF0BEA00BD8D7E /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				B139CF3525CF0BF600BD8D7E /* RealmDB.swift */,
-				B139CF3925CF0E1800BD8D7E /* testObject.swift */,
-			);
-			path = DB;
 			sourceTree = "<group>";
 		};
 		B183136525BDDBB100625375 /* API */ = {
@@ -169,7 +166,6 @@
 		B1989ED725B1AB6600BC612D /* ku-boost-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B139CF3425CF0BEA00BD8D7E /* DB */,
 				B183136525BDDBB100625375 /* API */,
 				B1A5779925B3606300311B30 /* Main */,
 				B1A5779D25B3609600311B30 /* Data */,
@@ -203,7 +199,6 @@
 			children = (
 				B1989EE125B1AB6600BC612D /* Info.plist */,
 				B1989EDC25B1AB6600BC612D /* Assets.xcassets */,
-				B18FEBAC25BF1A3200DB6C22 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -230,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				B18B804A25D03F4E00662FC1 /* Auth */,
+				B1C489A825D0713700702617 /* Grade */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -261,6 +257,19 @@
 				B1A6E82525BEC80D001A2911 /* AuthRouter.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		B1C489A825D0713700702617 /* Grade */ = {
+			isa = PBXGroup;
+			children = (
+				B1C489A925D0713F00702617 /* Grade.swift */,
+				B1C489AC25D0714D00702617 /* GradeResponse.swift */,
+				B1C489AF25D0715500702617 /* ValidGrade.swift */,
+				B1C489B225D0715B00702617 /* ValidGradeResponse.swift */,
+				B1C489B825D0718800702617 /* GraduationSimulation.swift */,
+				B1C489B525D0718100702617 /* GraduationSimulationResponse.swift */,
+			);
+			path = Grade;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,7 +331,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B18FEBAD25BF1A3200DB6C22 /* LaunchScreen.storyboard in Resources */,
 				B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */,
 				B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */,
 			);
@@ -377,13 +385,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B139CF3A25CF0E1800BD8D7E /* testObject.swift in Sources */,
 				B183137225BDF50B00625375 /* GradeRouter.swift in Sources */,
 				B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */,
 				B183136725BDDC2A00625375 /* GradeService.swift in Sources */,
+				B1C489AD25D0714D00702617 /* GradeResponse.swift in Sources */,
 				B1A577A225B3665100311B30 /* AuthHandler.swift in Sources */,
 				B1A577AB25B3696900311B30 /* MainView.swift in Sources */,
 				B18B805625D0478200662FC1 /* UserInfo.swift in Sources */,
+				B1C489B925D0718800702617 /* GraduationSimulation.swift in Sources */,
 				B183137525BDF72600625375 /* LibraryService.swift in Sources */,
 				B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */,
 				B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */,
@@ -391,15 +400,18 @@
 				B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */,
 				B1A577A825B3694700311B30 /* LoginView.swift in Sources */,
 				B1A577D225B385E000311B30 /* GradeHandler.swift in Sources */,
+				B1C489B025D0715500702617 /* ValidGrade.swift in Sources */,
 				B1A577AE25B3699C00311B30 /* LoginViewModel.swift in Sources */,
 				B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */,
 				B18B804C25D03F5E00662FC1 /* LoginResponse.swift in Sources */,
 				B18B804F25D03F7700662FC1 /* LoginSuccess.swift in Sources */,
 				B1A577C925B36C8200311B30 /* TextFields.swift in Sources */,
+				B1C489B325D0715B00702617 /* ValidGradeResponse.swift in Sources */,
 				B1A6E82325BEC6E4001A2911 /* AuthIntetceptor.swift in Sources */,
+				B1C489AA25D0713F00702617 /* Grade.swift in Sources */,
 				B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */,
 				B1A6E82025BEC6AA001A2911 /* AuthService.swift in Sources */,
-				B139CF3625CF0BF600BD8D7E /* RealmDB.swift in Sources */,
+				B1C489B625D0718100702617 /* GraduationSimulationResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

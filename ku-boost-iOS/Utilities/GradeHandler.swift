@@ -16,8 +16,23 @@ class GradeHandler {
     var Alamo = GradeService.shared.session
     
     func fetchGraduationSimulation(){
-        Alamo.request(GradeRouter.GradeSimul).responseJSON { (response) in
-//            debugPrint(response)
+        Alamo.request(GradeRouter.GradeSimul).responseJSON { [weak self] (response) in
+            guard let weakSelf = self else { return }
+            switch response.result{
+            case .success(let data):
+                do{
+                    let simulJson = try JSONDecoder().decode(GraduationSimulationResponse.self, from: JSONSerialization.data(withJSONObject: data))
+                    for simul in simulJson.simulations {
+                        // TODO : DB에 데이터 삽입
+                        print(simul) // 테스트 로깅
+                    }
+                } catch(let error){
+                    debugPrint(error)
+                }
+            case .failure(let err):
+                debugPrint(err)
+            }
+            return
         }
     }
     
