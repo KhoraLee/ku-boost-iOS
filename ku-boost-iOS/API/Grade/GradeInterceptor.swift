@@ -14,7 +14,7 @@ final class GradeInterceptor : RequestInterceptor {
         print("GradeInterceptor - adapt() called")
 
         var request = urlRequest
-        request.addValue("Cookie", forHTTPHeaderField: UserDefaults.standard.string(forKey: "Cookie")!)
+        request.addValue(UserDefaults.standard.string(forKey: "Cookie")!, forHTTPHeaderField: "Cookie")
 
         completion(.success(request))
     }
