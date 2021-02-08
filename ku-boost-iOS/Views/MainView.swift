@@ -22,20 +22,28 @@ struct MainView: View {
             Button(action: {
                 makeAllGradeRequest()
             }, label: {
-                Text("Fetch DB")
+                Text("Fetch Grade")
                     .padding(10)
                     .background(Color.green)
                     .cornerRadius(10)
-            }).padding().padding()
+            }).padding()
+            Button(action: {
+                validateGradeRequest()
+            }, label: {
+                Text("Validate Grade")
+                    .padding(10)
+                    .background(Color.green)
+                    .cornerRadius(10)
+            }).padding()
             HStack{
                 TextField("검색할 성적", text: $text)
                     .font(.largeTitle)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }.padding(.horizontal)
             Button(action: {
-                let GradeAplus = realm.objects(Grade.self).filter("characterGrade='\(text.uppercased())'")
+                let GradeAplus = realm.objects(RealmGrade.self).filter("characterGrade='\(text.uppercased())'")
                 for grade in GradeAplus {
-                    print(grade.subjectName! + " \(grade.grade!.value!)")
+                    print(grade.subjectName + " \(grade.grade.value)")
                 }
                 print()
             }, label: {
@@ -60,6 +68,11 @@ struct MainView: View {
                 gh.fetchRegularGrade(year: year, semester: sem)
             }
         }
+    }
+    
+    private func validateGradeRequest(){
+        let gh = GradeHandler.shared
+        gh.fetchValidGrades()
     }
 }
 

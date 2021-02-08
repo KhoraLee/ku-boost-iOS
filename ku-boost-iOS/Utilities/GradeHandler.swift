@@ -43,14 +43,14 @@ class GradeHandler {
             switch response.result{
             case .success(let data):
                 do{
+                    let realm = try! Realm()
                     let gradeJson = try JSONDecoder().decode(GradeResponse.self, from: JSONSerialization.data(withJSONObject: data))
-                    for grades in gradeJson.grades{
-                        // TODO : DB에 데이터 삽입
-                        print(grades) // 테스트 로깅
-                        let realm = try! Realm()
-                        print(realm.configuration.fileURL)
+                    for grade in gradeJson.grades{
+                        
+                        let realmGrade = RealmGrade()
+                        realmGrade.setup(year: year, grade: grade)
                         try? realm.write {
-                            realm.add(grades)
+                            realm.add(realmGrade, update: .modified)
                         }
                     }
                 } catch(let error){
@@ -69,10 +69,14 @@ class GradeHandler {
             switch response.result{
             case .success(let data):
                 do{
+                    let realm = try! Realm()
+
                     let validJson = try JSONDecoder().decode(ValidGradeResponse.self, from: JSONSerialization.data(withJSONObject: data))
                     for validGrade in validJson.validGrades{
-                        // TODO : DB에 데이터 삽입
-                        print(validGrade) // 테스트 로깅
+                        let grade = realm.objects(RealmGrade.self).filter("subjectId == '\(validGrade.subjectId)'").first!
+                        try? realm.write {
+                            grade.validate()
+                        }
                     }
                 } catch(let error){
                     debugPrint(error)
