@@ -61,6 +61,17 @@ struct MainView: View {
                     .cornerRadius(10)
             })
 
+            Button(action: {
+                let ah = LibraryHandler.shared
+                let username = UserDefaults.standard.string(forKey: "id")!
+                let password = UserDefaults.standard.string(forKey: "pw")!
+                ah.login(id: username, pw: password)
+            }, label: {
+                Text("GET Lib QR Raw")
+                    .padding(10)
+                    .background(Color.green)
+                    .cornerRadius(10)
+            }).padding()
         }
     }
     

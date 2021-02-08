@@ -20,6 +20,12 @@
 		B18B805625D0478200662FC1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805525D0478200662FC1 /* UserInfo.swift */; };
 		B19428DB25D1A52E0045A32F /* RealmSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428DA25D1A52E0045A32F /* RealmSimulation.swift */; };
 		B19428DE25D1AE9B0045A32F /* ChangePW.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428DD25D1AE9B0045A32F /* ChangePW.swift */; };
+		B19428E125D1B0190045A32F /* LibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428E025D1B0190045A32F /* LibraryRouter.swift */; };
+		B19428E425D1B21E0045A32F /* LibraryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428E325D1B21E0045A32F /* LibraryHandler.swift */; };
+		B19428E825D1B2B80045A32F /* LibLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428E725D1B2B80045A32F /* LibLoginResponse.swift */; };
+		B19428EC25D1B2E00045A32F /* QRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428EB25D1B2E00045A32F /* QRResponse.swift */; };
+		B19428F125D1B9800045A32F /* LibraryInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428F025D1B9800045A32F /* LibraryInterceptor.swift */; };
+		B19428F425D1BE630045A32F /* LibLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428F325D1BE630045A32F /* LibLoginRequest.swift */; };
 		B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */; };
 		B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDC25B1AB6600BC612D /* Assets.xcassets */; };
 		B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */; };
@@ -32,7 +38,7 @@
 		B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577C825B36C8200311B30 /* LoadingView.swift */; };
 		B1A577D225B385E000311B30 /* GradeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577D125B385E000311B30 /* GradeHandler.swift */; };
 		B1A6E82025BEC6AA001A2911 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E81F25BEC6AA001A2911 /* AuthService.swift */; };
-		B1A6E82325BEC6E4001A2911 /* AuthIntetceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E82225BEC6E4001A2911 /* AuthIntetceptor.swift */; };
+		B1A6E82325BEC6E4001A2911 /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E82225BEC6E4001A2911 /* AuthInterceptor.swift */; };
 		B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E82525BEC80D001A2911 /* AuthRouter.swift */; };
 		B1C489AA25D0713F00702617 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489A925D0713F00702617 /* Grade.swift */; };
 		B1C489AD25D0714D00702617 /* GradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489AC25D0714D00702617 /* GradeResponse.swift */; };
@@ -56,6 +62,12 @@
 		B18B805525D0478200662FC1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		B19428DA25D1A52E0045A32F /* RealmSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSimulation.swift; sourceTree = "<group>"; };
 		B19428DD25D1AE9B0045A32F /* ChangePW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePW.swift; sourceTree = "<group>"; };
+		B19428E025D1B0190045A32F /* LibraryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRouter.swift; sourceTree = "<group>"; };
+		B19428E325D1B21E0045A32F /* LibraryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHandler.swift; sourceTree = "<group>"; };
+		B19428E725D1B2B80045A32F /* LibLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibLoginResponse.swift; sourceTree = "<group>"; };
+		B19428EB25D1B2E00045A32F /* QRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRResponse.swift; sourceTree = "<group>"; };
+		B19428F025D1B9800045A32F /* LibraryInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryInterceptor.swift; sourceTree = "<group>"; };
+		B19428F325D1BE630045A32F /* LibLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibLoginRequest.swift; sourceTree = "<group>"; };
 		B1989ED525B1AB6600BC612D /* ku-boost-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ku-boost-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ku_boost_iOSApp.swift; sourceTree = "<group>"; };
 		B1989EDC25B1AB6600BC612D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +82,7 @@
 		B1A577C825B36C8200311B30 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B1A577D125B385E000311B30 /* GradeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeHandler.swift; sourceTree = "<group>"; };
 		B1A6E81F25BEC6AA001A2911 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		B1A6E82225BEC6E4001A2911 /* AuthIntetceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthIntetceptor.swift; sourceTree = "<group>"; };
+		B1A6E82225BEC6E4001A2911 /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
 		B1A6E82525BEC80D001A2911 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		B1C489A925D0713F00702617 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		B1C489AC25D0714D00702617 /* GradeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeResponse.swift; sourceTree = "<group>"; };
@@ -136,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				B183137425BDF72600625375 /* LibraryService.swift */,
+				B19428E025D1B0190045A32F /* LibraryRouter.swift */,
+				B19428F025D1B9800045A32F /* LibraryInterceptor.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -159,6 +173,16 @@
 				B19428DD25D1AE9B0045A32F /* ChangePW.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		B19428E625D1B2AC0045A32F /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B19428E725D1B2B80045A32F /* LibLoginResponse.swift */,
+				B19428EB25D1B2E00045A32F /* QRResponse.swift */,
+				B19428F325D1BE630045A32F /* LibLoginRequest.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		B1989ECC25B1AB6600BC612D = {
@@ -240,6 +264,7 @@
 		B1A5779D25B3609600311B30 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B19428E625D1B2AC0045A32F /* Library */,
 				B18320A325D14D330096884D /* Realm */,
 				B18B804A25D03F4E00662FC1 /* Auth */,
 				B1C489A825D0713700702617 /* Grade */,
@@ -252,6 +277,7 @@
 			children = (
 				B1A577A125B3665100311B30 /* AuthHandler.swift */,
 				B1A577D125B385E000311B30 /* GradeHandler.swift */,
+				B19428E325D1B21E0045A32F /* LibraryHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -270,7 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				B1A6E81F25BEC6AA001A2911 /* AuthService.swift */,
-				B1A6E82225BEC6E4001A2911 /* AuthIntetceptor.swift */,
+				B1A6E82225BEC6E4001A2911 /* AuthInterceptor.swift */,
 				B1A6E82525BEC80D001A2911 /* AuthRouter.swift */,
 			);
 			path = Auth;
@@ -404,9 +430,11 @@
 			files = (
 				B183137225BDF50B00625375 /* GradeRouter.swift in Sources */,
 				B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */,
+				B19428E425D1B21E0045A32F /* LibraryHandler.swift in Sources */,
 				B19428DE25D1AE9B0045A32F /* ChangePW.swift in Sources */,
 				B183136725BDDC2A00625375 /* GradeService.swift in Sources */,
 				B1C489AD25D0714D00702617 /* GradeResponse.swift in Sources */,
+				B19428E125D1B0190045A32F /* LibraryRouter.swift in Sources */,
 				B1A577A225B3665100311B30 /* AuthHandler.swift in Sources */,
 				B1A577AB25B3696900311B30 /* MainView.swift in Sources */,
 				B18B805625D0478200662FC1 /* UserInfo.swift in Sources */,
@@ -419,14 +447,18 @@
 				B1A577A825B3694700311B30 /* LoginView.swift in Sources */,
 				B1A577D225B385E000311B30 /* GradeHandler.swift in Sources */,
 				B1C489B025D0715500702617 /* ValidGrade.swift in Sources */,
+				B19428EC25D1B2E00045A32F /* QRResponse.swift in Sources */,
 				B1A577AE25B3699C00311B30 /* LoginViewModel.swift in Sources */,
+				B19428E825D1B2B80045A32F /* LibLoginResponse.swift in Sources */,
 				B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */,
 				B18B804C25D03F5E00662FC1 /* LoginResponse.swift in Sources */,
 				B18B804F25D03F7700662FC1 /* LoginSuccess.swift in Sources */,
+				B19428F425D1BE630045A32F /* LibLoginRequest.swift in Sources */,
 				B1A577C925B36C8200311B30 /* TextFields.swift in Sources */,
 				B18320A525D14D3E0096884D /* RealmGrade.swift in Sources */,
 				B1C489B325D0715B00702617 /* ValidGradeResponse.swift in Sources */,
-				B1A6E82325BEC6E4001A2911 /* AuthIntetceptor.swift in Sources */,
+				B19428F125D1B9800045A32F /* LibraryInterceptor.swift in Sources */,
+				B1A6E82325BEC6E4001A2911 /* AuthInterceptor.swift in Sources */,
 				B1C489AA25D0713F00702617 /* Grade.swift in Sources */,
 				B19428DB25D1A52E0045A32F /* RealmSimulation.swift in Sources */,
 				B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */,

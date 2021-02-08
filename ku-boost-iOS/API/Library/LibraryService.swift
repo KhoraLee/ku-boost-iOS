@@ -11,21 +11,22 @@ import Alamofire
 
 final class LibraryService {
 
-//    // Singleton
-//    static let shared = LibraryService()
-//
-//    // Intercepter
-//    let interceptors = Interceptor(interceptors :
-//                        [ LibraryInterceptor()
-//                        ])
+    // Singleton
+    static let shared = LibraryService()
+
+    // Intercepter
+    let interceptors = Interceptor(interceptors :
+                        [ LibraryInterceptor()
+                        ])
 //    // Logger
 //    let monitors = [LibraryLogger()] as [EventMonitor]
-//
-//
-//    // Session
-//    var session : Session
-//
-//    private init(){
-//        session = Session(interceptor:interceptors, eventMonitors: monitors)
-//    }
+
+    
+    // Session
+    var session : Session
+
+    private init(){
+        session = Session(interceptor:interceptors)
+    }
+    
 }
