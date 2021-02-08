@@ -14,7 +14,8 @@ class GradeHandler {
     
     static let shared = GradeHandler()
     
-    var Alamo = GradeService.shared.session
+    let realm = try! Realm()
+    let Alamo = GradeService.shared.session
     
     func fetchGraduationSimulation(){
         Alamo.request(GradeRouter.GradeSimul).responseJSON { [weak self] (response) in
@@ -24,8 +25,11 @@ class GradeHandler {
                 do{
                     let simulJson = try JSONDecoder().decode(GraduationSimulationResponse.self, from: JSONSerialization.data(withJSONObject: data))
                     for simul in simulJson.simulations {
-                        // TODO : DB에 데이터 삽입
-                        print(simul) // 테스트 로깅
+                        let realmSimul = RealmSimulation()
+                        realmSimul.setup(simul: simul)
+                        try? weakSelf.realm.write {
+                            weakSelf.realm.add(realmSimul, update: .modified)
+                        }
                     }
                 } catch(let error){
                     debugPrint(error)
@@ -43,14 +47,13 @@ class GradeHandler {
             switch response.result{
             case .success(let data):
                 do{
-                    let realm = try! Realm()
                     let gradeJson = try JSONDecoder().decode(GradeResponse.self, from: JSONSerialization.data(withJSONObject: data))
                     for grade in gradeJson.grades{
                         
                         let realmGrade = RealmGrade()
                         realmGrade.setup(year: year, grade: grade)
-                        try? realm.write {
-                            realm.add(realmGrade, update: .modified)
+                        try? weakSelf.realm.write {
+                            weakSelf.realm.add(realmGrade, update: .modified)
                         }
                     }
                 } catch(let error){
@@ -69,12 +72,10 @@ class GradeHandler {
             switch response.result{
             case .success(let data):
                 do{
-                    let realm = try! Realm()
-
                     let validJson = try JSONDecoder().decode(ValidGradeResponse.self, from: JSONSerialization.data(withJSONObject: data))
                     for validGrade in validJson.validGrades{
-                        let grade = realm.objects(RealmGrade.self).filter("subjectId == '\(validGrade.subjectId)'").first!
-                        try? realm.write {
+                        let grade = weakSelf.realm.objects(RealmGrade.self).filter("subjectId == '\(validGrade.subjectId)'").first!
+                        try? weakSelf.realm.write {
                             grade.validate()
                         }
                     }

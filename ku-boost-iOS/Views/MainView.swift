@@ -28,6 +28,14 @@ struct MainView: View {
                     .cornerRadius(10)
             }).padding()
             Button(action: {
+                makeSimulRequest()
+            }, label: {
+                Text("Fetch Simul")
+                    .padding(10)
+                    .background(Color.green)
+                    .cornerRadius(10)
+            }).padding()
+            Button(action: {
                 validateGradeRequest()
             }, label: {
                 Text("Validate Grade")
@@ -73,6 +81,11 @@ struct MainView: View {
     private func validateGradeRequest(){
         let gh = GradeHandler.shared
         gh.fetchValidGrades()
+    }
+    
+    private func makeSimulRequest(){
+        let gh = GradeHandler.shared
+        gh.fetchGraduationSimulation()
     }
 }
 

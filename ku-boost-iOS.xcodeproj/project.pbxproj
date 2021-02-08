@@ -18,6 +18,7 @@
 		B18B804F25D03F7700662FC1 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B804E25D03F7700662FC1 /* LoginSuccess.swift */; };
 		B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805225D03F8900662FC1 /* LoginFailure.swift */; };
 		B18B805625D0478200662FC1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805525D0478200662FC1 /* UserInfo.swift */; };
+		B19428DB25D1A52E0045A32F /* RealmSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428DA25D1A52E0045A32F /* RealmSimulation.swift */; };
 		B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */; };
 		B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDC25B1AB6600BC612D /* Assets.xcassets */; };
 		B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		B18B804E25D03F7700662FC1 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		B18B805225D03F8900662FC1 /* LoginFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailure.swift; sourceTree = "<group>"; };
 		B18B805525D0478200662FC1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		B19428DA25D1A52E0045A32F /* RealmSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSimulation.swift; sourceTree = "<group>"; };
 		B1989ED525B1AB6600BC612D /* ku-boost-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ku-boost-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ku_boost_iOSApp.swift; sourceTree = "<group>"; };
 		B1989EDC25B1AB6600BC612D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B18320A425D14D3E0096884D /* RealmGrade.swift */,
+				B19428DA25D1A52E0045A32F /* RealmSimulation.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				B1C489B325D0715B00702617 /* ValidGradeResponse.swift in Sources */,
 				B1A6E82325BEC6E4001A2911 /* AuthIntetceptor.swift in Sources */,
 				B1C489AA25D0713F00702617 /* Grade.swift in Sources */,
+				B19428DB25D1A52E0045A32F /* RealmSimulation.swift in Sources */,
 				B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */,
 				B1A6E82025BEC6AA001A2911 /* AuthService.swift in Sources */,
 				B1C489B625D0718100702617 /* GraduationSimulationResponse.swift in Sources */,
