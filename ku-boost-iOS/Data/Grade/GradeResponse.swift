@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct GradeResponse : Codable {
-    let grades: [Grade]
+class GradeResponse : Decodable {
+    var grades = List<Grade>()
     
     enum CodingKeys: String, CodingKey {
         case grades = "DS_GRADEOFSTUDENT"

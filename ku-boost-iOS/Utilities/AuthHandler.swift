@@ -34,6 +34,8 @@ class AuthHandler {
                         ud.set(passwd,forKey: "pw")
                         ud.set(true, forKey: "autologin")
                         
+                        AuthHandler.shared.fetchUserInformation() // TODO : Need async
+
                         weakSelf.isLogon = true
                         weakSelf.isLoading = false
                         return

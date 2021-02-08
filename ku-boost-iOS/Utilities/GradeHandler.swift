@@ -7,6 +7,7 @@
 
 import Alamofire
 import Combine
+import RealmSwift
 
 class GradeHandler {
     //학기 : 1 -> 1학기, 2 -> 2학기, 3 -> 여름 계절, 4 -> 겨울 계절
@@ -46,6 +47,11 @@ class GradeHandler {
                     for grades in gradeJson.grades{
                         // TODO : DB에 데이터 삽입
                         print(grades) // 테스트 로깅
+                        let realm = try! Realm()
+                        print(realm.configuration.fileURL)
+                        try? realm.write {
+                            realm.add(grades)
+                        }
                     }
                 } catch(let error){
                     debugPrint(error)
