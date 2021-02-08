@@ -39,6 +39,13 @@ class AuthHandler {
                         weakSelf.isLogon = true
                         weakSelf.isLoading = false
                         return
+                    } else if loginJson.ERRMSGINFO?.ERRMSG == "SYS.CMMN@CMMN018" { // 비밀번호 변경후 90일이 지났다는 오류
+                        let ud = UserDefaults.standard
+                        ud.set(id, forKey: "id")
+                        ud.set(passwd,forKey: "pw")
+                        
+                        weakSelf.isLogon = false
+                        weakSelf.isLoading = false
                     }
                 } catch(let error){
                     debugPrint(error)
@@ -79,6 +86,54 @@ class AuthHandler {
                     
                     print(infoJson)
                     print("\n")
+                } catch(let error){
+                    debugPrint(error)
+                }
+            case .failure(let err):
+                debugPrint(err)
+            }
+            weakSelf.isLoading = false
+            return
+        }
+    }
+    
+    func changePassword(){
+        print("AuthHandler - changePassword() called")
+        isLoading = true
+               
+        Alamo.request(AuthRouter.ChangeAfter90Day).responseJSON{ [weak self] (info) in
+            guard let weakSelf = self else { return }
+            switch info.result{
+            case .success(let data):
+                do{
+                    let flagJson = try JSONDecoder().decode(ChangePW.self, from: JSONSerialization.data(withJSONObject: data))
+                    if flagJson.dmRes.flag == "1"{
+                        // TODO :
+                    }
+                } catch(let error){
+                    debugPrint(error)
+                }
+            case .failure(let err):
+                debugPrint(err)
+            }
+            weakSelf.isLoading = false
+            return
+        }
+    }
+    
+    func changePassword(pw: String){
+        print("AuthHandler - changePassword(pw) called")
+        isLoading = true
+               
+        Alamo.request(AuthRouter.ChangePassword(pw: pw)).responseJSON{ [weak self] (info) in
+            guard let weakSelf = self else { return }
+            switch info.result{
+            case .success(let data):
+                do{
+                    let flagJson = try JSONDecoder().decode(ChangePW.self, from: JSONSerialization.data(withJSONObject: data))
+                    if flagJson.dmRes.flag == "1"{
+                        // TODO :
+                    }
                 } catch(let error){
                     debugPrint(error)
                 }

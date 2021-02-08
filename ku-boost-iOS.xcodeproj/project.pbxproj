@@ -19,6 +19,7 @@
 		B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805225D03F8900662FC1 /* LoginFailure.swift */; };
 		B18B805625D0478200662FC1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805525D0478200662FC1 /* UserInfo.swift */; };
 		B19428DB25D1A52E0045A32F /* RealmSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428DA25D1A52E0045A32F /* RealmSimulation.swift */; };
+		B19428DE25D1AE9B0045A32F /* ChangePW.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428DD25D1AE9B0045A32F /* ChangePW.swift */; };
 		B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */; };
 		B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDC25B1AB6600BC612D /* Assets.xcassets */; };
 		B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		B18B805225D03F8900662FC1 /* LoginFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailure.swift; sourceTree = "<group>"; };
 		B18B805525D0478200662FC1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		B19428DA25D1A52E0045A32F /* RealmSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSimulation.swift; sourceTree = "<group>"; };
+		B19428DD25D1AE9B0045A32F /* ChangePW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePW.swift; sourceTree = "<group>"; };
 		B1989ED525B1AB6600BC612D /* ku-boost-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ku-boost-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ku_boost_iOSApp.swift; sourceTree = "<group>"; };
 		B1989EDC25B1AB6600BC612D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				B18B804E25D03F7700662FC1 /* LoginSuccess.swift */,
 				B18B805225D03F8900662FC1 /* LoginFailure.swift */,
 				B18B805525D0478200662FC1 /* UserInfo.swift */,
+				B19428DD25D1AE9B0045A32F /* ChangePW.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			files = (
 				B183137225BDF50B00625375 /* GradeRouter.swift in Sources */,
 				B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */,
+				B19428DE25D1AE9B0045A32F /* ChangePW.swift in Sources */,
 				B183136725BDDC2A00625375 /* GradeService.swift in Sources */,
 				B1C489AD25D0714D00702617 /* GradeResponse.swift in Sources */,
 				B1A577A225B3665100311B30 /* AuthHandler.swift in Sources */,
