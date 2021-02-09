@@ -31,7 +31,7 @@
 		B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */; };
 		B1A577A225B3665100311B30 /* AuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577A125B3665100311B30 /* AuthHandler.swift */; };
 		B1A577A825B3694700311B30 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577A725B3694700311B30 /* LoginView.swift */; };
-		B1A577AB25B3696900311B30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577AA25B3696900311B30 /* MainView.swift */; };
+		B1A577AB25B3696900311B30 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577AA25B3696900311B30 /* DebugView.swift */; };
 		B1A577AE25B3699C00311B30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577AD25B3699C00311B30 /* LoginViewModel.swift */; };
 		B1A577C925B36C8200311B30 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577C625B36C8200311B30 /* TextFields.swift */; };
 		B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577C725B36C8200311B30 /* LoadingIndicator.swift */; };
@@ -75,7 +75,7 @@
 		B1989EE125B1AB6600BC612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1A577A125B3665100311B30 /* AuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHandler.swift; sourceTree = "<group>"; };
 		B1A577A725B3694700311B30 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		B1A577AA25B3696900311B30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B1A577AA25B3696900311B30 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		B1A577AD25B3699C00311B30 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B1A577C625B36C8200311B30 /* TextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
 		B1A577C725B36C8200311B30 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 			children = (
 				B1A577B525B36C1100311B30 /* ResusableViews */,
 				B1A577A725B3694700311B30 /* LoginView.swift */,
-				B1A577AA25B3696900311B30 /* MainView.swift */,
+				B1A577AA25B3696900311B30 /* DebugView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 				B1C489AD25D0714D00702617 /* GradeResponse.swift in Sources */,
 				B19428E125D1B0190045A32F /* LibraryRouter.swift in Sources */,
 				B1A577A225B3665100311B30 /* AuthHandler.swift in Sources */,
-				B1A577AB25B3696900311B30 /* MainView.swift in Sources */,
+				B1A577AB25B3696900311B30 /* DebugView.swift in Sources */,
 				B18B805625D0478200662FC1 /* UserInfo.swift in Sources */,
 				B1C489B925D0718800702617 /* GraduationSimulation.swift in Sources */,
 				B183137525BDF72600625375 /* LibraryService.swift in Sources */,

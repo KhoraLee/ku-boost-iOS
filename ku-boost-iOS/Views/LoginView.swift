@@ -12,7 +12,7 @@ struct LoginView: View {
     @ObservedObject var viewModel = LoginViewModel()
     
     var loginButton: some View {
-        NavigationLink(destination: MainView().navigationBarHidden(true), isActive: .constant($viewModel.isLogon.wrappedValue == true)) {
+        NavigationLink(destination: DebugView().navigationBarHidden(true), isActive: .constant($viewModel.isLogon.wrappedValue == true)) {
             VStack {
                 Spacer()
                 HStack {
