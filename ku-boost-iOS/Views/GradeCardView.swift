@@ -10,26 +10,26 @@ import Charts
 
 struct GradeCardView: View {
     
-    @ObservedObject var viewModel = GradeViewModel()
+    @ObservedObject var viewModel = GradeViewModel() // TODO : 뷰모델이 아닌 데이터를 binding 으로 받기
+    
+    // 성적 리스트
+    // Pie 차트 데이터
 
     var proxy: GeometryProxy
     var title = ""
-    
-    @State var size: CGFloat = 3.2
-    @State var rowSize: CGSize = .zero
+       
     var body: some View {
 
         VStack(alignment: .leading){
             HStack{
                 VStack(alignment: .leading){
-                    // Code Start Here
+                    // Card view starts here
                     if title != ""{
-                    Text("\(title)")
-                        .font(.title)
-                        .fontWeight(.black)
-                        .foregroundColor(.primary)
-                        .lineLimit(3)
-                        
+                        Text("\(title)")
+                            .font(.title)
+                            .fontWeight(.black)
+                            .foregroundColor(.primary)
+                            .lineLimit(1)
                     }
                     HStack{
                         PieChart(entries: [
@@ -53,12 +53,10 @@ struct GradeCardView: View {
                     List{
                         ForEach(viewModel.curSemGrades, id: \.compoundKey ){grade in
                         GradeRow(grade: grade)
-//                            .listRowInsets(EdgeInsets())
                         }
                     }.listStyle(PlainListStyle())
                     .environment(\.defaultMinListRowHeight, 40)
                     .frame(height: 40 * CGFloat(viewModel.curSemGrades.count))
-
                     // End
                 }
                 .layoutPriority(100)
