@@ -20,7 +20,7 @@ struct PieChart: UIViewRepresentable {
     func updateUIView(_ uiView: PieChartView, context: Context) {
         let dataSet = PieChartDataSet(entries: entries)
         dataSet.selectionShift = 0
-        dataSet.colors = ChartColorTemplates.colorful()
+        dataSet.colors = [UIColor(Color("pastelRed")),UIColor(Color("pastelOrange")),UIColor(Color("pastelYellow")),UIColor(Color("pastelGreen")),UIColor(Color("pastelBlue")),UIColor(Color("pastelIndigo")),UIColor(Color("pastelPurple")),UIColor(Color("pastelDeepPurple")),UIColor(Color("pastelBrown")),UIColor(Color("pastelLighGray"))]
         let pieChartData = PieChartData(dataSet: dataSet)
         uiView.data = pieChartData
         configureChart(uiView)
