@@ -9,11 +9,12 @@ import SwiftUI
 import Charts
 
 struct GradeCardView: View {
-    
-    @ObservedObject var viewModel = GradeViewModel() // TODO : 뷰모델이 아닌 데이터를 binding 으로 받기
-    
-    // 성적 리스트
-    // Pie 차트 데이터
+      
+    // 계산된 pie chart entry들
+    var gradeEntries: [[PieChartDataEntry]] // [0] : 전체 학점, [1] : 전공 학점, [2]: 학점 분포
+
+    // 학기 성적 전체 리스트
+    var grades: [RealmGrade]
 
     var proxy: GeometryProxy
     var title = ""
@@ -32,31 +33,22 @@ struct GradeCardView: View {
                             .lineLimit(1)
                     }
                     HStack{
-                        PieChart(entries: [
-                            PieChartDataEntry(value:4,label:"A+"),
-                            PieChartDataEntry(value:4,label:"A"),
-                            PieChartDataEntry(value:1,label:"B+")
-                        ]).frame(height: proxy.size.width*0.8/3)
+                        PieChart(classification:"전체", average: gradeEntries[0][0].value, isSummury: true, entries: gradeEntries[0])
+                            .frame(height: proxy.size.width*0.8/3)
                         Spacer()
-                        PieChart(entries: [
-                            PieChartDataEntry(value:4,label:"A+"),
-                            PieChartDataEntry(value:4,label:"A"),
-                            PieChartDataEntry(value:1,label:"B+")
-                        ]).frame(height: proxy.size.width*0.8/3)
+                        PieChart(classification:"전공", average: gradeEntries[1][0].value, isSummury: true, entries: gradeEntries[1])
+                            .frame(height: proxy.size.width*0.8/3)
                         Spacer()
-                        PieChart(entries: [
-                            PieChartDataEntry(value:4,label:"A+"),
-                            PieChartDataEntry(value:4,label:"A"),
-                            PieChartDataEntry(value:1,label:"B+")
-                        ]).frame(height: proxy.size.width*0.8/3)
+                        PieChart(entries: gradeEntries[2])
+                            .frame(height: proxy.size.width*0.8/3)
                     }
                     List{
-                        ForEach(viewModel.curSemGrades, id: \.compoundKey ){grade in
+                        ForEach(grades, id: \.compoundKey ){grade in
                         GradeRow(grade: grade)
                         }
                     }.listStyle(PlainListStyle())
                     .environment(\.defaultMinListRowHeight, 40)
-                    .frame(height: 40 * CGFloat(viewModel.curSemGrades.count))
+                    .frame(height: 40 * CGFloat(grades.count))
                     // End
                 }
                 .layoutPriority(100)
@@ -73,11 +65,3 @@ struct GradeCardView: View {
 
     }
 }
-
-
-
-//struct CurrentGradeCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CurrentGradeCardView()
-//    }
-//}

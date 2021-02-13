@@ -10,13 +10,14 @@ import Combine
 import Charts
 
 struct GradeView: View {
+    
+    @ObservedObject var viewModel = GradeViewModel.shared
 
     var body: some View {
         GeometryReader{ p in
             ScrollView {
-                GradeCardView(proxy: p, title:"금학기성적")
-                GradeCardView(proxy: p)
-                    .padding(.bottom, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                GradeCardView(gradeEntries: viewModel.currentGradesEntries, grades: viewModel.currentGrades, proxy: p, title:"금학기성적")
+                GradeCardView(gradeEntries: viewModel.totalGradesEntries, grades: viewModel.totalGrades, proxy: p, title:"전체학기성적")
             }
             
         }

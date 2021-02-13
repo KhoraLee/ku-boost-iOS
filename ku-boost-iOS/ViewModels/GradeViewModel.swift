@@ -8,31 +8,109 @@
 import SwiftUI
 import Combine
 import RealmSwift
+import Charts
 
 class GradeViewModel: ObservableObject, Identifiable {
+    
+    static let shared = GradeViewModel()
 
     let realm = try! Realm()
     let stdNo = UserDefaults.standard.string(forKey: "stdNo") ?? ""
     private var disposables: Set<AnyCancellable> = []
     
-    @Published var curSemGrades: [RealmGrade] = []
-    @Published var curSem = ""
+    @Published var currentGrades: [RealmGrade] = []
+    @Published var totalGrades: [RealmGrade] = []
+    @Published var currentGradesEntries: [[PieChartDataEntry]] = []
+    @Published var totalGradesEntries: [[PieChartDataEntry]] = []
     
     init(){
+        reload()
+    }
+    
+    func reload() {
         fetchCurrentGradesFromLocalDb()
+        fetchTotalGradesFromLocalDb()
+        makeCurrentGradeEntries()
+        makeTotalGradeEntries()
     }
     
     func fetchCurrentGradesFromLocalDb() {
         let curSemGrade = realm.objects(RealmGrade.self)
             .filter("stdNo == '\(stdNo)'")
             .sorted(by: [SortDescriptor(keyPath: "year",ascending: false),SortDescriptor(keyPath: "semester",ascending: false)]).first
-        curSem = "\(curSemGrade?.year) \(curSemGrade?.semester)"
         let curGrades = realm.objects(RealmGrade.self)
             .filter("stdNo == '\(stdNo)' && year == \(curSemGrade?.year ?? 2000) && semester == '\(curSemGrade?.semester ?? "")'").toArray(ofType: RealmGrade.self)
         for grade in curGrades {
-            curSemGrades.append(grade)
+            currentGrades.append(grade)
         }
         print("fetchCurrentGradesFromLocalDb() Done")
+    }
+    
+    func fetchTotalGradesFromLocalDb() {
+        let totGrades = realm.objects(RealmGrade.self)
+            .filter("stdNo == '\(stdNo)' && valid == true").toArray(ofType: RealmGrade.self)
+        for grade in totGrades {
+            totalGrades.append(grade)
+        }
+        print("fetchTotalGradesFromLocalDb() Done")
+    }
+    
+    func makeCurrentGradeEntries(){
+       currentGradesEntries = [makeSubjectEntry(grades: currentGrades),
+                               makeSubjectEntry(grades: currentGrades,isMajor: true),
+                               makeGradeEntry(grades: currentGrades)]
+    }
+    
+    func makeTotalGradeEntries(){
+      totalGradesEntries = [makeSubjectEntry(grades: totalGrades),
+                               makeSubjectEntry(grades: totalGrades,isMajor: true),
+                               makeGradeEntry(grades: totalGrades)]
+    }
+    
+    func makeGradeEntry(grades:[RealmGrade]) -> [PieChartDataEntry] {
+        var tmp = [String:Int]()
+        var result = [PieChartDataEntry]()
+        
+        for grade in grades {
+            let key = grade.characterGrade
+            if (tmp[key] == nil){ tmp[key] = 0 }
+            tmp[key] = tmp[key]! + 1
+        }
+        
+        let sorted = tmp.sorted {
+            if $0.value == $1.value{
+                return $0.key.prefix(1) < $1.key.prefix(1)
+            } else {
+                return $0.value > $1.value
+            }
+        }
+        sorted.forEach{ key,value in
+            result.append(PieChartDataEntry(value: Double(value), label:key))
+        }
+        return result
+    }
+    
+    func makeSubjectEntry(grades: [RealmGrade], isMajor: Bool = false) -> [PieChartDataEntry] {
+        var sum: Float = 0
+        var count: Float = 0
+        for grade in grades {
+            if isMajor {
+                if grade.classification == "전필" || grade.classification == "전선" {
+                    sum += (grade.grade.value ?? 0) * Float(grade.subjectPoint.value ?? 0)
+                    count += Float(grade.subjectPoint.value ?? 0)
+                }
+            } else {
+                if grade.evaluationMethod == "P/N평가" { continue }
+                sum += (grade.grade.value ?? 0) * Float(grade.subjectPoint.value ?? 0)
+                count += Float(grade.subjectPoint.value ?? 0)
+            }
+        }
+        if sum == 0 && count == 0 {
+            return[PieChartDataEntry(value: 0, label:"grade"),
+                   PieChartDataEntry(value: 4.5, label:"total")]
+        }
+        return[PieChartDataEntry(value: Double(sum/count), label:"grade"),
+               PieChartDataEntry(value: 4.5 - Double(sum/count), label:"total")]
     }
     
 }
