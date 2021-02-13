@@ -74,9 +74,11 @@ class GradeHandler {
                 do{
                     let validJson = try JSONDecoder().decode(ValidGradeResponse.self, from: JSONSerialization.data(withJSONObject: data))
                     for validGrade in validJson.validGrades{
-                        let grade = weakSelf.realm.objects(RealmGrade.self).filter("subjectId == '\(validGrade.subjectId)'").first!
-                        try? weakSelf.realm.write {
-                            grade.validate()
+                        if let grade = weakSelf.realm.objects(RealmGrade.self).filter("subjectId == '\(validGrade.subjectId)'").first {
+                            try? weakSelf.realm.write {
+                                grade.validate()
+                            }
+                            
                         }
                     }
                 } catch(let error){
