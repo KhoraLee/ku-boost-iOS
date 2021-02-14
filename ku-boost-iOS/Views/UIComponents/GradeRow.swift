@@ -11,22 +11,24 @@ struct GradeRow: View {
     var grade: RealmGrade
     
     var body: some View {
-        HStack{
-            Text(grade.subjectName)
-                .font(.callout)
-                .lineLimit(1)
-            Spacer()
-            Text(grade.professor)
-                .font(.callout)
-            Text(String(grade.subjectPoint.value ?? 0))
+        NavigationLink(destination: GradeDetailView(grade: grade)){
+            HStack{
+                Text(grade.subjectName)
                     .font(.callout)
-            Text(grade.classification)
-                .font(.callout)
-            Text(grade.characterGrade)
-                .font(.callout)
-            if(grade.characterGrade.last != "+"){
-                Spacer().frame(width:"0".widthOfString(usingFont: UIFont.systemFont(ofSize:UIFont.systemFontSize)))
-            } else {
+                    .lineLimit(1)
+                Spacer()
+                Text(grade.professor)
+                    .font(.callout)
+                Text(String(grade.subjectPoint.value ?? 0))
+                        .font(.callout)
+                Text(grade.classification)
+                    .font(.callout)
+                Text(grade.characterGrade)
+                    .font(.callout)
+                if(grade.characterGrade.last != "+"){
+                    Spacer().frame(width:"+".widthOfString(usingFont: UIFont.systemFont(ofSize:UIFont.systemFontSize)))
+                } else {
+                }
             }
         }
     }
