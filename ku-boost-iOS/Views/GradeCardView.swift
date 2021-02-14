@@ -46,7 +46,9 @@ struct GradeCardView: View {
                         ForEach(grades, id: \.compoundKey ){grade in
                         GradeRow(grade: grade)
                         }
-                    }.listStyle(PlainListStyle())
+                    }
+                    .hasScrollEnabled(false)
+                    .listStyle(PlainListStyle())
                     .environment(\.defaultMinListRowHeight, 40)
                     .frame(height: 40 * CGFloat(grades.count))
                     // End
@@ -63,5 +65,13 @@ struct GradeCardView: View {
        )
         .padding([.top, .horizontal])
 
+    }
+}
+
+extension View {
+    func hasScrollEnabled(_ value: Bool) -> some View {
+        self.onAppear {
+            UITableView.appearance().isScrollEnabled = value
+        }
     }
 }
