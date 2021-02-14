@@ -37,7 +37,7 @@ struct TotalGradeCardView: View {
                                 .lineLimit(1)
                         }
                         Spacer()
-                        NavigationLink(destination: TotalGradeDetailView().navigationBarHidden(true)) {
+                        NavigationLink(destination: TotalGradeDetailView()) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .resizable()
                                 .scaledToFit()

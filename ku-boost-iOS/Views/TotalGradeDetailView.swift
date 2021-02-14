@@ -10,25 +10,47 @@ import SwiftUI
 
 struct TotalGradeDetailView: View {
     
-    @State var selectedSemester = "2020년 1학기"
     @ObservedObject var viewModel = GradeViewModel.shared
-
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @State var selectedSemester = ""
+    
     var body: some View {
         GeometryReader{ p in
             VStack {
-                Menu("\(selectedSemester)"){
-                    ForEach(viewModel.currentGrades, id: \.compoundKey) { grade in
-                        Button("\(grade.semester)", action: {
-                            print(grade.subjectName)
-                        })
+                ZStack{
+                    Menu("\(selectedSemester == "" ? viewModel.currentSemester : selectedSemester)"){
+                        ForEach(viewModel.semesters, id: \.self) { sem in
+                            Button("\(sem)", action: {
+                                selectedSemester = sem
+                            })
+                        }
+                    }.frame(width: 200, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .background(Color("primaryLightColor"))
+                    .foregroundColor(Color.white)
+                    .cornerRadius(15)
+                    .padding(.top,10)
+                    HStack{
+                        btnBack
+                            .padding(.top,15)
+                            .padding(.leading,20)
+                        Spacer()                        
                     }
                 }
-                .padding(.all,5)
-                .background(Color.green)
-                .cornerRadius(15)
-                .padding(.top,10)
-                GradeCardView(pieChartEntries: viewModel.currentGradesEntries, grades: viewModel.currentGrades, proxy: p)
+                GradeCardView(pieChartEntries: viewModel.getSelectedGradeEntries(semester: selectedSemester == "" ? viewModel.currentSemester : selectedSemester), grades: viewModel.getSelectedGrades(semester: selectedSemester == "" ? viewModel.currentSemester : selectedSemester), proxy: p)
+            }
+        }.navigationBarHidden(true)
+
+    }
+    
+    var btnBack : some View { Button(action: {
+        self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "arrow.uturn.left") // set image here
+                .aspectRatio(contentMode: .fit)
             }
         }
     }
+    
 }

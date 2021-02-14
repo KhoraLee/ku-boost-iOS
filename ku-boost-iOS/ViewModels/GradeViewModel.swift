@@ -24,6 +24,9 @@ class GradeViewModel: ObservableObject, Identifiable {
     @Published var totalGradesEntries: [[PieChartDataEntry]] = []
     @Published var totalGradeLineEntries: [ChartDataEntry] = []
     
+    @Published var currentSemester: String = ""
+    @Published var semesters: [String] = []
+    
     init(){
         reload()
     }
@@ -45,6 +48,7 @@ class GradeViewModel: ObservableObject, Identifiable {
         for grade in curGrades {
             currentGrades.append(grade)
         }
+        currentSemester = "\(curSemGrade!.year)년도 \(curSemGrade!.semester)"
         print("fetchCurrentGradesFromLocalDb() Done")
     }
     
@@ -53,6 +57,10 @@ class GradeViewModel: ObservableObject, Identifiable {
             .filter("stdNo == '\(stdNo)' && valid == true").toArray(ofType: RealmGrade.self)
         for grade in totGrades {
             totalGrades.append(grade)
+            let sem = "\(grade.year)년도 \(grade.semester)"
+            if !semesters.contains(sem) {
+                semesters.append(sem)
+            }
         }
         print("fetchTotalGradesFromLocalDb() Done")
     }
@@ -141,6 +149,25 @@ class GradeViewModel: ObservableObject, Identifiable {
         
     }
     
+    func getSelectedGradeEntries(semester: String) -> [[PieChartDataEntry]] {
+        let tmpGrade = getSelectedGrades(semester: semester)
+        
+        return [makeSubjectEntry(grades: tmpGrade),
+                makeSubjectEntry(grades: tmpGrade,isMajor: true),
+                makeGradeEntry(grades: tmpGrade)]
+    }
+    
+    func getSelectedGrades(semester: String) -> [RealmGrade] {
+        var tmpGrade = [RealmGrade]()
+        for grade in totalGrades {
+            let sem = "\(grade.year)년도 \(grade.semester)"
+            if sem == semester {
+                tmpGrade.append(grade)
+            }
+        }
+        return tmpGrade
+    }
+        
 }
 
 extension Results {
