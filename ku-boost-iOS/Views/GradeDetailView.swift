@@ -143,21 +143,4 @@ struct GradeDetailView: View {
             }
         }
     }
-    
-    
-}
-
-struct SizePreferenceKey: PreferenceKey {
-    typealias Value = CGSize
-    static var defaultValue: Value = .zero
-
-    static func reduce(value: inout Value, nextValue: () -> Value) {
-        value = nextValue()
-    }
-}
-
-extension String {
-    func sizeDiff(_ s:String,font:UIFont)-> CGFloat{
-        return s.widthOfString(usingFont: font) - self.widthOfString(usingFont: font)
-    }
 }

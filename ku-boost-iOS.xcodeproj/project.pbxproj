@@ -12,6 +12,7 @@
 		B1767A2D25D8F19100266027 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A2C25D8F19100266027 /* LineChart.swift */; };
 		B1767A3225D9132300266027 /* GradeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A3125D9132300266027 /* GradeDetailView.swift */; };
 		B17CFA3125D970A200EEEF7C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CFA3025D970A200EEEF7C /* View.swift */; };
+		B17CFA3525D9710500EEEF7C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CFA3425D9710500EEEF7C /* String.swift */; };
 		B183136725BDDC2A00625375 /* GradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136625BDDC2A00625375 /* GradeService.swift */; };
 		B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136B25BDF4CA00625375 /* GradeInterceptor.swift */; };
 		B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136E25BDF4E500625375 /* GradeLogger.swift */; };
@@ -65,6 +66,7 @@
 		B1767A2C25D8F19100266027 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		B1767A3125D9132300266027 /* GradeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDetailView.swift; sourceTree = "<group>"; };
 		B17CFA3025D970A200EEEF7C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		B17CFA3425D9710500EEEF7C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B183136625BDDC2A00625375 /* GradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeService.swift; sourceTree = "<group>"; };
 		B183136B25BDF4CA00625375 /* GradeInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeInterceptor.swift; sourceTree = "<group>"; };
 		B183136E25BDF4E500625375 /* GradeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeLogger.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				B17CFA3025D970A200EEEF7C /* View.swift */,
+				B17CFA3425D9710500EEEF7C /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				B19428E825D1B2B80045A32F /* LibLoginResponse.swift in Sources */,
 				B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */,
 				B18B804C25D03F5E00662FC1 /* LoginResponse.swift in Sources */,
+				B17CFA3525D9710500EEEF7C /* String.swift in Sources */,
 				B1767A3225D9132300266027 /* GradeDetailView.swift in Sources */,
 				B1767A2D25D8F19100266027 /* LineChart.swift in Sources */,
 				B1EF085425D2DD9800C569A4 /* MainView.swift in Sources */,

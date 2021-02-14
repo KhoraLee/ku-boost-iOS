@@ -15,20 +15,18 @@ struct TotalGradeDetailView: View {
 
     var body: some View {
         GeometryReader{ p in
-            ScrollView {
-                
-//
-//                Menu("\(selectedSemester)"){
-//                    ForEach(viewModel.currentGrades, id: \.compoundKey) { grade in
-//                        Button("\(grade.semester)", action: {
-//                            print(grade.subjectName)
-//                        })
-//                    }
-//                }
-//                .padding(.all,5)
-//                .background(Color.green)
-//                .cornerRadius(15)
-//                .padding(.top,10)
+            VStack {
+                Menu("\(selectedSemester)"){
+                    ForEach(viewModel.currentGrades, id: \.compoundKey) { grade in
+                        Button("\(grade.semester)", action: {
+                            print(grade.subjectName)
+                        })
+                    }
+                }
+                .padding(.all,5)
+                .background(Color.green)
+                .cornerRadius(15)
+                .padding(.top,10)
                 GradeCardView(pieChartEntries: viewModel.currentGradesEntries, grades: viewModel.currentGrades, proxy: p)
             }
         }
