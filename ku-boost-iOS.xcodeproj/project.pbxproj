@@ -11,6 +11,7 @@
 		B1767A2825D8F0FB00266027 /* TotalGradeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A2725D8F0FB00266027 /* TotalGradeCardView.swift */; };
 		B1767A2D25D8F19100266027 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A2C25D8F19100266027 /* LineChart.swift */; };
 		B1767A3225D9132300266027 /* GradeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A3125D9132300266027 /* GradeDetailView.swift */; };
+		B17CFA3125D970A200EEEF7C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CFA3025D970A200EEEF7C /* View.swift */; };
 		B183136725BDDC2A00625375 /* GradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136625BDDC2A00625375 /* GradeService.swift */; };
 		B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136B25BDF4CA00625375 /* GradeInterceptor.swift */; };
 		B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136E25BDF4E500625375 /* GradeLogger.swift */; };
@@ -63,6 +64,7 @@
 		B1767A2725D8F0FB00266027 /* TotalGradeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalGradeCardView.swift; sourceTree = "<group>"; };
 		B1767A2C25D8F19100266027 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		B1767A3125D9132300266027 /* GradeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDetailView.swift; sourceTree = "<group>"; };
+		B17CFA3025D970A200EEEF7C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		B183136625BDDC2A00625375 /* GradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeService.swift; sourceTree = "<group>"; };
 		B183136B25BDF4CA00625375 /* GradeInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeInterceptor.swift; sourceTree = "<group>"; };
 		B183136E25BDF4E500625375 /* GradeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeLogger.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 				BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B17CFA2F25D9709800EEEF7C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B17CFA3025D970A200EEEF7C /* View.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B183136525BDDBB100625375 /* API */ = {
@@ -226,6 +236,7 @@
 		B1989ED725B1AB6600BC612D /* ku-boost-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B17CFA2F25D9709800EEEF7C /* Extensions */,
 				B183136525BDDBB100625375 /* API */,
 				B1A5779925B3606300311B30 /* Main */,
 				B1A5779D25B3609600311B30 /* Data */,
@@ -474,6 +485,7 @@
 				B1A577AB25B3696900311B30 /* DebugView.swift in Sources */,
 				B18B805625D0478200662FC1 /* UserInfo.swift in Sources */,
 				B1C489B925D0718800702617 /* GraduationSimulation.swift in Sources */,
+				B17CFA3125D970A200EEEF7C /* View.swift in Sources */,
 				B183137525BDF72600625375 /* LibraryService.swift in Sources */,
 				B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */,
 				B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */,
