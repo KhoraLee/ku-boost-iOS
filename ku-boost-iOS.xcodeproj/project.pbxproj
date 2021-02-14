@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B2C4FEA4AE9C7018B73E033 /* Pods_ku_boost_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */; };
+		B1767A2825D8F0FB00266027 /* TotalGradeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A2725D8F0FB00266027 /* TotalGradeCardView.swift */; };
+		B1767A2D25D8F19100266027 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A2C25D8F19100266027 /* LineChart.swift */; };
 		B183136725BDDC2A00625375 /* GradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136625BDDC2A00625375 /* GradeService.swift */; };
 		B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136B25BDF4CA00625375 /* GradeInterceptor.swift */; };
 		B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136E25BDF4E500625375 /* GradeLogger.swift */; };
@@ -42,7 +44,7 @@
 		B1A6E82025BEC6AA001A2911 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E81F25BEC6AA001A2911 /* AuthService.swift */; };
 		B1A6E82325BEC6E4001A2911 /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E82225BEC6E4001A2911 /* AuthInterceptor.swift */; };
 		B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E82525BEC80D001A2911 /* AuthRouter.swift */; };
-		B1BD6D3C25D8465400A395BA /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD6D3B25D8465400A395BA /* DropDown.swift */; };
+		B1BD6D4125D861B700A395BA /* TotalGradeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD6D4025D861B700A395BA /* TotalGradeDetailView.swift */; };
 		B1C489AA25D0713F00702617 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489A925D0713F00702617 /* Grade.swift */; };
 		B1C489AD25D0714D00702617 /* GradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489AC25D0714D00702617 /* GradeResponse.swift */; };
 		B1C489B025D0715500702617 /* ValidGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489AF25D0715500702617 /* ValidGrade.swift */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		A195609F6A6805C21BAA0298 /* Pods-ku-boost-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ku-boost-iOS.release.xcconfig"; path = "Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		B1767A2725D8F0FB00266027 /* TotalGradeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalGradeCardView.swift; sourceTree = "<group>"; };
+		B1767A2C25D8F19100266027 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		B183136625BDDC2A00625375 /* GradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeService.swift; sourceTree = "<group>"; };
 		B183136B25BDF4CA00625375 /* GradeInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeInterceptor.swift; sourceTree = "<group>"; };
 		B183136E25BDF4E500625375 /* GradeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeLogger.swift; sourceTree = "<group>"; };
@@ -93,7 +97,7 @@
 		B1A6E81F25BEC6AA001A2911 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B1A6E82225BEC6E4001A2911 /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
 		B1A6E82525BEC80D001A2911 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		B1BD6D3B25D8465400A395BA /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
+		B1BD6D4025D861B700A395BA /* TotalGradeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalGradeDetailView.swift; sourceTree = "<group>"; };
 		B1C489A925D0713F00702617 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		B1C489AC25D0714D00702617 /* GradeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeResponse.swift; sourceTree = "<group>"; };
 		B1C489AF25D0715500702617 /* ValidGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidGrade.swift; sourceTree = "<group>"; };
@@ -260,12 +264,14 @@
 		B1A5779B25B3608B00311B30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B1A577B525B36C1100311B30 /* ResusableViews */,
+				B1A577B525B36C1100311B30 /* UIComponents */,
 				B1A577A725B3694700311B30 /* LoginView.swift */,
 				B1A577AA25B3696900311B30 /* DebugView.swift */,
 				B1EF085325D2DD9800C569A4 /* MainView.swift */,
 				B1EF085625D2DDA000C569A4 /* GradeView.swift */,
 				B1EF085925D2FA7500C569A4 /* GradeCardView.swift */,
+				B1767A2725D8F0FB00266027 /* TotalGradeCardView.swift */,
+				B1BD6D4025D861B700A395BA /* TotalGradeDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,17 +306,17 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		B1A577B525B36C1100311B30 /* ResusableViews */ = {
+		B1A577B525B36C1100311B30 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
 				B1A577C725B36C8200311B30 /* LoadingIndicator.swift */,
 				B1A577C825B36C8200311B30 /* LoadingView.swift */,
 				B1A577C625B36C8200311B30 /* TextFields.swift */,
-				B1EF085C25D3007900C569A4 /* PieChart.swift */,
 				B185D86525D652780022D78E /* GradeRow.swift */,
-				B1BD6D3B25D8465400A395BA /* DropDown.swift */,
+				B1EF085C25D3007900C569A4 /* PieChart.swift */,
+				B1767A2C25D8F19100266027 /* LineChart.swift */,
 			);
-			path = ResusableViews;
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		B1A6E81E25BEC6A1001A2911 /* Auth */ = {
@@ -451,6 +457,7 @@
 			files = (
 				B183137225BDF50B00625375 /* GradeRouter.swift in Sources */,
 				B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */,
+				B1BD6D4125D861B700A395BA /* TotalGradeDetailView.swift in Sources */,
 				B19428E425D1B21E0045A32F /* LibraryHandler.swift in Sources */,
 				B1EF085A25D2FA7500C569A4 /* GradeCardView.swift in Sources */,
 				B19428DE25D1AE9B0045A32F /* ChangePW.swift in Sources */,
@@ -477,12 +484,12 @@
 				B19428E825D1B2B80045A32F /* LibLoginResponse.swift in Sources */,
 				B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */,
 				B18B804C25D03F5E00662FC1 /* LoginResponse.swift in Sources */,
+				B1767A2D25D8F19100266027 /* LineChart.swift in Sources */,
 				B1EF085425D2DD9800C569A4 /* MainView.swift in Sources */,
 				B18B804F25D03F7700662FC1 /* LoginSuccess.swift in Sources */,
 				B19428F425D1BE630045A32F /* LibLoginRequest.swift in Sources */,
 				B1A577C925B36C8200311B30 /* TextFields.swift in Sources */,
 				B18320A525D14D3E0096884D /* RealmGrade.swift in Sources */,
-				B1BD6D3C25D8465400A395BA /* DropDown.swift in Sources */,
 				B1C489B325D0715B00702617 /* ValidGradeResponse.swift in Sources */,
 				B185D86625D652780022D78E /* GradeRow.swift in Sources */,
 				B19428F125D1B9800045A32F /* LibraryInterceptor.swift in Sources */,
@@ -492,6 +499,7 @@
 				B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */,
 				B1A6E82025BEC6AA001A2911 /* AuthService.swift in Sources */,
 				B1C489B625D0718100702617 /* GraduationSimulationResponse.swift in Sources */,
+				B1767A2825D8F0FB00266027 /* TotalGradeCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

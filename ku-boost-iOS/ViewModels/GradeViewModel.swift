@@ -22,6 +22,7 @@ class GradeViewModel: ObservableObject, Identifiable {
     @Published var totalGrades: [RealmGrade] = []
     @Published var currentGradesEntries: [[PieChartDataEntry]] = []
     @Published var totalGradesEntries: [[PieChartDataEntry]] = []
+    @Published var totalGradeLineEntries: [ChartDataEntry] = []
     
     init(){
         reload()
@@ -32,6 +33,7 @@ class GradeViewModel: ObservableObject, Identifiable {
         fetchTotalGradesFromLocalDb()
         makeCurrentGradeEntries()
         makeTotalGradeEntries()
+        makeGradeLineEntry()
     }
     
     func fetchCurrentGradesFromLocalDb() {
@@ -111,6 +113,32 @@ class GradeViewModel: ObservableObject, Identifiable {
         }
         return[PieChartDataEntry(value: Double(sum/count), label:"grade"),
                PieChartDataEntry(value: 4.5 - Double(sum/count), label:"total")]
+    }
+    
+    func makeGradeLineEntry() {
+        var sum = [String:Float]()
+        var count = [String:Float]()
+
+        for grade in totalGrades {
+            if grade.evaluationMethod == "P/N평가" { continue }
+            let key = "\(grade.year)\(grade.semester.prefix(1))"
+            if sum[key] == nil {
+                sum[key] = 0
+                count[key] = 0
+            }
+            sum[key]! += (grade.grade.value ?? 0) * Float(grade.subjectPoint.value ?? 0)
+            count[key]! += Float(grade.subjectPoint.value ?? 0)
+        }
+        
+        let sorted = sum.sorted { $0.key < $1.key }
+        
+        for (key,value) in sorted {
+            let avg = value / count[key]!
+            if value == 0 && count[key] == 0 { continue }
+            totalGradeLineEntries.append(ChartDataEntry(x: Double(key) ?? 0, y: Double(floor(Float(avg)*100)/100)))
+        }
+        
+        
     }
     
 }
