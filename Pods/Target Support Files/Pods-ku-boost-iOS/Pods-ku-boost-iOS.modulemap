@@ -1,6 +1,0 @@
-framework module Pods_ku_boost_iOS {
-  umbrella header "Pods-ku-boost-iOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
