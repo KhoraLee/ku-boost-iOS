@@ -48,7 +48,7 @@ class GradeViewModel: ObservableObject, Identifiable {
         for grade in curGrades {
             currentGrades.append(grade)
         }
-        currentSemester = "\(curSemGrade!.year)년도 \(curSemGrade!.semester)"
+        currentSemester = "\(curSemGrade?.year ?? 0)년도 \(curSemGrade?.semester ?? "학기")"
         print("fetchCurrentGradesFromLocalDb() Done")
     }
     

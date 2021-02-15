@@ -26,7 +26,12 @@ struct PieChart: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: PieChartView, context: Context) {
-        let dataSet = PieChartDataSet(entries: entries)
+        var dataSet = PieChartDataSet()
+        if !(entries.count == 0) {
+            dataSet = PieChartDataSet(entries: entries)
+            let ChartData = PieChartData(dataSet: dataSet)
+            uiView.data = ChartData
+        }
         dataSet.selectionShift = 0
         if isSummury {
             dataSet.colors = [UIColor(Color("pastelRed")),UIColor(Color("pastelLightGray"))]
