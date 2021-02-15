@@ -3,6 +3,15 @@ PODS:
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
   - Realm (10.5.1):
     - Realm/Headers (= 10.5.1)
   - Realm/Headers (10.5.1)
@@ -13,6 +22,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Charts
+  - PromiseKit (~> 6.8)
   - RealmSwift
   - SwiftLint
 
@@ -20,6 +30,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Charts
+    - PromiseKit
     - Realm
     - RealmSwift
     - SwiftLint
@@ -27,10 +38,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Realm: 77fcb4e0b9f2963ea06f584749a0d7dc9cab95e1
   RealmSwift: 6abe6aa6cd8b70cc1a87afcb9232cabea74ff1ac
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: 183cc88a1c216fa802cd51e5c5666ad4c84389c6
+PODFILE CHECKSUM: d9058fde444d2e893bcda2ca8b476a001331f212
 
 COCOAPODS: 1.10.1

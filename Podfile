@@ -10,4 +10,5 @@ target 'ku-boost-iOS' do
   pod 'Charts'
   pod 'SwiftLint'
   pod 'RealmSwift'
+  pod 'PromiseKit', "~> 6.8"
 end
