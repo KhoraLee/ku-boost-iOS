@@ -7,6 +7,7 @@
 
 import Combine
 import Alamofire
+import PromiseKit
 
 class AuthHandler {
     
@@ -20,82 +21,108 @@ class AuthHandler {
     func login(id:String, passwd:String) {
         print("AuthHandler - login() called")
         isLoading = true
-               
-        Alamo.request(AuthRouter.Login(id: id, pw: passwd)).responseJSON{ [weak self] (login) in
-            guard let weakSelf = self else { return }
-            switch login.result{
-            case .success(let data):
-                do{
-                    let loginJson = try JSONDecoder().decode(LoginResponse.self, from: JSONSerialization.data(withJSONObject: data))
-                    if loginJson._METADATA_?.success == true {
-                        // ID/PW 저장 및 자동 로그인 활성화
-                        let ud = UserDefaults.standard
-                        ud.set(id, forKey: "id")
-                        ud.set(passwd,forKey: "pw")
-                        ud.set(true, forKey: "autologin")
-                        
-                        AuthHandler.shared.fetchUserInformation() // TODO : Need async
-
-                        weakSelf.isLogon = true
-                        weakSelf.isLoading = false
-                        return
-                    } else if loginJson.ERRMSGINFO?.ERRMSG == "SYS.CMMN@CMMN018" { // 비밀번호 변경후 90일이 지났다는 오류
-                        let ud = UserDefaults.standard
-                        ud.set(id, forKey: "id")
-                        ud.set(passwd,forKey: "pw")
-                        
-                        weakSelf.isLogon = false
-                        weakSelf.isLoading = false
-                    }
-                } catch(let error){
-                    debugPrint(error)
-                }
-            case .failure(let err):
-                debugPrint(err)
+        
+        firstly{
+            requestLogin(id: id, passwd: passwd)
+        }.then{ loginJson -> Promise<Bool> in
+            if loginJson._METADATA_?.success == true {
+                // ID/PW 저장 및 자동 로그인 활성화
+                let ud = UserDefaults.standard
+                ud.set(id, forKey: "id")
+                ud.set(passwd,forKey: "pw")
+                ud.set(true, forKey: "autologin")
+                return Promise{ s in s.fulfill(true)}
+            } else if loginJson.ERRMSGINFO?.ERRMSG == "SYS.CMMN@CMMN018" {
+                return Promise{ s in s.reject( MyError.changePwRequired)}
             }
-            weakSelf.isLoading = false
-            return
+            return Promise{ s in s.reject( MyError.unknown)}
+        }.then{ _ in
+            self.fetchUserInformation()
+        }.done{ result in
+            let infoJson = result
+            // UserDefaults에 기본 정보 저장
+            let ud = UserDefaults.standard
+            let info = infoJson.dmUserInfo
+            ud.setValue(info.name, forKey: "name")
+            ud.setValue(info.stdNo, forKey: "stdNo")
+            ud.setValue(info.state, forKey: "state")
+            ud.setValue(info.dept, forKey: "dept")
+            ud.setValue(info.code, forKey: "code")
+            // 로그인이 성공함을 뷰에 알림
+            self.isLoading = false
+            self.isLogon = true
+        }.catch{ error in
+            // 로그인에 실패하였음으로 로딩표시만 끄도록 뷰에 알림
+            self.isLoading = false
+            print("catch \(error)")
         }
     }
     
-    func fetchUserInformation(){
-        print("AuthHandler - fetchUserInformation() called")
-        isLoading = true
-               
-        Alamo.request(AuthRouter.UserInfo).responseJSON{ [weak self] (info) in
-            guard let weakSelf = self else { return }
-            switch info.result{
-            case .success(let data):
-                do{
-                    let infoJson = try JSONDecoder().decode(UserInfo.self, from: JSONSerialization.data(withJSONObject: data))
-                    
-                    // UserDefaults에 기본 정보 저장
-                    let ud = UserDefaults.standard
-                    let info = infoJson.dmUserInfo
-                    guard let name = info.name,
-                          let stdNo = info.stdNo,
-                          let state = info.state,
-                          let dept = info.dept,
-                          let code = info.code else { return }
-                    
-                    ud.setValue(name, forKey: "name")
-                    ud.setValue(stdNo, forKey: "stdNo")
-                    ud.setValue(state, forKey: "state")
-                    ud.setValue(dept, forKey: "dept")
-                    ud.setValue(code, forKey: "code")
-                    
-                    print(infoJson)
-                    print("\n")
-                } catch(let error){
-                    debugPrint(error)
+    func requestLogin(id:String, passwd:String) -> Promise<LoginResponse> {
+        print("requestLogin")
+        return Promise<LoginResponse> { seal in
+            // Trigger the HTTPRequest using Alamofire
+            Alamo.request(AuthRouter.Login(id: id, pw: passwd)).responseJSON{ login in
+                switch login.result {
+                case .success(let data):
+                    do{
+                        let loginJson = try JSONDecoder().decode(LoginResponse.self, from: JSONSerialization.data(withJSONObject: data))
+                        seal.fulfill(loginJson)
+                    } catch {
+                        seal.reject(MyError.jsonDecodeFail)
+                    }
+                case .failure:
+                    // If it's a failure, check status code and map it to my error
+                    switch login.response?.statusCode {
+                    case 400:
+                        seal.reject(MyError.badAPIRequest)
+                    case 401:
+                        seal.reject(MyError.unauthorized)
+                    default:
+                        guard NetworkReachabilityManager()?.isReachable ?? false else {
+                            seal.reject(MyError.noInternet)
+                            return
+                        }
+                        seal.reject(MyError.unknown)
+                    }
                 }
-            case .failure(let err):
-                debugPrint(err)
             }
-            weakSelf.isLoading = false
-            return
         }
     }
+    
+    func fetchUserInformation() -> Promise<UserInfo> {
+        print("AuthHandler - fetchUserInformation2() called")
+        return Promise<UserInfo> { seal in
+            // Trigger the HTTPRequest using Alamofire
+            Alamo.request(AuthRouter.UserInfo).responseJSON{ info in
+                switch info.result {
+                case .success(let data):
+                    do{
+                        let infoJson = try JSONDecoder().decode(UserInfo.self, from: JSONSerialization.data(withJSONObject: data))
+                        seal.fulfill(infoJson)
+                    } catch {
+                        seal.reject(MyError.jsonDecodeFail)
+                    }
+                case .failure:
+                    // If it's a failure, check status code and map it to my error
+                    switch info.response?.statusCode {
+                    case 400:
+                        seal.reject(MyError.badAPIRequest)
+                    case 401:
+                        seal.reject(MyError.unauthorized)
+                    default:
+                        guard NetworkReachabilityManager()?.isReachable ?? false else {
+                            seal.reject(MyError.noInternet)
+                            return
+                        }
+                        seal.reject(MyError.unknown)
+                    }
+                }
+            }
+        }
+    }
+    
+    //TODO: 이후에 PromiseKit에 적용되도록 수정 필요
     
     func changePassword(){
         print("AuthHandler - changePassword() called")
