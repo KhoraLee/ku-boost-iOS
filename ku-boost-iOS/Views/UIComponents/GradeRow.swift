@@ -9,9 +9,9 @@ import SwiftUI
 
 struct GradeRow: View {
     var grade: RealmGrade
-    
+    @State var isTapped = false
     var body: some View {
-        NavigationLink(destination: GradeDetailView(grade: grade)){
+        ZStack{
             HStack{
                 Text(grade.subjectName)
                     .font(.callout)
@@ -29,6 +29,12 @@ struct GradeRow: View {
                     Spacer().frame(width:"+".widthOfString(usingFont: UIFont.systemFont(ofSize:UIFont.systemFontSize)))
                 } else {
                 }
+            }.contentShape(Rectangle())
+            .onTapGesture {
+                isTapped = true
+            }
+            NavigationLink(destination: GradeDetailView(grade: grade),isActive:$isTapped){
+                EmptyView()
             }
         }
     }

@@ -158,13 +158,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B182D81A25DAB9D500582851 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		B183136525BDDBB100625375 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,7 +241,6 @@
 		B1989ED725B1AB6600BC612D /* ku-boost-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B182D81A25DAB9D500582851 /* New Group */,
 				B17CFA2F25D9709800EEEF7C /* Extensions */,
 				B183136525BDDBB100625375 /* API */,
 				B1A5779925B3606300311B30 /* Main */,
