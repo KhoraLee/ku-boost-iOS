@@ -8,6 +8,12 @@
 import Foundation
 
 struct LoginResponse: Codable {
-    let _METADATA_: LoginSuccess?
-    let ERRMSGINFO: LoginFailure?
+    let loginSuccess: LoginSuccess?
+    let loginFailure: LoginFailure?
+    
+    enum CodingKeys: String, CodingKey {
+        case loginSuccess = "_METADATA_"
+        case loginFailure = "ERRMSGINFO"
+    }
+    
 }
