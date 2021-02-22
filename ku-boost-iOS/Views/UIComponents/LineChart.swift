@@ -45,7 +45,7 @@ struct LineChart: UIViewRepresentable {
     }
     
     func configureChart( _ lineChart: LineChartView) {
-        lineChart.animate(xAxisDuration: 0.5, easingOption: .easeInOutQuad)
+//        lineChart.animate(xAxisDuration: 0.5, easingOption: .easeInOutQuad)
         lineChart.noDataText = "데이터 가저오는 중..."
         lineChart.legend.enabled = false // legend 비활성화
         lineChart.dragEnabled = false

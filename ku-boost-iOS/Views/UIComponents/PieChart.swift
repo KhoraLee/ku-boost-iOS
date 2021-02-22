@@ -59,12 +59,11 @@ struct PieChart: UIViewRepresentable {
     
     func configureChart( _ pieChart: PieChartView) {
         pieChart.rotationEnabled = false
-        pieChart.animate(xAxisDuration: 0.5, easingOption: .easeInOutCirc)
+//        pieChart.animate(xAxisDuration: 0.5, easingOption: .easeInOutCirc)
         pieChart.drawEntryLabelsEnabled = !isSummury
         pieChart.entryLabelColor = UIColor.black
         pieChart.noDataText = "데이터 가저오는 중..."
         pieChart.holeRadiusPercent = isSummury ? 0.9 : 0
-//        pieChart.centerText = "\(classification)학점\n\(String(format:"%.2f",average))" // 반올림
         pieChart.centerText = "\(classification)학점\n\(String(format:"%.2f",floor(Float(average)*100)/100))" // 내림
         pieChart.transparentCircleRadiusPercent = 0
         pieChart.legend.enabled = false // legend 비활성화
