@@ -9,13 +9,7 @@ public enum MyError: Error {
     
     // MARK: - Internal errors
     case noInternet
-    
-    // MARK: - API errors
-    case badAPIRequest
-    
-    // MARK: - Auth errors
-    case unauthorized
-    
+       
     // MARK: - Unknown errors
     case unknown
     
@@ -24,4 +18,7 @@ public enum MyError: Error {
     
     // MARK: - Received response that user need to change password
     case changePwRequired
+    
+    // MARK: - Error that contain error message
+    case errWithMSG(msg: String)
 }

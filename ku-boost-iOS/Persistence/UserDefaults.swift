@@ -45,11 +45,18 @@ extension UserDefaults {
     
     @UserDefault(key:"hasData", defaultValue:false)
     static var hasData: Bool
+           
+    static func setUserInfo(name: String?, stdNo: String?, state: String?, dept: String?, code: String?) {
+        UserDefaults.name = name ?? ""
+        UserDefaults.stdNo = stdNo ?? ""
+        UserDefaults.state = state ?? ""
+        UserDefaults.dept = dept ?? ""
+        UserDefaults.code = code ?? ""
+    }
     
-    @UserDefault(key:"accessToken", defaultValue:"")
-    static var accessToken: String
-    
-    @UserDefault(key:"selectedSemester", defaultValue:1)
-    static var selectedSemester: Int
-    
+    static func clearAll() {
+        setUserInfo(name: "", stdNo: "", state: "", dept: "", code: "")
+        UserDefaults.cookie = ""
+        UserDefaults.hasData = false
+    }
 }
