@@ -29,6 +29,9 @@ struct LoginView: View {
         }.simultaneousGesture(TapGesture().onEnded{
             self.loginUser()
         })
+        .alert(isPresented: $viewModel.gotError) {
+            Alert(title: Text("오류"), message: Text("\(viewModel.errMsg)"))
+        }
     }
     
     var placeHolderTextView: some View {
@@ -64,7 +67,7 @@ struct LoginView: View {
     }
     
     private func loginUser() {
-        viewModel.doLogin()
+        viewModel.login()
     }
 }
 

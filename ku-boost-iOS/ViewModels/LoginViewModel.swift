@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Combine
+import PromiseKit
+import Network
 
 class LoginViewModel: ObservableObject, Identifiable {
     
@@ -15,51 +17,64 @@ class LoginViewModel: ObservableObject, Identifiable {
     
     @Published var isLogon = false
     @Published var isLoading = false
-      
-    @Published var shouldNavigate = false
+    
+    @Published var errMsg = ""
+    @Published var gotError = false
     
     private var disposables: Set<AnyCancellable> = []
     
-    var authHandler = AuthHandler.shared
-    
-  
-    private var isLoadingPublisher: AnyPublisher<Bool, Never> {
-        authHandler.$isLoading
-            .receive(on: RunLoop.main)
-            .map { $0 }
-            .eraseToAnyPublisher()
-    }
-    
-    private var isAuthenticatedPublisher: AnyPublisher<Bool, Never> {
-        authHandler.$isLogon
-            .receive(on: RunLoop.main)
-            .map { $0 }
-            .eraseToAnyPublisher()
-    }
-    
+    var authRepo = AuthRepository.shared
+       
     init() {
-        isLoadingPublisher
-            .receive(on: RunLoop.main)
-            .assign(to: \.isLoading, on: self)
-            .store(in: &disposables)
-        
-        isAuthenticatedPublisher
-            .receive(on: RunLoop.main)
-            .assign(to: \.isLogon, on: self)
-            .store(in: &disposables)
-        
         let isAutoLogin = UserDefaults.standard.bool(forKey: "autologin")
         
         if isAutoLogin {
             username = UserDefaults.standard.string(forKey: "id")!
             password = UserDefaults.standard.string(forKey: "pw")!
-            doLogin()
+            login()
         }
         
     }
     
-    func doLogin(){
-        authHandler.login(id:username, passwd:password)
+    func login(){
+        if username.isEmpty || password.isEmpty { return }
+        isLoading = true
+        firstly{
+            authRepo.makeLoginRequest(username: username, password: password)
+        }.then{
+            self.authRepo.makeUserInformationRequest()
+        }.done{
+            let ud = UserDefaults.standard
+            ud.setValue(self.username, forKey: "id")
+            ud.setValue(self.password, forKey: "pw")
+            ud.setValue(true, forKey: "autologin")
+            self.isLoading = false
+            self.isLogon = true
+        }.catch{err in
+            self.isLoading = false
+            guard let error = err as? MyError else {
+                self.errMsg = "알수없는 오류\n관리자에게 문의 바랍니다."
+                return
+            }
+            switch error {
+            case let .errWithMSG(msg):
+                self.errMsg = msg
+                print(msg)
+            case .noInternet:
+                if UserDefaults.hasData {
+                    self.isLogon = true
+                    return
+                } else {
+                    self.errMsg = "네트워크 연결이 없습니다."
+                }
+//            case .changePwRequired:
+                // change pw or change after 90 days
+            default:
+                print("error : \(error)")
+                self.errMsg = "알수없는 오류\n관리자에게 문의 바랍니다."
+            }
+            self.gotError = true
+        }
     }
     
 }
