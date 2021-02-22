@@ -20,12 +20,10 @@
 		B182C38025E3A0B50034926E /* GraduationSimulationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182C37F25E3A0B50034926E /* GraduationSimulationDAO.swift */; };
 		B182C38425E3A20A0034926E /* RankDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182C38325E3A20A0034926E /* RankDAO.swift */; };
 		B182D82025DAD1CE00582851 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182D81F25DAD1CE00582851 /* MyError.swift */; };
-		B183136725BDDC2A00625375 /* GradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136625BDDC2A00625375 /* GradeService.swift */; };
-		B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136B25BDF4CA00625375 /* GradeInterceptor.swift */; };
-		B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136E25BDF4E500625375 /* GradeLogger.swift */; };
 		B183137225BDF50B00625375 /* GradeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183137125BDF50B00625375 /* GradeRouter.swift */; };
 		B183137525BDF72600625375 /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183137425BDF72600625375 /* LibraryService.swift */; };
 		B18320A525D14D3E0096884D /* RealmGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18320A425D14D3E0096884D /* RealmGrade.swift */; };
+		B18387AB25E3CBC8000F1688 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18387AA25E3CBC8000F1688 /* AuthRepository.swift */; };
 		B185314725E1092C00721AA4 /* GradeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B185314625E1092C00721AA4 /* GradeDAO.swift */; };
 		B185314B25E10C1B00721AA4 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B185314A25E10C1B00721AA4 /* Realm.swift */; };
 		B185D86325D641030022D78E /* GradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B185D86225D641030022D78E /* GradeViewModel.swift */; };
@@ -45,16 +43,15 @@
 		B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1989ED825B1AB6600BC612D /* ku_boost_iOSApp.swift */; };
 		B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDC25B1AB6600BC612D /* Assets.xcassets */; };
 		B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */; };
-		B1A577A225B3665100311B30 /* AuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577A125B3665100311B30 /* AuthHandler.swift */; };
+		B19CEBB625E3F10900412A97 /* KuisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19CEBB525E3F10900412A97 /* KuisService.swift */; };
+		B19CEBBA25E3F13200412A97 /* KuisInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19CEBB925E3F13200412A97 /* KuisInterceptor.swift */; };
+		B19CEBBE25E3FEED00412A97 /* BackBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19CEBBD25E3FEED00412A97 /* BackBtn.swift */; };
 		B1A577A825B3694700311B30 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577A725B3694700311B30 /* LoginView.swift */; };
 		B1A577AB25B3696900311B30 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577AA25B3696900311B30 /* DebugView.swift */; };
 		B1A577AE25B3699C00311B30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577AD25B3699C00311B30 /* LoginViewModel.swift */; };
 		B1A577C925B36C8200311B30 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577C625B36C8200311B30 /* TextFields.swift */; };
 		B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577C725B36C8200311B30 /* LoadingIndicator.swift */; };
 		B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577C825B36C8200311B30 /* LoadingView.swift */; };
-		B1A577D225B385E000311B30 /* GradeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577D125B385E000311B30 /* GradeHandler.swift */; };
-		B1A6E82025BEC6AA001A2911 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E81F25BEC6AA001A2911 /* AuthService.swift */; };
-		B1A6E82325BEC6E4001A2911 /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E82225BEC6E4001A2911 /* AuthInterceptor.swift */; };
 		B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6E82525BEC80D001A2911 /* AuthRouter.swift */; };
 		B1BD6D4125D861B700A395BA /* TotalGradeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD6D4025D861B700A395BA /* TotalGradeDetailView.swift */; };
 		B1C489AA25D0713F00702617 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C489A925D0713F00702617 /* Grade.swift */; };
@@ -83,12 +80,10 @@
 		B182C37F25E3A0B50034926E /* GraduationSimulationDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraduationSimulationDAO.swift; sourceTree = "<group>"; };
 		B182C38325E3A20A0034926E /* RankDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankDAO.swift; sourceTree = "<group>"; };
 		B182D81F25DAD1CE00582851 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
-		B183136625BDDC2A00625375 /* GradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeService.swift; sourceTree = "<group>"; };
-		B183136B25BDF4CA00625375 /* GradeInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeInterceptor.swift; sourceTree = "<group>"; };
-		B183136E25BDF4E500625375 /* GradeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeLogger.swift; sourceTree = "<group>"; };
 		B183137125BDF50B00625375 /* GradeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeRouter.swift; sourceTree = "<group>"; };
 		B183137425BDF72600625375 /* LibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
 		B18320A425D14D3E0096884D /* RealmGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGrade.swift; sourceTree = "<group>"; };
+		B18387AA25E3CBC8000F1688 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		B185314625E1092C00721AA4 /* GradeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDAO.swift; sourceTree = "<group>"; };
 		B185314A25E10C1B00721AA4 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		B185D86225D641030022D78E /* GradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeViewModel.swift; sourceTree = "<group>"; };
@@ -110,16 +105,15 @@
 		B1989EDC25B1AB6600BC612D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1989EDF25B1AB6600BC612D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B1989EE125B1AB6600BC612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1A577A125B3665100311B30 /* AuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHandler.swift; sourceTree = "<group>"; };
+		B19CEBB525E3F10900412A97 /* KuisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuisService.swift; sourceTree = "<group>"; };
+		B19CEBB925E3F13200412A97 /* KuisInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuisInterceptor.swift; sourceTree = "<group>"; };
+		B19CEBBD25E3FEED00412A97 /* BackBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBtn.swift; sourceTree = "<group>"; };
 		B1A577A725B3694700311B30 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B1A577AA25B3696900311B30 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		B1A577AD25B3699C00311B30 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B1A577C625B36C8200311B30 /* TextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
 		B1A577C725B36C8200311B30 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		B1A577C825B36C8200311B30 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		B1A577D125B385E000311B30 /* GradeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeHandler.swift; sourceTree = "<group>"; };
-		B1A6E81F25BEC6AA001A2911 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		B1A6E82225BEC6E4001A2911 /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
 		B1A6E82525BEC80D001A2911 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		B1BD6D4025D861B700A395BA /* TotalGradeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalGradeDetailView.swift; sourceTree = "<group>"; };
 		B1C489A925D0713F00702617 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
@@ -182,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				B1812AD225E174280014A751 /* GradeRepository.swift */,
+				B18387AA25E3CBC8000F1688 /* AuthRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -189,22 +184,10 @@
 		B183136525BDDBB100625375 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6E81E25BEC6A1001A2911 /* Auth */,
+				B19CEBC525E4164B00412A97 /* Kuis */,
 				B183136A25BDF4A400625375 /* Library */,
-				B183136925BDF49B00625375 /* Grade */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		B183136925BDF49B00625375 /* Grade */ = {
-			isa = PBXGroup;
-			children = (
-				B183136625BDDC2A00625375 /* GradeService.swift */,
-				B183136B25BDF4CA00625375 /* GradeInterceptor.swift */,
-				B183136E25BDF4E500625375 /* GradeLogger.swift */,
-				B183137125BDF50B00625375 /* GradeRouter.swift */,
-			);
-			path = Grade;
 			sourceTree = "<group>";
 		};
 		B183136A25BDF4A400625375 /* Library */ = {
@@ -304,6 +287,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B19CEBC525E4164B00412A97 /* Kuis */ = {
+			isa = PBXGroup;
+			children = (
+				B19CEBB525E3F10900412A97 /* KuisService.swift */,
+				B19CEBB925E3F13200412A97 /* KuisInterceptor.swift */,
+				B1A6E82525BEC80D001A2911 /* AuthRouter.swift */,
+				B183137125BDF50B00625375 /* GradeRouter.swift */,
+			);
+			path = Kuis;
+			sourceTree = "<group>";
+		};
 		B1A5779925B3606300311B30 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,8 +354,6 @@
 		B1A5779E25B3609D00311B30 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B1A577A125B3665100311B30 /* AuthHandler.swift */,
-				B1A577D125B385E000311B30 /* GradeHandler.swift */,
 				B19428E325D1B21E0045A32F /* LibraryHandler.swift */,
 			);
 			path = Utilities;
@@ -376,18 +368,9 @@
 				B185D86525D652780022D78E /* GradeRow.swift */,
 				B1EF085C25D3007900C569A4 /* PieChart.swift */,
 				B1767A2C25D8F19100266027 /* LineChart.swift */,
+				B19CEBBD25E3FEED00412A97 /* BackBtn.swift */,
 			);
 			path = UIComponents;
-			sourceTree = "<group>";
-		};
-		B1A6E81E25BEC6A1001A2911 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				B1A6E81F25BEC6AA001A2911 /* AuthService.swift */,
-				B1A6E82225BEC6E4001A2911 /* AuthInterceptor.swift */,
-				B1A6E82525BEC80D001A2911 /* AuthRouter.swift */,
-			);
-			path = Auth;
 			sourceTree = "<group>";
 		};
 		B1C489A825D0713700702617 /* Grade */ = {
@@ -521,28 +504,27 @@
 				B1BD6D4125D861B700A395BA /* TotalGradeDetailView.swift in Sources */,
 				B19428E425D1B21E0045A32F /* LibraryHandler.swift in Sources */,
 				B1812AE125E1772E0014A751 /* UserDefaults.swift in Sources */,
+				B19CEBBE25E3FEED00412A97 /* BackBtn.swift in Sources */,
 				B1EF085A25D2FA7500C569A4 /* GradeCardView.swift in Sources */,
 				B182C38425E3A20A0034926E /* RankDAO.swift in Sources */,
 				B19428DE25D1AE9B0045A32F /* ChangePW.swift in Sources */,
 				B1EF085725D2DDA000C569A4 /* GradeView.swift in Sources */,
 				B185D86325D641030022D78E /* GradeViewModel.swift in Sources */,
-				B183136725BDDC2A00625375 /* GradeService.swift in Sources */,
 				B1C489AD25D0714D00702617 /* GradeResponse.swift in Sources */,
 				B19428E125D1B0190045A32F /* LibraryRouter.swift in Sources */,
 				B1EF085D25D3007900C569A4 /* PieChart.swift in Sources */,
-				B1A577A225B3665100311B30 /* AuthHandler.swift in Sources */,
 				B1A577AB25B3696900311B30 /* DebugView.swift in Sources */,
 				B18B805625D0478200662FC1 /* UserInfo.swift in Sources */,
 				B1C489B925D0718800702617 /* GraduationSimulation.swift in Sources */,
 				B185314725E1092C00721AA4 /* GradeDAO.swift in Sources */,
 				B17CFA3125D970A200EEEF7C /* View.swift in Sources */,
 				B183137525BDF72600625375 /* LibraryService.swift in Sources */,
+				B18387AB25E3CBC8000F1688 /* AuthRepository.swift in Sources */,
 				B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */,
-				B183136F25BDF4E500625375 /* GradeLogger.swift in Sources */,
-				B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */,
+				B19CEBB625E3F10900412A97 /* KuisService.swift in Sources */,
 				B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */,
 				B1A577A825B3694700311B30 /* LoginView.swift in Sources */,
-				B1A577D225B385E000311B30 /* GradeHandler.swift in Sources */,
+				B19CEBBA25E3F13200412A97 /* KuisInterceptor.swift in Sources */,
 				B1C489B025D0715500702617 /* ValidGrade.swift in Sources */,
 				B19428EC25D1B2E00045A32F /* QRResponse.swift in Sources */,
 				B1A577AE25B3699C00311B30 /* LoginViewModel.swift in Sources */,
@@ -565,11 +547,9 @@
 				B1C489B325D0715B00702617 /* ValidGradeResponse.swift in Sources */,
 				B185D86625D652780022D78E /* GradeRow.swift in Sources */,
 				B19428F125D1B9800045A32F /* LibraryInterceptor.swift in Sources */,
-				B1A6E82325BEC6E4001A2911 /* AuthInterceptor.swift in Sources */,
 				B1C489AA25D0713F00702617 /* Grade.swift in Sources */,
 				B19428DB25D1A52E0045A32F /* RealmSimulation.swift in Sources */,
 				B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */,
-				B1A6E82025BEC6AA001A2911 /* AuthService.swift in Sources */,
 				B1C489B625D0718100702617 /* GraduationSimulationResponse.swift in Sources */,
 				B1812AD725E174E80014A751 /* RealmRank.swift in Sources */,
 				B1767A2825D8F0FB00266027 /* TotalGradeCardView.swift in Sources */,

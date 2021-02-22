@@ -31,7 +31,7 @@ struct TotalGradeDetailView: View {
                     .cornerRadius(15)
                     .padding(.top,10)
                     HStack{
-                        btnBack
+                        BackBtn()
                             .padding(.top,15)
                             .padding(.leading,20)
                         Spacer()                        
@@ -41,16 +41,6 @@ struct TotalGradeDetailView: View {
             }
         }.navigationBarHidden(true)
 
-    }
-    
-    var btnBack : some View { Button(action: {
-        self.presentationMode.wrappedValue.dismiss()
-        }) {
-            HStack {
-                Image(systemName: "arrow.uturn.left") // set image here
-                .aspectRatio(contentMode: .fit)
-            }
-        }
     }
     
 }

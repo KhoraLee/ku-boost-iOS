@@ -19,7 +19,7 @@ struct GradeDetailView: View {
     var body: some View {
         VStack{
             HStack{
-                btnBack
+                BackBtn()
                     .padding(.top,15)
                     .padding(.leading,20)
             Spacer()
@@ -133,14 +133,4 @@ struct GradeDetailView: View {
 
     }
     
-    
-    var btnBack : some View { Button(action: {
-        self.presentationMode.wrappedValue.dismiss()
-        }) {
-            HStack {
-                Image(systemName: "arrow.uturn.left") // set image here
-                .aspectRatio(contentMode: .fit)
-            }
-        }
-    }
 }
