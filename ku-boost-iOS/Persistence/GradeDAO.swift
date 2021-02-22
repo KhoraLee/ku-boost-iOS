@@ -25,9 +25,9 @@ class GradeDAO {
         }
     }
     
-    func getAllGrades(stdNo: String) -> [RealmGrade] {
+    func getAllGrades(stdNo: String, valid: Bool = true) -> [RealmGrade] {
         return realm.objects(RealmGrade.self)
-            .filter("stdNo == '\(stdNo)'")
+            .filter("stdNo == '\(stdNo)' && valid == \(valid)")
             .toArray(ofType: RealmGrade.self)
     }
     
@@ -40,7 +40,7 @@ class GradeDAO {
     func getCurrentSemesterGrades(stdNo: String) -> [RealmGrade] {
         let curSem = getCurrentSemester(stdNo: stdNo)
         return realm.objects(RealmGrade.self)
-            .filter("stdNo == '\(stdNo)' && year == \(curSem.year) && semester == '\(curSem.semester)'").toArray(ofType: RealmGrade.self)
+            .filter("stdNo == '\(stdNo)' && year == \(curSem.year) && semester == \(curSem.semester)").toArray(ofType: RealmGrade.self)
     }
     
     func getSelectedSemesterGrades(stdNo: String, year: Int, semester: Int) -> [RealmGrade] {
@@ -55,7 +55,7 @@ class GradeDAO {
 
     func removeGrades(stdNo: String, year: Int, semester: Int) {
         let entities = realm.objects(RealmGrade.self)
-            .filter("stdNo == '\(stdNo)' && year == \(year) && semester == '\(semester)학기'")
+            .filter("stdNo == '\(stdNo)' && year == \(year) && semester == \(semester)")
         try? realm.write {
             realm.delete(entities)
         }
