@@ -23,7 +23,7 @@ class RealmSimulation : Object {
     }
     
     func setup(simul:GraduationSimulation){
-        self.stdNo = UserDefaults.standard.string(forKey: "stdNo")!
+        self.stdNo = UserDefaults.stdNo
         self.classification = simul.classification ?? ""
         self.remainder = simul.remainder ?? 0
         self.acquired = simul.acquired ?? ""

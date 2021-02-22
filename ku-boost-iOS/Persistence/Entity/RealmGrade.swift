@@ -31,7 +31,7 @@ class RealmGrade : Object {
     }
     
     func setup(year:Int, grade:Grade){
-        self.stdNo = UserDefaults.standard.string(forKey: "stdNo")!
+        self.stdNo = UserDefaults.stdNo
         self.year = year
         self.semester = grade.semester
         self.evaluationMethod = grade.evaluationMethod ?? ""

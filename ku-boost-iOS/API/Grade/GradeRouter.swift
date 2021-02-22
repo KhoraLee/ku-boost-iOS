@@ -36,16 +36,16 @@ enum GradeRouter: URLRequestConvertible {
     var parameters : [String: String] {
         switch self {
         case .GradeSimul:
-            return ["shregCd":UserDefaults.standard.string(forKey: "code")!,
-                    "corsYy":"2020",
-                    "stdNo":UserDefaults.standard.string(forKey: "stdNo")!,
+            return ["shregCd":UserDefaults.code,
+                    "corsYy":String(UserDefaults.stdNo.prefix(4)),
+                    "stdNo":UserDefaults.stdNo,
                     "_AUTH_MENU_KEY":"1170201"]
             
         case let .RegularGrade(year, semester):
             let format = DateFormatter()
             format.dateFormat = "yyyyMMdd"
 
-            return ["stdNo":UserDefaults.standard.string(forKey: "stdNo")!,
+            return ["stdNo":UserDefaults.stdNo,
                     "basiYy": String(year),
                     "basiShtm": "B0101" + String(semester),
                     "curDate": format.string(from: Date()),
@@ -55,7 +55,7 @@ enum GradeRouter: URLRequestConvertible {
             let format = DateFormatter()
             format.dateFormat = "yyyy"
             
-            return ["argStdNo":UserDefaults.standard.string(forKey: "stdNo")!,
+            return ["argStdNo":UserDefaults.stdNo,
                     "argYy": format.string(from: Date()),
                     "argShtm": "B01012", // TODO: 년도 및 학기 관련 찾아보고 수정
                     "_AUTH_MENU_KEY":"1140606"]

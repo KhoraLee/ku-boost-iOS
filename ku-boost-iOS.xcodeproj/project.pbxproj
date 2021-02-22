@@ -13,6 +13,12 @@
 		B1767A3225D9132300266027 /* GradeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A3125D9132300266027 /* GradeDetailView.swift */; };
 		B17CFA3125D970A200EEEF7C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CFA3025D970A200EEEF7C /* View.swift */; };
 		B17CFA3525D9710500EEEF7C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CFA3425D9710500EEEF7C /* String.swift */; };
+		B1812AD325E174280014A751 /* GradeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1812AD225E174280014A751 /* GradeRepository.swift */; };
+		B1812AD725E174E80014A751 /* RealmRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1812AD625E174E80014A751 /* RealmRank.swift */; };
+		B1812AE125E1772E0014A751 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1812AE025E1772E0014A751 /* UserDefaults.swift */; };
+		B182C37D25E39FC30034926E /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182C37C25E39FC30034926E /* Alamofire.swift */; };
+		B182C38025E3A0B50034926E /* GraduationSimulationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182C37F25E3A0B50034926E /* GraduationSimulationDAO.swift */; };
+		B182C38425E3A20A0034926E /* RankDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182C38325E3A20A0034926E /* RankDAO.swift */; };
 		B182D82025DAD1CE00582851 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182D81F25DAD1CE00582851 /* MyError.swift */; };
 		B183136725BDDC2A00625375 /* GradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136625BDDC2A00625375 /* GradeService.swift */; };
 		B183136C25BDF4CA00625375 /* GradeInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183136B25BDF4CA00625375 /* GradeInterceptor.swift */; };
@@ -70,6 +76,12 @@
 		B1767A3125D9132300266027 /* GradeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDetailView.swift; sourceTree = "<group>"; };
 		B17CFA3025D970A200EEEF7C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		B17CFA3425D9710500EEEF7C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		B1812AD225E174280014A751 /* GradeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeRepository.swift; sourceTree = "<group>"; };
+		B1812AD625E174E80014A751 /* RealmRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRank.swift; sourceTree = "<group>"; };
+		B1812AE025E1772E0014A751 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		B182C37C25E39FC30034926E /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		B182C37F25E3A0B50034926E /* GraduationSimulationDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraduationSimulationDAO.swift; sourceTree = "<group>"; };
+		B182C38325E3A20A0034926E /* RankDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankDAO.swift; sourceTree = "<group>"; };
 		B182D81F25DAD1CE00582851 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		B183136625BDDC2A00625375 /* GradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeService.swift; sourceTree = "<group>"; };
 		B183136B25BDF4CA00625375 /* GradeInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeInterceptor.swift; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 		6422D1CB5CF6AD8F792BC0A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				AB4BF44BAE00A1A28DB52C87 /* Frameworks */,
 				D2E1C2EDFC0D762BA47414A9 /* Pods-ku-boost-iOS.debug.xcconfig */,
 				A195609F6A6805C21BAA0298 /* Pods-ku-boost-iOS.release.xcconfig */,
 			);
@@ -151,6 +164,7 @@
 				BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B17CFA2F25D9709800EEEF7C /* Extensions */ = {
@@ -159,8 +173,17 @@
 				B17CFA3025D970A200EEEF7C /* View.swift */,
 				B17CFA3425D9710500EEEF7C /* String.swift */,
 				B185314A25E10C1B00721AA4 /* Realm.swift */,
+				B182C37C25E39FC30034926E /* Alamofire.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B1812AD125E1741C0014A751 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B1812AD225E174280014A751 /* GradeRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		B183136525BDDBB100625375 /* API */ = {
@@ -199,6 +222,7 @@
 			children = (
 				B18320A425D14D3E0096884D /* RealmGrade.swift */,
 				B19428DA25D1A52E0045A32F /* RealmSimulation.swift */,
+				B1812AD625E174E80014A751 /* RealmRank.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -208,6 +232,9 @@
 			children = (
 				B18320A325D14D330096884D /* Entity */,
 				B185314625E1092C00721AA4 /* GradeDAO.swift */,
+				B182C37F25E3A0B50034926E /* GraduationSimulationDAO.swift */,
+				B182C38325E3A20A0034926E /* RankDAO.swift */,
+				B1812AE025E1772E0014A751 /* UserDefaults.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -240,7 +267,6 @@
 				B1989ED725B1AB6600BC612D /* ku-boost-iOS */,
 				B1989ED625B1AB6600BC612D /* Products */,
 				6422D1CB5CF6AD8F792BC0A0 /* Pods */,
-				AB4BF44BAE00A1A28DB52C87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,16 +281,17 @@
 		B1989ED725B1AB6600BC612D /* ku-boost-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B185314525E108FD00721AA4 /* Persistence */,
-				B17CFA2F25D9709800EEEF7C /* Extensions */,
 				B183136525BDDBB100625375 /* API */,
-				B1A5779925B3606300311B30 /* Main */,
 				B1A5779D25B3609600311B30 /* Data */,
-				B1A5779B25B3608B00311B30 /* Views */,
-				B1A5779C25B3609100311B30 /* ViewModels */,
-				B1A5779E25B3609D00311B30 /* Utilities */,
-				B1A5779A25B3607A00311B30 /* Resources */,
+				B17CFA2F25D9709800EEEF7C /* Extensions */,
+				B1A5779925B3606300311B30 /* Main */,
+				B185314525E108FD00721AA4 /* Persistence */,
 				B1989EDE25B1AB6600BC612D /* Preview Content */,
+				B1812AD125E1741C0014A751 /* Repositories */,
+				B1A5779A25B3607A00311B30 /* Resources */,
+				B1A5779E25B3609D00311B30 /* Utilities */,
+				B1A5779C25B3609100311B30 /* ViewModels */,
+				B1A5779B25B3608B00311B30 /* Views */,
 			);
 			path = "ku-boost-iOS";
 			sourceTree = "<group>";
@@ -493,7 +520,9 @@
 				B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */,
 				B1BD6D4125D861B700A395BA /* TotalGradeDetailView.swift in Sources */,
 				B19428E425D1B21E0045A32F /* LibraryHandler.swift in Sources */,
+				B1812AE125E1772E0014A751 /* UserDefaults.swift in Sources */,
 				B1EF085A25D2FA7500C569A4 /* GradeCardView.swift in Sources */,
+				B182C38425E3A20A0034926E /* RankDAO.swift in Sources */,
 				B19428DE25D1AE9B0045A32F /* ChangePW.swift in Sources */,
 				B1EF085725D2DDA000C569A4 /* GradeView.swift in Sources */,
 				B185D86325D641030022D78E /* GradeViewModel.swift in Sources */,
@@ -524,10 +553,13 @@
 				B18B804C25D03F5E00662FC1 /* LoginResponse.swift in Sources */,
 				B17CFA3525D9710500EEEF7C /* String.swift in Sources */,
 				B1767A3225D9132300266027 /* GradeDetailView.swift in Sources */,
+				B1812AD325E174280014A751 /* GradeRepository.swift in Sources */,
 				B1767A2D25D8F19100266027 /* LineChart.swift in Sources */,
 				B1EF085425D2DD9800C569A4 /* MainView.swift in Sources */,
+				B182C38025E3A0B50034926E /* GraduationSimulationDAO.swift in Sources */,
 				B18B804F25D03F7700662FC1 /* LoginSuccess.swift in Sources */,
 				B19428F425D1BE630045A32F /* LibLoginRequest.swift in Sources */,
+				B182C37D25E39FC30034926E /* Alamofire.swift in Sources */,
 				B1A577C925B36C8200311B30 /* TextFields.swift in Sources */,
 				B18320A525D14D3E0096884D /* RealmGrade.swift in Sources */,
 				B1C489B325D0715B00702617 /* ValidGradeResponse.swift in Sources */,
@@ -539,6 +571,7 @@
 				B1A6E82625BEC80D001A2911 /* AuthRouter.swift in Sources */,
 				B1A6E82025BEC6AA001A2911 /* AuthService.swift in Sources */,
 				B1C489B625D0718100702617 /* GraduationSimulationResponse.swift in Sources */,
+				B1812AD725E174E80014A751 /* RealmRank.swift in Sources */,
 				B1767A2825D8F0FB00266027 /* TotalGradeCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
