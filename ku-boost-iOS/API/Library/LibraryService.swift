@@ -15,13 +15,8 @@ final class LibraryService {
     static let shared = LibraryService()
 
     // Intercepter
-    let interceptors = Interceptor(interceptors :
-                        [ LibraryInterceptor()
-                        ])
-//    // Logger
-//    let monitors = [LibraryLogger()] as [EventMonitor]
+    let interceptors = Interceptor(interceptors : [ LibraryInterceptor() ])
 
-    
     // Session
     var session : Session
 

@@ -12,8 +12,8 @@ enum AuthRouter: URLRequestConvertible {
 
     case Login(id:String, pw:String)
     case UserInfo
-    case ChangePassword(pw: String)
-    case ChangeAfter90Day
+    case ChangePassword(id:String, before:String, after:String)
+    case ChangeAfter90Day(id:String, pw:String)
 
     var baseURL: URL {
         return URL(string: "https://kuis.konkuk.ac.kr")!
@@ -39,17 +39,15 @@ enum AuthRouter: URLRequestConvertible {
         case let .Login(id, pw):
             return ["SINGLE_ID":id,
                     "PWD": pw]
-        case let .ChangePassword(pw):
-            let ud = UserDefaults.standard
-            return ["SINGLE_ID" : ud.string(forKey: "id")!,
-                    "BF_PWD" : ud.string(forKey: "pw")!,
-                    "PWD" : pw,
-                    "PWD1" : pw,
+        case let .ChangePassword(id,before,after):
+            return ["SINGLE_ID" : id,
+                    "BF_PWD" : before,
+                    "PWD" : after,
+                    "PWD1" : after,
                     "PROC_DIV" : ""]
-        case .ChangeAfter90Day:
-            let ud = UserDefaults.standard
-            return ["SINGLE_ID" : ud.string(forKey: "id")!,
-                    "BF_PWD" : ud.string(forKey: "pw")!,
+        case let .ChangeAfter90Day(id,pw):
+            return ["SINGLE_ID" : id,
+                    "BF_PWD" : pw,
                     "PWD" : "",
                     "PWD1" : "",
                     "PROC_DIV" : "PASS"]
