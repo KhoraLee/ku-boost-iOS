@@ -35,7 +35,7 @@ struct GradeRow: View {
             }
             NavigationLink(destination: GradeDetailView(grade: grade),isActive:$isTapped){
                 EmptyView()
-            }
+            }.hidden()
         }
     }
     
