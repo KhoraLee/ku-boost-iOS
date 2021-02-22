@@ -11,7 +11,7 @@ import RealmSwift
 class RealmGrade : Object {
     @objc dynamic var stdNo: String = "" // 학번
     @objc dynamic var year: Int = 0000 // 년도
-    @objc dynamic var semester: String = "" // 학기
+    @objc dynamic var semester: Int = 0 // 학기
     @objc dynamic var evaluationMethod: String = "" // 성적평가방식
     @objc dynamic var classification: String = "" // 이수구분
     @objc dynamic var characterGrade: String = "" // 알파벳 성적
@@ -30,10 +30,10 @@ class RealmGrade : Object {
         return "compoundKey"
     }
     
-    func setup(year:Int, grade:Grade){
+    func setup(year:Int, semester:Int, grade:Grade){
         self.stdNo = UserDefaults.stdNo
         self.year = year
-        self.semester = grade.semester
+        self.semester = semester
         self.evaluationMethod = grade.evaluationMethod ?? ""
         self.classification = grade.classification
         self.characterGrade = grade.characterGrade ?? ""
