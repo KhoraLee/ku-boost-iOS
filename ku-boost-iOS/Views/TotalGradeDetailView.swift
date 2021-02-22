@@ -13,16 +13,14 @@ struct TotalGradeDetailView: View {
     @ObservedObject var viewModel = GradeViewModel.shared
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @State var selectedSemester = ""
-    
     var body: some View {
         GeometryReader{ p in
             VStack {
                 ZStack{
-                    Menu("\(selectedSemester == "" ? viewModel.currentSemester : selectedSemester)"){
+                    Menu("\(viewModel.selectedSemester)"){
                         ForEach(viewModel.semesters, id: \.self) { sem in
                             Button("\(sem)", action: {
-                                selectedSemester = sem
+                                viewModel.selectedSemester = sem
                             })
                         }
                     }.frame(width: 200, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -37,10 +35,9 @@ struct TotalGradeDetailView: View {
                         Spacer()                        
                     }
                 }
-                GradeCardView(pieChartEntries: viewModel.getSelectedGradeEntries(semester: selectedSemester == "" ? viewModel.currentSemester : selectedSemester), grades: viewModel.getSelectedGrades(semester: selectedSemester == "" ? viewModel.currentSemester : selectedSemester), proxy: p)
+                GradeCardView(pieChartEntries: viewModel.getSelectedGradeEntries(semester: viewModel.selectedSemester), grades: viewModel.getSelectedGrades(semester: viewModel.selectedSemester), proxy: p)
             }
         }.navigationBarHidden(true)
-
     }
     
 }

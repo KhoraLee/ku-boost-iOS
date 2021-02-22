@@ -46,6 +46,7 @@
 		B19CEBB625E3F10900412A97 /* KuisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19CEBB525E3F10900412A97 /* KuisService.swift */; };
 		B19CEBBA25E3F13200412A97 /* KuisInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19CEBB925E3F13200412A97 /* KuisInterceptor.swift */; };
 		B19CEBBE25E3FEED00412A97 /* BackBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19CEBBD25E3FEED00412A97 /* BackBtn.swift */; };
+		B19CEBC825E423A100412A97 /* ChartUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19CEBC725E423A100412A97 /* ChartUtils.swift */; };
 		B1A577A825B3694700311B30 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577A725B3694700311B30 /* LoginView.swift */; };
 		B1A577AB25B3696900311B30 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577AA25B3696900311B30 /* DebugView.swift */; };
 		B1A577AE25B3699C00311B30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A577AD25B3699C00311B30 /* LoginViewModel.swift */; };
@@ -108,6 +109,7 @@
 		B19CEBB525E3F10900412A97 /* KuisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuisService.swift; sourceTree = "<group>"; };
 		B19CEBB925E3F13200412A97 /* KuisInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuisInterceptor.swift; sourceTree = "<group>"; };
 		B19CEBBD25E3FEED00412A97 /* BackBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBtn.swift; sourceTree = "<group>"; };
+		B19CEBC725E423A100412A97 /* ChartUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUtils.swift; sourceTree = "<group>"; };
 		B1A577A725B3694700311B30 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B1A577AA25B3696900311B30 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		B1A577AD25B3699C00311B30 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				B19428E325D1B21E0045A32F /* LibraryHandler.swift */,
+				B19CEBC725E423A100412A97 /* ChartUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				B18B804C25D03F5E00662FC1 /* LoginResponse.swift in Sources */,
 				B17CFA3525D9710500EEEF7C /* String.swift in Sources */,
 				B1767A3225D9132300266027 /* GradeDetailView.swift in Sources */,
+				B19CEBC825E423A100412A97 /* ChartUtils.swift in Sources */,
 				B1812AD325E174280014A751 /* GradeRepository.swift in Sources */,
 				B1767A2D25D8F19100266027 /* LineChart.swift in Sources */,
 				B1EF085425D2DD9800C569A4 /* MainView.swift in Sources */,
