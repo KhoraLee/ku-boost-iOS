@@ -19,10 +19,10 @@ struct MainView: View {
                         Text("성적")
                     }
                     .navigationBarHidden(true)
-                DebugView()
+                SettingView()
                     .tabItem {
-                        Image(systemName: "ladybug.fill")
-                        Text("디버그")
+                        Image(systemName: "gearshape")
+                        Text("설정")
                         
                     }
             }
