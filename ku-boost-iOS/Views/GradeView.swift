@@ -17,8 +17,10 @@ struct GradeView: View {
         GeometryReader{ p in
             ScrollView {
                 GradeCardView(pieChartEntries: viewModel.currentGradesEntries, grades: viewModel.currentGrades, proxy: p, title:"금학기성적")
-                TotalGradeCardView(pieChartEntries: viewModel.totalGradesEntries, lineChartEntries: viewModel.totalGradeLineEntries, grades: viewModel.totalGrades, proxy: p, title:"전체학기성적")
-                    .padding(.bottom,10)
+                TotalGradeCardView(pieChartEntries: viewModel.totalGradesEntries, lineChartEntries: viewModel.totalGradeLineEntries, proxy: p, title:"전체학기성적")
+                    .padding(.bottom)
+            }.onAppear {
+                viewModel.viewOnAppear()
             }
         }
     }

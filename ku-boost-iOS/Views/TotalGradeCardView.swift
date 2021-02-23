@@ -15,9 +15,6 @@ struct TotalGradeCardView: View {
     
     // Line chart entries
     var lineChartEntries: [ChartDataEntry]
-    
-    // 학기 성적 전체 리스트
-    var grades: [RealmGrade]
 
     var proxy: GeometryProxy
     var title = ""

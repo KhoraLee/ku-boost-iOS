@@ -35,7 +35,7 @@ struct TotalGradeDetailView: View {
                         Spacer()                        
                     }
                 }
-                GradeCardView(pieChartEntries: viewModel.getSelectedGradeEntries(semester: viewModel.selectedSemester), grades: viewModel.getSelectedGrades(semester: viewModel.selectedSemester), proxy: p)
+                GradeCardView(pieChartEntries: viewModel.makeSelectedGradeEntries(semester: viewModel.selectedSemester), grades: viewModel.getSelectedGrades(semester: viewModel.selectedSemester), proxy: p)
             }
         }.navigationBarHidden(true)
     }
