@@ -8,7 +8,6 @@
 import SwiftUI
 import Combine
 import PromiseKit
-import Network
 
 class LoginViewModel: ObservableObject, Identifiable {
     
@@ -67,8 +66,7 @@ class LoginViewModel: ObservableObject, Identifiable {
                 } else {
                     self.errMsg = "네트워크 연결이 없습니다."
                 }
-//            case .changePwRequired:
-                // change pw or change after 90 days
+                //TODO: change pw or change after 90 days
             default:
                 print("error : \(error)")
                 self.errMsg = "알수없는 오류\n관리자에게 문의 바랍니다."

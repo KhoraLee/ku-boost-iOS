@@ -12,13 +12,9 @@ struct ChangePW: Codable {
 }
 
 struct dmRes: Codable{
-    
     let flag: String
     
     enum CodingKeys: String, CodingKey {
         case flag = "FLAG"
-
-        
     }
-
 }
