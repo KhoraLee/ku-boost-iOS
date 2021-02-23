@@ -83,6 +83,12 @@ class AuthRepository {
         }
     }
     
+    func makeStudentInformationRequest() -> Promise<Void> {
+        return api.requestPromise(AuthRouter.PersonalInfo).done{ (result:StudentInfoResponse) in
+            UserDefaults.standard.setValue(result.profilePhoto.profilePhoto, forKey: "photo")
+        }
+    }
+    
     func getName() -> String { UserDefaults.name }
 
     func getDept() -> String { UserDefaults.dept }

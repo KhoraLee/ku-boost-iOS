@@ -14,6 +14,7 @@ enum AuthRouter: URLRequestConvertible {
     case UserInfo
     case ChangePassword(id:String, before:String, after:String)
     case ChangeAfter90Day(id:String, pw:String)
+    case PersonalInfo
 
     var baseURL: URL {
         return URL(string: "https://kuis.konkuk.ac.kr")!
@@ -31,6 +32,8 @@ enum AuthRouter: URLRequestConvertible {
             return "Main/onLoad.do"
         case .ChangePassword, .ChangeAfter90Day:
             return "CmmnPwdChgPop/save.do"
+        case .PersonalInfo:
+            return "RegiRegisterMasterInq/find.do"
         }
     }
 
@@ -51,6 +54,9 @@ enum AuthRouter: URLRequestConvertible {
                     "PWD" : "",
                     "PWD1" : "",
                     "PROC_DIV" : "PASS"]
+        case .PersonalInfo:
+            return ["_AUTH_MENU_KEY":"1122208",
+                    "strStdNo":UserDefaults.stdNo]
         default:
             return ["":""]
         }
