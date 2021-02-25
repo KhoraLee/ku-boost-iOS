@@ -16,6 +16,8 @@ struct GradeDetailView: View {
     @State var textHeight: CGFloat = 0
     @State var textWidth: CGFloat = 0
     
+    let semesterConverter = [1 : "1", 2 : "하계 계절", 3 : "2", 4 : "동계 계절"] as [Int : String]
+
     var body: some View {
         VStack{
             HStack{
@@ -29,7 +31,7 @@ struct GradeDetailView: View {
                     Text("\(grade.subjectName)")
                         .bold()
                         .font(.title2)
-                    Text("\(String(grade.year))년도 \(grade.semester)")
+                    Text("\(String(grade.year))년도 \(semesterConverter[grade.semester]!)학기")
                 }.padding()
                 .padding(.leading,5)
                 .background(

@@ -17,7 +17,7 @@ class GradeViewModel: ObservableObject, Identifiable {
 
     let gradeRepo = GradeRepository.shared
     var fetched = false // 서버로부터의 fetch 여부
-    let semesterConverter = [1 : 1, 2 : "하계 계절", 3 : 2, 4 : "동계 계절"] as [Int : Any]
+    let semesterConverter = [1 : "1", 2 : "하계 계절", 3 : "2", 4 : "동계 계절"] as [Int : String]
     private var disposables: Set<AnyCancellable> = []
     // MARK: - Data variables
     @Published var currentGrades = [RealmGrade]()
@@ -54,6 +54,7 @@ class GradeViewModel: ObservableObject, Identifiable {
         fetchAllGradesFromLocalDb()
         fetchGraduationSimulationFromLocalDb()
         fetchAllRankFromLocalDb()
+        makeSemesterList()
         makeChartEntries()
     }
     
@@ -87,13 +88,6 @@ class GradeViewModel: ObservableObject, Identifiable {
     
     func fetchAllGradesFromLocalDb() {
         allValidGrades = gradeRepo.getAllValidGrades()
-        for grade in allValidGrades {
-            let sem = "\(grade.year)년도 \(semesterConverter[grade.semester]!)학기"
-            if !semesters.contains(sem) {
-                semesters.append(sem)
-                selectedSemester = sem
-            }
-        }
     }
     
     func fetchGraduationSimulationFromLocalDb() {}
@@ -135,7 +129,19 @@ class GradeViewModel: ObservableObject, Identifiable {
         totalGradeLineEntries = ChartUtils.makeGradeLineEntry(grades: allValidGrades)
     }
     
-    // MARK: - Functions for TotalGradeDetailView
+    // MARK: - Others
+    
+    func makeSemesterList(){
+        for grade in allValidGrades {
+            let sem = "\(grade.year)년도 \(semesterConverter[grade.semester]!)학기"
+            if !semesters.contains(sem) {
+                semesters.append(sem)
+                selectedSemester = sem
+            }
+        }
+//        semesters.sort()
+    }
+
     func makeSelectedGradeEntries(semester: String) -> [[PieChartDataEntry]] {
         let tmpGrade = getSelectedGrades(semester: semester)
         
