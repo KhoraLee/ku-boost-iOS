@@ -45,6 +45,12 @@ extension UserDefaults {
     
     @UserDefault(key:"hasData", defaultValue:false)
     static var hasData: Bool
+    
+    @UserDefault(key:"authToken", defaultValue: "")
+    static var authToken: String
+    
+    @UserDefault(key:"qrRaw", defaultValue: "")
+    static var qrRaw: String
            
     static func setUserInfo(name: String?, stdNo: String?, state: String?, dept: String?, code: String?) {
         UserDefaults.name = name ?? ""

@@ -10,7 +10,7 @@ import Alamofire
 
 enum LibraryRouter: URLRequestConvertible {
 
-    case login(id:String, pw:String)
+    case login
     case getMobileQRCode
 
     var baseURL: URL {
@@ -41,8 +41,9 @@ enum LibraryRouter: URLRequestConvertible {
         request.method = method
 
         switch self {
-            case let .login(id,pw):
-                request = try JSONParameterEncoder().encode(LibLoginRequest(loginId: id, password: pw, isMobile: true), into: request)
+            case .login:
+                let ud: UserDefaults = .standard
+                request = try JSONParameterEncoder().encode(LibLoginRequest(loginId: ud.string(forKey: "id")!, password: ud.string(forKey: "pw")!, isMobile: true), into: request)
             default:
                 break
         }
