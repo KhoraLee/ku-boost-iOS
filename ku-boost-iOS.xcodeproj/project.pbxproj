@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B2C4FEA4AE9C7018B73E033 /* Pods_ku_boost_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */; };
+		40C165A2B8DA4578F4CC3BF2 /* Pods_ku_boost_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE949BBC4C9010B8738D7CF7 /* Pods_ku_boost_iOS.framework */; };
 		B1767A2825D8F0FB00266027 /* TotalGradeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A2725D8F0FB00266027 /* TotalGradeCardView.swift */; };
 		B1767A2D25D8F19100266027 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A2C25D8F19100266027 /* LineChart.swift */; };
 		B1767A3225D9132300266027 /* GradeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A3125D9132300266027 /* GradeDetailView.swift */; };
@@ -73,7 +73,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A195609F6A6805C21BAA0298 /* Pods-ku-boost-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ku-boost-iOS.release.xcconfig"; path = "Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		3C8161F63097C48D19D17EB2 /* Pods-ku-boost-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ku-boost-iOS.release.xcconfig"; path = "Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		40C7B1074B747C9325007E0B /* Pods-ku-boost-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ku-boost-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B1767A2725D8F0FB00266027 /* TotalGradeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalGradeCardView.swift; sourceTree = "<group>"; };
 		B1767A2C25D8F19100266027 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		B1767A3125D9132300266027 /* GradeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDetailView.swift; sourceTree = "<group>"; };
@@ -138,8 +139,7 @@
 		B1EF085625D2DDA000C569A4 /* GradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeView.swift; sourceTree = "<group>"; };
 		B1EF085925D2FA7500C569A4 /* GradeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCardView.swift; sourceTree = "<group>"; };
 		B1EF085C25D3007900C569A4 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
-		BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ku_boost_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2E1C2EDFC0D762BA47414A9 /* Pods-ku-boost-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ku-boost-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DE949BBC4C9010B8738D7CF7 /* Pods_ku_boost_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ku_boost_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2C4FEA4AE9C7018B73E033 /* Pods_ku_boost_iOS.framework in Frameworks */,
+				40C165A2B8DA4578F4CC3BF2 /* Pods_ku_boost_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,20 +157,10 @@
 		6422D1CB5CF6AD8F792BC0A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AB4BF44BAE00A1A28DB52C87 /* Frameworks */,
-				D2E1C2EDFC0D762BA47414A9 /* Pods-ku-boost-iOS.debug.xcconfig */,
-				A195609F6A6805C21BAA0298 /* Pods-ku-boost-iOS.release.xcconfig */,
+				40C7B1074B747C9325007E0B /* Pods-ku-boost-iOS.debug.xcconfig */,
+				3C8161F63097C48D19D17EB2 /* Pods-ku-boost-iOS.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		AB4BF44BAE00A1A28DB52C87 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BD713A811F4BE9667D8A2DF9 /* Pods_ku_boost_iOS.framework */,
-			);
-			name = Frameworks;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		B17CFA2F25D9709800EEEF7C /* Extensions */ = {
@@ -263,9 +253,10 @@
 		B1989ECC25B1AB6600BC612D = {
 			isa = PBXGroup;
 			children = (
+				EF6ECE6FB6190EE5800642AF /* Frameworks */,
 				B1989ED725B1AB6600BC612D /* ku-boost-iOS */,
-				B1989ED625B1AB6600BC612D /* Products */,
 				6422D1CB5CF6AD8F792BC0A0 /* Pods */,
+				B1989ED625B1AB6600BC612D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -404,6 +395,14 @@
 			path = Grade;
 			sourceTree = "<group>";
 		};
+		EF6ECE6FB6190EE5800642AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE949BBC4C9010B8738D7CF7 /* Pods_ku_boost_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,11 +410,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1989EE425B1AB6600BC612D /* Build configuration list for PBXNativeTarget "ku-boost-iOS" */;
 			buildPhases = (
-				5B47F9E36F8FCE0E8E4A7637 /* [CP] Check Pods Manifest.lock */,
+				16C8B9B2E7C6884C998D52C3 /* [CP] Check Pods Manifest.lock */,
 				B1989ED125B1AB6600BC612D /* Sources */,
 				B1989ED225B1AB6600BC612D /* Frameworks */,
 				B1989ED325B1AB6600BC612D /* Resources */,
-				AD7A52502B2D23B8005402BC /* [CP] Embed Pods Frameworks */,
+				855EECED66329C17642622F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -471,7 +470,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5B47F9E36F8FCE0E8E4A7637 /* [CP] Check Pods Manifest.lock */ = {
+		16C8B9B2E7C6884C998D52C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -493,7 +492,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD7A52502B2D23B8005402BC /* [CP] Embed Pods Frameworks */ = {
+		855EECED66329C17642622F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -701,7 +700,7 @@
 		};
 		B1989EE525B1AB6600BC612D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2E1C2EDFC0D762BA47414A9 /* Pods-ku-boost-iOS.debug.xcconfig */;
+			baseConfigurationReference = 40C7B1074B747C9325007E0B /* Pods-ku-boost-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -724,7 +723,7 @@
 		};
 		B1989EE625B1AB6600BC612D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A195609F6A6805C21BAA0298 /* Pods-ku-boost-iOS.release.xcconfig */;
+			baseConfigurationReference = 3C8161F63097C48D19D17EB2 /* Pods-ku-boost-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
