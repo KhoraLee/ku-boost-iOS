@@ -23,9 +23,8 @@ class SettingViewModel: ObservableObject, Identifiable {
     @Published var qrImg = UIImage()
     private var disposables: Set<AnyCancellable> = []
     
-    init() {
-        
-    }
+    private let context = CIContext()
+    private let filter = CIFilter.qrCodeGenerator()
     
     func fetchQRData() {
         qrImg = UIImage()
@@ -52,10 +51,8 @@ class SettingViewModel: ObservableObject, Identifiable {
     }
     
     func makeQRCode() {
-        let context = CIContext()
-        let filter = CIFilter.qrCodeGenerator()
-        let data = Data(UserDefaults.qrRaw.utf8)
-        
+        let data = UserDefaults.qrRaw.data(using: .ascii)
+        filter.setValue("M", forKey: "inputCorrectionLevel")
         filter.setValue(data, forKey: "inputMessage")
         if let outputImage = filter.outputImage?.transformed(by: CGAffineTransform(scaleX: 12, y: 12)) {
             if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
