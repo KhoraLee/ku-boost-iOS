@@ -5,23 +5,26 @@
 //  Created by 승윤이 on 2021/01/25.
 //
 
-
-import Foundation
 import Alamofire
+import Foundation
 
 final class LibraryService {
 
-    // Singleton
-    static let shared = LibraryService()
+  // MARK: Lifecycle
 
-    // Intercepter
-    let interceptors = Interceptor(interceptors : [ LibraryInterceptor() ])
+  private init(){
+    session = Session(interceptor:interceptors)
+  }
 
-    // Session
-    var session : Session
+  // MARK: Internal
 
-    private init(){
-        session = Session(interceptor:interceptors)
-    }
-    
+  // Singleton
+  static let shared = LibraryService()
+
+  // Intercepter
+  let interceptors = Interceptor(interceptors : [ LibraryInterceptor() ])
+
+  // Session
+  var session: Session
+
 }

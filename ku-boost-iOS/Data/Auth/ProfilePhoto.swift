@@ -8,9 +8,9 @@
 import Foundation
 
 struct ProfilePhoto: Codable{
-    let profilePhoto: String
-    
-    enum CodingKeys: String, CodingKey {
-        case profilePhoto = "PHOTO"
-    }
+  let profilePhoto: String
+
+  enum CodingKeys: String, CodingKey {
+    case profilePhoto = "PHOTO"
+  }
 }

@@ -10,17 +10,22 @@ import SwiftUI
 
 struct LoadingIndicator: UIViewRepresentable {
 
-    typealias UIViewType = UIActivityIndicatorView
+  typealias UIViewType = UIActivityIndicatorView
 
-    let style: UIActivityIndicatorView.Style
+  let style: UIActivityIndicatorView.Style
 
-    func makeUIView(context: UIViewRepresentableContext<LoadingIndicator>) -> LoadingIndicator.UIViewType {
-        return UIActivityIndicatorView(style: style)
-    }
+  func makeUIView(
+    context: UIViewRepresentableContext<LoadingIndicator>
+  ) -> LoadingIndicator.UIViewType
+  {
+    UIActivityIndicatorView(style: style)
+  }
 
-    func updateUIView(_ view: LoadingIndicator.UIViewType, context: UIViewRepresentableContext<LoadingIndicator>) {
-        view.startAnimating()
-    }
-    
+  func updateUIView(
+    _ view: LoadingIndicator.UIViewType,
+    context: UIViewRepresentableContext<LoadingIndicator>)
+  {
+    view.startAnimating()
+  }
+
 }
-

@@ -8,24 +8,25 @@
 import PromiseKit
 
 class LibraryRepository {
-    
-    static let shared = LibraryRepository()
-    let api = LibraryService.shared.session
-    
-    func makeLoginRequest() -> Promise<Void> {
-        return firstly{
-            api.requestPromise(LibraryRouter.login)
-        }.done{ (result: LibLoginResponse) in
-            UserDefaults.authToken = result.data?.accessToken ?? ""
-        }
+
+  static let shared = LibraryRepository()
+
+  let api = LibraryService.shared.session
+
+  func makeLoginRequest() -> Promise<Void> {
+    firstly{
+      api.requestPromise(LibraryRouter.login)
+    }.done{ (result: LibLoginResponse) in
+      UserDefaults.authToken = result.data?.accessToken ?? ""
     }
-    
-    func makeMobileQRCodeRequest() -> Promise<Void> {
-        return firstly{
-            api.requestPromise(LibraryRouter.getMobileQRCode)
-        }.done{ (result: QRResponse) in
-            UserDefaults.qrRaw = result.qrdata?.membershipCard ?? ""
-        }
+  }
+
+  func makeMobileQRCodeRequest() -> Promise<Void> {
+    firstly{
+      api.requestPromise(LibraryRouter.getMobileQRCode)
+    }.done{ (result: QRResponse) in
+      UserDefaults.qrRaw = result.qrdata?.membershipCard ?? ""
     }
-    
+  }
+
 }

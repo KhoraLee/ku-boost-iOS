@@ -7,31 +7,39 @@
 
 import SwiftUI
 
-extension UINavigationController: UIGestureRecognizerDelegate {
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        interactivePopGestureRecognizer?.delegate = self
-    }
+// MARK: - UINavigationController + UIGestureRecognizerDelegate
 
-    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return viewControllers.count > 2
-    }
+extension UINavigationController: UIGestureRecognizerDelegate {
+
+  // MARK: Open
+
+  override open func viewDidLoad() {
+    super.viewDidLoad()
+    interactivePopGestureRecognizer?.delegate = self
+  }
+
+  // MARK: Public
+
+  public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    viewControllers.count > 2
+  }
 }
 
 extension View {
-    func hasScrollEnabled(_ value: Bool) -> some View {
-        self.onAppear {
-            UITableView.appearance().isScrollEnabled = value
-        }
+  func hasScrollEnabled(_ value: Bool) -> some View {
+    onAppear {
+      UITableView.appearance().isScrollEnabled = value
     }
+  }
 }
 
+// MARK: - SizePreferenceKey
 
 struct SizePreferenceKey: PreferenceKey {
-    typealias Value = CGSize
-    static var defaultValue: Value = .zero
+  typealias Value = CGSize
+  static var defaultValue: Value = .zero
 
-    static func reduce(value: inout Value, nextValue: () -> Value) {
-        value = nextValue()
-    }
+  static func reduce(value: inout Value, nextValue: () -> Value) {
+    value = nextValue()
+  }
 }

@@ -8,19 +8,24 @@
 import RealmSwift
 
 class RankDAO {
-    static let shared = RankDAO()
-    
-    private let realm = try! Realm()
-    
-    func insertRank(rank: RealmRank) {
-        try? realm.write {
-            realm.add(rank, update: .modified)
-        }
+
+  // MARK: Internal
+
+  static let shared = RankDAO()
+
+  func insertRank(rank: RealmRank) {
+    try? realm.write {
+      realm.add(rank, update: .modified)
     }
-    
-    func getRank(stdNo: String, year: Int, semester: Int) -> RealmRank {
-        return realm.objects(RealmRank.self)
-            .filter("stdNo == '\(stdNo)' && year == \(year) && semester == \(semester)")
-            .first!
-    }
+  }
+
+  func getRank(stdNo: String, year: Int, semester: Int) -> RealmRank {
+    realm.objects(RealmRank.self)
+      .filter("stdNo == '\(stdNo)' && year == \(year) && semester == \(semester)")
+      .first!
+  }
+
+  // MARK: Private
+
+  private let realm = try! Realm()
 }

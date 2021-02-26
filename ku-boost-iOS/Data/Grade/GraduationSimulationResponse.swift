@@ -8,9 +8,9 @@
 import Foundation
 
 struct GraduationSimulationResponse: Codable{
-    let simulations: [GraduationSimulation]
-    
-    enum CodingKeys: String, CodingKey {
-        case simulations = "DS_SIMUL1"
-    }
+  let simulations: [GraduationSimulation]
+
+  enum CodingKeys: String, CodingKey {
+    case simulations = "DS_SIMUL1"
+  }
 }
