@@ -22,6 +22,7 @@ whitelist_rules:
   - vertical_whitespace
   - void_return
   - custom_rules
+  - line_length
 
 excluded:
   - Carthage
@@ -31,6 +32,8 @@ colon:
   apply_to_dictionaries: false
 
 indentation: 2
+
+line_length: 100
 
 custom_rules:
   no_objcMembers:
