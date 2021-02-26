@@ -11,4 +11,5 @@ target 'ku-boost-iOS' do
   pod 'SwiftLint'
   pod 'RealmSwift'
   pod 'PromiseKit', "~> 6.8"
+  pod 'SwiftFormat/CLI'
 end

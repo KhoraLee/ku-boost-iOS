@@ -411,10 +411,12 @@
 			buildConfigurationList = B1989EE425B1AB6600BC612D /* Build configuration list for PBXNativeTarget "ku-boost-iOS" */;
 			buildPhases = (
 				16C8B9B2E7C6884C998D52C3 /* [CP] Check Pods Manifest.lock */,
+				B1B28A7D25E91191006AAE6E /* Swift Format */,
 				B1989ED125B1AB6600BC612D /* Sources */,
 				B1989ED225B1AB6600BC612D /* Frameworks */,
 				B1989ED325B1AB6600BC612D /* Resources */,
 				855EECED66329C17642622F4 /* [CP] Embed Pods Frameworks */,
+				B1B28A7C25E9118F006AAE6E /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -508,6 +510,42 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B1B28A7C25E9118F006AAE6E /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		B1B28A7D25E91191006AAE6E /* Swift Format */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Format";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
