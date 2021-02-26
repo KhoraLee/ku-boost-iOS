@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct BackBtn: View {
-    
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
-    var body : some View { Button(action: {
-        self.presentationMode.wrappedValue.dismiss()
-        }) {
-            HStack {
-                Image(systemName: "chevron.compact.left") // set image here
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(Color("primaryLightColor"))
-            }
-        }
-    }
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+  var body : some View { Button(action: {
+    self.presentationMode.wrappedValue.dismiss()
+  }) {
+      HStack {
+        Image(systemName: "chevron.compact.left") // set image here
+          .aspectRatio(contentMode: .fit)
+          .foregroundColor(Color("primaryLightColor"))
+      }
+  }
+  }
 }

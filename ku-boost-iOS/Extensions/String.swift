@@ -8,14 +8,14 @@
 import SwiftUI
 
 extension String {
-    
-    func sizeDiff(_ s:String,font:UIFont)-> CGFloat{
-        return s.widthOfString(usingFont: font) - self.widthOfString(usingFont: font)
-    }
-    
-    func widthOfString(usingFont font: UIFont) -> CGFloat {
-        let fontAttributes = [NSAttributedString.Key.font: font]
-        let size = self.size(withAttributes: fontAttributes)
-        return size.width
-    }
+
+  func sizeDiff(_ string: String, font: UIFont) -> CGFloat{
+    string.widthOfString(usingFont: font) - widthOfString(usingFont: font)
+  }
+
+  func widthOfString(usingFont font: UIFont) -> CGFloat {
+    let fontAttributes = [NSAttributedString.Key.font: font]
+    let size = self.size(withAttributes: fontAttributes)
+    return size.width
+  }
 }

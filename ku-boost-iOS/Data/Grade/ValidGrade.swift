@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct ValidGrade : Codable {
-    let subjectId: String
-    
-    enum CodingKeys: String, CodingKey {
-        case subjectId = "SBJT_ID"
-    }
+struct ValidGrade: Codable {
+  let subjectId: String
+
+  enum CodingKeys: String, CodingKey {
+    case subjectId = "SBJT_ID"
+  }
 }

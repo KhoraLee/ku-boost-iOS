@@ -7,43 +7,50 @@
 
 import SwiftUI
 
+// MARK: - GradeRow
+
 struct GradeRow: View {
-    var grade: RealmGrade
-    @State var isTapped = false
-    var body: some View {
-        ZStack{
-            HStack{
-                Text(grade.subjectName)
-                    .font(.callout)
-                    .lineLimit(1)
-                Spacer()
-                Text(grade.professor)
-                    .font(.callout)
-                Text(String(grade.subjectPoint.value ?? 0))
-                        .font(.callout)
-                Text(grade.classification)
-                    .font(.callout)
-                Text(grade.characterGrade)
-                    .font(.callout)
-                if(grade.characterGrade.last != "+"){
-                    Spacer().frame(width:"+".widthOfString(usingFont: UIFont.systemFont(ofSize:UIFont.systemFontSize)))
-                } else {
-                }
-            }.contentShape(Rectangle())
-            .onTapGesture {
-                isTapped = true
-            }
-            NavigationLink(destination: GradeDetailView(grade: grade),isActive:$isTapped){
-                EmptyView()
-            }.hidden()
+  var grade: RealmGrade
+  @State var isTapped = false
+
+  var body: some View {
+    ZStack{
+      HStack{
+        Text(grade.subjectName)
+          .font(.callout)
+          .lineLimit(1)
+        Spacer()
+        Text(grade.professor)
+          .font(.callout)
+        Text(String(grade.subjectPoint.value ?? 0))
+          .font(.callout)
+        Text(grade.classification)
+          .font(.callout)
+        Text(grade.characterGrade)
+          .font(.callout)
+        if grade.characterGrade.last != "+"{
+          Spacer()
+            .frame(
+              width: "+".widthOfString(usingFont: UIFont.systemFont(ofSize:UIFont.systemFontSize)))
+        } else {
         }
+      }.contentShape(Rectangle())
+        .onTapGesture {
+          isTapped = true
+        }
+      NavigationLink(destination: GradeDetailView(grade: grade),isActive:$isTapped){
+        EmptyView()
+      }.hidden()
     }
-    
+  }
+
 }
+
+// MARK: - GradeRow_Previews
 
 struct GradeRow_Previews: PreviewProvider {
 
-    static var previews: some View {
-        GradeRow(grade: RealmGrade())
-    }
+  static var previews: some View {
+    GradeRow(grade: RealmGrade())
+  }
 }
