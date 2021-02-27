@@ -15,7 +15,6 @@ class GradeViewModel: ObservableObject, Identifiable {
 
   // MARK: Lifecycle
 
-  //MARK: -
   init() {
     makeChartEntries() // make empty chart entries for first view draw
   }
@@ -93,9 +92,13 @@ class GradeViewModel: ObservableObject, Identifiable {
     allValidGrades = gradeRepo.getAllValidGrades()
   }
 
-  func fetchGraduationSimulationFromLocalDb() {}
+  func fetchGraduationSimulationFromLocalDb() {
+    graduationSimulation = gradeRepo.getGraduationSimulations()
+  }
 
-  func fetchAllRankFromLocalDb() {}
+  func fetchAllRankFromLocalDb() {
+    // TODO: Rank 구현
+  }
 
   // MARK: - Fetch data from server
   func fetchGraduationSimulationFromServer() -> Promise<Void> {
@@ -110,9 +113,8 @@ class GradeViewModel: ObservableObject, Identifiable {
     }
   }
 
-  // TODO: Rank 구현
   func fetchRankFromServer() -> Promise<Void>  {
-    Promise()
+    Promise() // TODO: Rank 구현
   }
 
   // MARK: - Make chart entries

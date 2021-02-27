@@ -34,6 +34,8 @@
 		B18B804F25D03F7700662FC1 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B804E25D03F7700662FC1 /* LoginSuccess.swift */; };
 		B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805225D03F8900662FC1 /* LoginFailure.swift */; };
 		B18B805625D0478200662FC1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805525D0478200662FC1 /* UserInfo.swift */; };
+		B191685A25EA277700B17D1D /* SimulationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191685925EA277700B17D1D /* SimulationCardView.swift */; };
+		B191685D25EA28CC00B17D1D /* SimulRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191685C25EA28CC00B17D1D /* SimulRow.swift */; };
 		B19428DB25D1A52E0045A32F /* RealmSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428DA25D1A52E0045A32F /* RealmSimulation.swift */; };
 		B19428DE25D1AE9B0045A32F /* ChangePW.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428DD25D1AE9B0045A32F /* ChangePW.swift */; };
 		B19428E125D1B0190045A32F /* LibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428E025D1B0190045A32F /* LibraryRouter.swift */; };
@@ -101,6 +103,8 @@
 		B18B804E25D03F7700662FC1 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		B18B805225D03F8900662FC1 /* LoginFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailure.swift; sourceTree = "<group>"; };
 		B18B805525D0478200662FC1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		B191685925EA277700B17D1D /* SimulationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationCardView.swift; sourceTree = "<group>"; };
+		B191685C25EA28CC00B17D1D /* SimulRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulRow.swift; sourceTree = "<group>"; };
 		B19428DA25D1A52E0045A32F /* RealmSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSimulation.swift; sourceTree = "<group>"; };
 		B19428DD25D1AE9B0045A32F /* ChangePW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePW.swift; sourceTree = "<group>"; };
 		B19428E025D1B0190045A32F /* LibraryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRouter.swift; sourceTree = "<group>"; };
@@ -335,6 +339,7 @@
 				B1BD6D4025D861B700A395BA /* TotalGradeDetailView.swift */,
 				B1BD7E6225E4E97E00DEDB89 /* SettingView.swift */,
 				B184271225E7B0D3009541AC /* LibQRCodeView.swift */,
+				B191685925EA277700B17D1D /* SimulationCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				B1A577C825B36C8200311B30 /* LoadingView.swift */,
 				B1A577C625B36C8200311B30 /* TextFields.swift */,
 				B185D86525D652780022D78E /* GradeRow.swift */,
+				B191685C25EA28CC00B17D1D /* SimulRow.swift */,
 				B1EF085C25D3007900C569A4 /* PieChart.swift */,
 				B1767A2C25D8F19100266027 /* LineChart.swift */,
 				B19CEBBD25E3FEED00412A97 /* BackBtn.swift */,
@@ -571,7 +577,9 @@
 				B19428E125D1B0190045A32F /* LibraryRouter.swift in Sources */,
 				B1EF085D25D3007900C569A4 /* PieChart.swift in Sources */,
 				B18B805625D0478200662FC1 /* UserInfo.swift in Sources */,
+				B191685A25EA277700B17D1D /* SimulationCardView.swift in Sources */,
 				B1C489B925D0718800702617 /* GraduationSimulation.swift in Sources */,
+				B191685D25EA28CC00B17D1D /* SimulRow.swift in Sources */,
 				B185314725E1092C00721AA4 /* GradeDAO.swift in Sources */,
 				B17CFA3125D970A200EEEF7C /* View.swift in Sources */,
 				B183137525BDF72600625375 /* LibraryService.swift in Sources */,
