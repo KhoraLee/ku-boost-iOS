@@ -61,6 +61,26 @@ class SettingViewModel: ObservableObject, Identifiable {
     qrImg = UIImage(systemName: "xmark.circle") ?? UIImage()
   }
 
+  func logout() {
+    authRepo.makeLogoutRequset()
+  }
+
+  func getOpenSourceLicense() -> String {
+    if
+      let filepath = Bundle.main.path(
+        forResource: "Pods-ku-boost-iOS-acknowledgements",
+        ofType: "markdown")
+    {
+      do {
+        return try String(contentsOfFile: filepath)
+      } catch let error as NSError {
+        return "\(error.localizedDescription)"
+      }
+    } else {
+      return "File not found"
+    }
+  }
+
   // MARK: Private
 
   private var disposables: Set<AnyCancellable> = []

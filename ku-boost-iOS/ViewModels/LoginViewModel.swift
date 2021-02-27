@@ -49,6 +49,8 @@ class LoginViewModel: ObservableObject, Identifiable {
       ud.setValue(self.username, forKey: "id")
       ud.setValue(self.password, forKey: "pw")
       ud.setValue(true, forKey: "autologin")
+      self.username = ""
+      self.password = ""
       self.isLoading = false
       self.isLogon = true
     }.catch{err in
