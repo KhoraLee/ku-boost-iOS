@@ -67,6 +67,9 @@ struct SettingView: View {
             SettingBtn(text:"모바일 열람증",sysImg: "qrcode"){
               selected = "lib"
             }.padding()
+            SettingBtn(text:"비밀번호 변경",sysImg: "rectangle.and.pencil.and.ellipsis"){
+              selected = "changepw"
+            }.padding()
             SettingBtn(text:"오픈소스 라이선스",sysImg: "doc.plaintext"){
               selected = "opensource"
             }.padding()
@@ -76,16 +79,21 @@ struct SettingView: View {
             }.padding()
           }
           VStack{ // VStack only for navigationLink
-            NavigationLink(destination: LibQRCodeView(),tag: "lib", selection: $selected) {
-              EmptyView()
-            }
+            NavigationLink(
+              destination: LibQRCodeView(),
+              tag: "lib",
+              selection: $selected,
+              label: { EmptyView() })
+            NavigationLink(
+              destination: ChangePasswordView(),
+              tag: "changepw",
+              selection: $selected,
+              label: { EmptyView() })
             NavigationLink(
               destination: OpenSourceView(osl: viewModel.getOpenSourceLicense()),
               tag: "opensource",
-              selection: $selected)
-            {
-              EmptyView()
-            }
+              selection: $selected,
+              label: { EmptyView() })
           }.hidden()
         }
         Spacer()
