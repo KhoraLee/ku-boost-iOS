@@ -9,13 +9,25 @@ import SwiftUI
 
 struct OpenSourceView: View {
 
-  var osl = ""
+  var osl: String
 
   var body: some View {
-    ScrollView {
-      Text(osl)
-        .lineLimit(nil)
-        .padding()
-    }
+    VStack {
+      HStack{
+        BackBtn()
+          .padding(.top,15)
+          .padding(.leading,20)
+        Text("오픈소스 라이선스")
+          .font(.title)
+          .fontWeight(.bold)
+          .padding([.top,.leading])
+        Spacer()
+      }
+      ScrollView {
+        Text(osl)
+          .frame(maxWidth:.infinity)
+          .padding()
+      }
+    }.navigationBarHidden(true)
   }
 }

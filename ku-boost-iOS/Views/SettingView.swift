@@ -80,7 +80,7 @@ struct SettingView: View {
               EmptyView()
             }
             NavigationLink(
-              destination: OpenSourceView(),
+              destination: OpenSourceView(osl: viewModel.getOpenSourceLicense()),
               tag: "opensource",
               selection: $selected)
             {
