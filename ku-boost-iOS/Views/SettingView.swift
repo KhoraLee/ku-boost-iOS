@@ -10,8 +10,11 @@ import SwiftUI
 // MARK: - SettingView
 
 struct SettingView: View {
+
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
   @ObservedObject var viewModel = SettingViewModel.shared
   @State var selected: String?
+  @State var osl = false
 
   var body: some View {
     GeometryReader{ p in
@@ -64,11 +67,33 @@ struct SettingView: View {
             SettingBtn(text:"모바일 열람증",sysImg: "qrcode"){
               selected = "lib"
             }.padding()
+            SettingBtn(text:"비밀번호 변경",sysImg: "rectangle.and.pencil.and.ellipsis"){
+              selected = "changepw"
+            }.padding()
+            SettingBtn(text:"오픈소스 라이선스",sysImg: "doc.plaintext"){
+              selected = "opensource"
+            }.padding()
+            SettingBtn(text:"로그아웃",sysImg: "escape"){
+              viewModel.logout()
+              self.presentationMode.wrappedValue.dismiss()
+            }.padding()
           }
           VStack{ // VStack only for navigationLink
-            NavigationLink(destination: LibQRCodeView(),tag: "lib", selection: $selected) {
-              EmptyView()
-            }
+            NavigationLink(
+              destination: LibQRCodeView(),
+              tag: "lib",
+              selection: $selected,
+              label: { EmptyView() })
+            NavigationLink(
+              destination: ChangePasswordView(),
+              tag: "changepw",
+              selection: $selected,
+              label: { EmptyView() })
+            NavigationLink(
+              destination: OpenSourceView(osl: viewModel.getOpenSourceLicense()),
+              tag: "opensource",
+              selection: $selected,
+              label: { EmptyView() })
           }.hidden()
         }
         Spacer()
@@ -92,30 +117,28 @@ struct SettingBtn: View {
   var action: () -> Void
 
   var body: some View {
-    Button(action: {
-      action()
-    }){
-        HStack{
-          Image(systemName: sysImg)
-            .resizable()
-            .foregroundColor(Color("primaryLightColor"))
-            .frame(width: textHeight, height: textHeight)
-            .scaledToFit()
-            .padding(.leading,5)
-          Text(text)
-            .foregroundColor(.primary)
-            .font(.title2)
-            .background(
-              GeometryReader { proxy in
-                Color.clear.preference(key: SizePreferenceKey.self, value: proxy.size)
-              }
-            )
-            .onPreferenceChange(SizePreferenceKey.self){ preferences in
-              self.textHeight = preferences.height
-            }.padding(.leading,7)
+    Button(action: action){
+      HStack{
+        Image(systemName: sysImg)
+          .resizable()
+          .foregroundColor(Color("primaryLightColor"))
+          .scaledToFit()
+          .frame(width: textHeight, height: textHeight)
+          .padding(.leading,5)
+        Text(text)
+          .foregroundColor(.primary)
+          .font(.title2)
+          .background(
+            GeometryReader { proxy in
+              Color.clear.preference(key: SizePreferenceKey.self, value: proxy.size)
+            }
+          )
+          .onPreferenceChange(SizePreferenceKey.self){ preferences in
+            self.textHeight = preferences.height
+          }.padding(.leading,7)
 
-          Spacer()
-        }
+        Spacer()
+      }
     }
   }
 }

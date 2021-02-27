@@ -22,6 +22,10 @@
 		B182D82025DAD1CE00582851 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182D81F25DAD1CE00582851 /* MyError.swift */; };
 		B183137225BDF50B00625375 /* GradeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183137125BDF50B00625375 /* GradeRouter.swift */; };
 		B183137525BDF72600625375 /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183137425BDF72600625375 /* LibraryService.swift */; };
+		B1831AAA25EAA51300FCD3F7 /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1831AA925EAA51300FCD3F7 /* OpenSourceView.swift */; };
+		B1831AC425EAB12400FCD3F7 /* Pods-ku-boost-iOS-acknowledgements.markdown in Resources */ = {isa = PBXBuildFile; fileRef = B1831AC325EAB12400FCD3F7 /* Pods-ku-boost-iOS-acknowledgements.markdown */; };
+		B1831AC725EAB6F700FCD3F7 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1831AC625EAB6F700FCD3F7 /* ChangePasswordView.swift */; };
+		B1831ACA25EABB9100FCD3F7 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1831AC925EABB9100FCD3F7 /* ChangePasswordViewModel.swift */; };
 		B18320A525D14D3E0096884D /* RealmGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18320A425D14D3E0096884D /* RealmGrade.swift */; };
 		B18387AB25E3CBC8000F1688 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18387AA25E3CBC8000F1688 /* AuthRepository.swift */; };
 		B184270F25E7AA62009541AC /* LibraryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184270E25E7AA62009541AC /* LibraryRepository.swift */; };
@@ -93,6 +97,10 @@
 		B182D81F25DAD1CE00582851 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		B183137125BDF50B00625375 /* GradeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeRouter.swift; sourceTree = "<group>"; };
 		B183137425BDF72600625375 /* LibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
+		B1831AA925EAA51300FCD3F7 /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
+		B1831AC325EAB12400FCD3F7 /* Pods-ku-boost-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Pods-ku-boost-iOS-acknowledgements.markdown"; path = "Pods/Target Support Files/Pods-ku-boost-iOS/Pods-ku-boost-iOS-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
+		B1831AC625EAB6F700FCD3F7 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		B1831AC925EABB9100FCD3F7 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		B18320A425D14D3E0096884D /* RealmGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGrade.swift; sourceTree = "<group>"; };
 		B18387AA25E3CBC8000F1688 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		B184270E25E7AA62009541AC /* LibraryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRepository.swift; sourceTree = "<group>"; };
@@ -324,6 +332,7 @@
 		B1A5779A25B3607A00311B30 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B1831AC325EAB12400FCD3F7 /* Pods-ku-boost-iOS-acknowledgements.markdown */,
 				B1989EE125B1AB6600BC612D /* Info.plist */,
 				B1989EDC25B1AB6600BC612D /* Assets.xcassets */,
 			);
@@ -345,6 +354,8 @@
 				B184271225E7B0D3009541AC /* LibQRCodeView.swift */,
 				B191685925EA277700B17D1D /* SimulationCardView.swift */,
 				B191686C25EA3C0500B17D1D /* SimulationDetailView.swift */,
+				B1831AA925EAA51300FCD3F7 /* OpenSourceView.swift */,
+				B1831AC625EAB6F700FCD3F7 /* ChangePasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -356,6 +367,7 @@
 				B185D86225D641030022D78E /* GradeViewModel.swift */,
 				B1BD7E6E25E4FFFB00DEDB89 /* SettingViewModel.swift */,
 				B191686F25EA3C1B00B17D1D /* SimulationViewModel.swift */,
+				B1831AC925EABB9100FCD3F7 /* ChangePasswordViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -478,6 +490,7 @@
 			files = (
 				B1989EE025B1AB6600BC612D /* Preview Assets.xcassets in Resources */,
 				B1989EDD25B1AB6600BC612D /* Assets.xcassets in Resources */,
+				B1831AC425EAB12400FCD3F7 /* Pods-ku-boost-iOS-acknowledgements.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B183137225BDF50B00625375 /* GradeRouter.swift in Sources */,
+				B1831AC725EAB6F700FCD3F7 /* ChangePasswordView.swift in Sources */,
 				B1A577CA25B36C8200311B30 /* LoadingIndicator.swift in Sources */,
 				B1BD6D4125D861B700A395BA /* TotalGradeDetailView.swift in Sources */,
 				B1BD7E6C25E4FD8600DEDB89 /* PersonalInfo.swift in Sources */,
@@ -581,6 +595,7 @@
 				B185D86325D641030022D78E /* GradeViewModel.swift in Sources */,
 				B1C489AD25D0714D00702617 /* GradeResponse.swift in Sources */,
 				B19428E125D1B0190045A32F /* LibraryRouter.swift in Sources */,
+				B1831ACA25EABB9100FCD3F7 /* ChangePasswordViewModel.swift in Sources */,
 				B1EF085D25D3007900C569A4 /* PieChart.swift in Sources */,
 				B18B805625D0478200662FC1 /* UserInfo.swift in Sources */,
 				B191685A25EA277700B17D1D /* SimulationCardView.swift in Sources */,
@@ -619,6 +634,7 @@
 				B182C37D25E39FC30034926E /* Alamofire.swift in Sources */,
 				B1A577C925B36C8200311B30 /* TextFields.swift in Sources */,
 				B18320A525D14D3E0096884D /* RealmGrade.swift in Sources */,
+				B1831AAA25EAA51300FCD3F7 /* OpenSourceView.swift in Sources */,
 				B1C489B325D0715B00702617 /* ValidGradeResponse.swift in Sources */,
 				B185D86625D652780022D78E /* GradeRow.swift in Sources */,
 				B19428F125D1B9800045A32F /* LibraryInterceptor.swift in Sources */,

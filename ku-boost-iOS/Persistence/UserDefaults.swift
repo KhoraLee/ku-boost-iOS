@@ -71,6 +71,7 @@ extension UserDefaults {
   static func clearAll() {
     setUserInfo(name: "", stdNo: "", state: "", dept: "", code: "")
     UserDefaults.cookie = ""
+    UserDefaults.authToken = ""
     UserDefaults.hasData = false
   }
 }
