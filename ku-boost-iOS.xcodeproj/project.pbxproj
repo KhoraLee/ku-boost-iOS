@@ -34,6 +34,10 @@
 		B18B804F25D03F7700662FC1 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B804E25D03F7700662FC1 /* LoginSuccess.swift */; };
 		B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805225D03F8900662FC1 /* LoginFailure.swift */; };
 		B18B805625D0478200662FC1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B805525D0478200662FC1 /* UserInfo.swift */; };
+		B191685A25EA277700B17D1D /* SimulationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191685925EA277700B17D1D /* SimulationCardView.swift */; };
+		B191685D25EA28CC00B17D1D /* SimulRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191685C25EA28CC00B17D1D /* SimulRow.swift */; };
+		B191686D25EA3C0500B17D1D /* SimulationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191686C25EA3C0500B17D1D /* SimulationDetailView.swift */; };
+		B191687025EA3C1B00B17D1D /* SimulationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191686F25EA3C1B00B17D1D /* SimulationViewModel.swift */; };
 		B19428DB25D1A52E0045A32F /* RealmSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428DA25D1A52E0045A32F /* RealmSimulation.swift */; };
 		B19428DE25D1AE9B0045A32F /* ChangePW.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428DD25D1AE9B0045A32F /* ChangePW.swift */; };
 		B19428E125D1B0190045A32F /* LibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19428E025D1B0190045A32F /* LibraryRouter.swift */; };
@@ -101,6 +105,10 @@
 		B18B804E25D03F7700662FC1 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		B18B805225D03F8900662FC1 /* LoginFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailure.swift; sourceTree = "<group>"; };
 		B18B805525D0478200662FC1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		B191685925EA277700B17D1D /* SimulationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationCardView.swift; sourceTree = "<group>"; };
+		B191685C25EA28CC00B17D1D /* SimulRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulRow.swift; sourceTree = "<group>"; };
+		B191686C25EA3C0500B17D1D /* SimulationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationDetailView.swift; sourceTree = "<group>"; };
+		B191686F25EA3C1B00B17D1D /* SimulationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationViewModel.swift; sourceTree = "<group>"; };
 		B19428DA25D1A52E0045A32F /* RealmSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSimulation.swift; sourceTree = "<group>"; };
 		B19428DD25D1AE9B0045A32F /* ChangePW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePW.swift; sourceTree = "<group>"; };
 		B19428E025D1B0190045A32F /* LibraryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRouter.swift; sourceTree = "<group>"; };
@@ -335,6 +343,8 @@
 				B1BD6D4025D861B700A395BA /* TotalGradeDetailView.swift */,
 				B1BD7E6225E4E97E00DEDB89 /* SettingView.swift */,
 				B184271225E7B0D3009541AC /* LibQRCodeView.swift */,
+				B191685925EA277700B17D1D /* SimulationCardView.swift */,
+				B191686C25EA3C0500B17D1D /* SimulationDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +355,7 @@
 				B1A577AD25B3699C00311B30 /* LoginViewModel.swift */,
 				B185D86225D641030022D78E /* GradeViewModel.swift */,
 				B1BD7E6E25E4FFFB00DEDB89 /* SettingViewModel.swift */,
+				B191686F25EA3C1B00B17D1D /* SimulationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -375,6 +386,7 @@
 				B1A577C825B36C8200311B30 /* LoadingView.swift */,
 				B1A577C625B36C8200311B30 /* TextFields.swift */,
 				B185D86525D652780022D78E /* GradeRow.swift */,
+				B191685C25EA28CC00B17D1D /* SimulRow.swift */,
 				B1EF085C25D3007900C569A4 /* PieChart.swift */,
 				B1767A2C25D8F19100266027 /* LineChart.swift */,
 				B19CEBBD25E3FEED00412A97 /* BackBtn.swift */,
@@ -571,13 +583,16 @@
 				B19428E125D1B0190045A32F /* LibraryRouter.swift in Sources */,
 				B1EF085D25D3007900C569A4 /* PieChart.swift in Sources */,
 				B18B805625D0478200662FC1 /* UserInfo.swift in Sources */,
+				B191685A25EA277700B17D1D /* SimulationCardView.swift in Sources */,
 				B1C489B925D0718800702617 /* GraduationSimulation.swift in Sources */,
+				B191685D25EA28CC00B17D1D /* SimulRow.swift in Sources */,
 				B185314725E1092C00721AA4 /* GradeDAO.swift in Sources */,
 				B17CFA3125D970A200EEEF7C /* View.swift in Sources */,
 				B183137525BDF72600625375 /* LibraryService.swift in Sources */,
 				B18387AB25E3CBC8000F1688 /* AuthRepository.swift in Sources */,
 				B1A577CB25B36C8200311B30 /* LoadingView.swift in Sources */,
 				B1BD7E6325E4E97E00DEDB89 /* SettingView.swift in Sources */,
+				B191686D25EA3C0500B17D1D /* SimulationDetailView.swift in Sources */,
 				B1BD7E6625E4FCBD00DEDB89 /* StudentInfoResponse.swift in Sources */,
 				B19CEBB625E3F10900412A97 /* KuisService.swift in Sources */,
 				B1989ED925B1AB6600BC612D /* ku_boost_iOSApp.swift in Sources */,
@@ -588,6 +603,7 @@
 				B1A577AE25B3699C00311B30 /* LoginViewModel.swift in Sources */,
 				B185314B25E10C1B00721AA4 /* Realm.swift in Sources */,
 				B182D82025DAD1CE00582851 /* MyError.swift in Sources */,
+				B191687025EA3C1B00B17D1D /* SimulationViewModel.swift in Sources */,
 				B19428E825D1B2B80045A32F /* LibLoginResponse.swift in Sources */,
 				B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */,
 				B18B804C25D03F5E00662FC1 /* LoginResponse.swift in Sources */,

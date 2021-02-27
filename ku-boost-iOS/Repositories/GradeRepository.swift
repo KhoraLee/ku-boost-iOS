@@ -23,10 +23,11 @@ class GradeRepository {
     }.done{ (result: GraduationSimulationResponse)  in
       let graduationSimulationResponse = result
       let simulations = graduationSimulationResponse.simulations
-
+      var index = 0
       for simulation in simulations {
         let data = RealmSimulation()
-        data.setup(simul: simulation)
+        data.setup(simul: simulation, index: index)
+        index += 1
         self.simulDao.insertGraduationSimulation(simul: data)
       }
     }
@@ -90,7 +91,11 @@ class GradeRepository {
   }
 
   func getGradesByClassification(clf: String) -> [RealmGrade] {
-    gradeDao.getGradesByClassification(stdNo: stdNo, clf: clf)
+    if clf == "총점" {
+      return gradeDao.getAllGrades(stdNo: stdNo)
+    }
+    return
+      gradeDao.getGradesByClassification(stdNo: stdNo, clf: clf)
   }
 
 //    func getTotalRank(year: Int, semester: Int) -> Promise<RealmRank> {}

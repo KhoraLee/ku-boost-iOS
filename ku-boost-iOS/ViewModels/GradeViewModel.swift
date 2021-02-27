@@ -15,7 +15,6 @@ class GradeViewModel: ObservableObject, Identifiable {
 
   // MARK: Lifecycle
 
-  //MARK: -
   init() {
     makeChartEntries() // make empty chart entries for first view draw
   }
@@ -30,7 +29,6 @@ class GradeViewModel: ObservableObject, Identifiable {
   // MARK: - Data variables
   @Published var currentGrades = [RealmGrade]()
   @Published var allValidGrades = [RealmGrade]()
-  @Published var graduationSimulation = [RealmSimulation]()
   @Published var ranks = [RealmRank]()
   // MARK: - Chart entries variables
   @Published var currentGradesEntries = [[PieChartDataEntry]]()
@@ -54,7 +52,6 @@ class GradeViewModel: ObservableObject, Identifiable {
     if isFetched() || !hasData() { return }
     fetchCurrentGradesFromLocalDb()
     fetchAllGradesFromLocalDb()
-    fetchGraduationSimulationFromLocalDb()
     fetchAllRankFromLocalDb()
     makeSemesterList()
     makeChartEntries()
@@ -63,7 +60,6 @@ class GradeViewModel: ObservableObject, Identifiable {
   func fetchFromServer() {
     if isFetched() { return }
     when(fulfilled :[
-      fetchGraduationSimulationFromServer(),
       fetchAllGradesFromServer(),
       fetchRankFromServer(),
     ])
@@ -93,9 +89,9 @@ class GradeViewModel: ObservableObject, Identifiable {
     allValidGrades = gradeRepo.getAllValidGrades()
   }
 
-  func fetchGraduationSimulationFromLocalDb() {}
-
-  func fetchAllRankFromLocalDb() {}
+  func fetchAllRankFromLocalDb() {
+    // TODO: Rank 구현
+  }
 
   // MARK: - Fetch data from server
   func fetchGraduationSimulationFromServer() -> Promise<Void> {
@@ -110,9 +106,8 @@ class GradeViewModel: ObservableObject, Identifiable {
     }
   }
 
-  // TODO: Rank 구현
   func fetchRankFromServer() -> Promise<Void>  {
-    Promise()
+    Promise() // TODO: Rank 구현
   }
 
   // MARK: - Make chart entries

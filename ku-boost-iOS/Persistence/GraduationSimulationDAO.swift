@@ -23,6 +23,7 @@ class GraduationSimulationDAO {
     realm.objects(RealmSimulation.self)
       .filter("stdNo == '\(stdNo)'")
       .toArray(ofType: RealmSimulation.self)
+      .sorted(by: { $0.index < $1.index })
   }
 
   // MARK: Private

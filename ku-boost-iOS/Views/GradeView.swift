@@ -28,6 +28,9 @@ struct GradeView: View {
           lineChartEntries: viewModel.totalGradeLineEntries,
           proxy: p,
           title:"전체학기성적")
+        SimulationCardView(
+          proxy: p,
+          title: "졸업시뮬레이션")
           .padding(.bottom)
       }.onAppear {
         viewModel.viewOnAppear()
