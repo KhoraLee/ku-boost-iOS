@@ -12,7 +12,7 @@ import SwiftUI
 
 struct SimulationCardView: View {
 
-  var simuls: [RealmSimulation]
+  @ObservedObject var viewModel = SimulationViewModel.shared
 
   var proxy: GeometryProxy
   var title = ""
@@ -31,14 +31,14 @@ struct SimulationCardView: View {
           }
           List{
             HeaderRow()
-            ForEach(simuls, id: \.compoundKey ){ simul in
+            ForEach(viewModel.graduationSimulation, id: \.compoundKey ){ simul in
               SimulRow(simul: simul)
             }
           }
           .hasScrollEnabled(false)
           .listStyle(PlainListStyle())
           .environment(\.defaultMinListRowHeight, 40)
-          .frame(height: 40 * CGFloat(simuls.count + 1))
+          .frame(height: 40 * CGFloat(viewModel.graduationSimulation.count + 1))
         }
         .layoutPriority(100)
         Spacer()
@@ -58,6 +58,9 @@ struct SimulationCardView: View {
           lineWidth: 1)
     )
     .padding([.top, .horizontal])
+    .onAppear{
+      viewModel.viewOnAppear()
+    }
 
   }
 }

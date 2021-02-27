@@ -39,7 +39,7 @@ struct SimulRow: View {
             if gradeByCLF.count != 0 { isTapped = true }
           }
       }
-      NavigationLink(destination: Text(simul.classification),isActive:$isTapped){
+      NavigationLink(destination: SimulationDetailView(simul: simul),isActive:$isTapped){
         EmptyView()
       }.hidden()
     }

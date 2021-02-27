@@ -91,7 +91,11 @@ class GradeRepository {
   }
 
   func getGradesByClassification(clf: String) -> [RealmGrade] {
-    gradeDao.getGradesByClassification(stdNo: stdNo, clf: clf)
+    if clf == "총점" {
+      return gradeDao.getAllGrades(stdNo: stdNo)
+    }
+    return
+      gradeDao.getGradesByClassification(stdNo: stdNo, clf: clf)
   }
 
 //    func getTotalRank(year: Int, semester: Int) -> Promise<RealmRank> {}
