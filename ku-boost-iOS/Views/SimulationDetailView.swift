@@ -14,8 +14,6 @@ struct SimulationDetailView: View {
 
   @ObservedObject var viewModel = SimulationViewModel.shared
 
-  @State var isScrollable = false
-
   var body: some View {
     GeometryReader{ proxy in
       ScrollView{
@@ -78,7 +76,6 @@ struct SimulationDetailView: View {
         )
         .padding([.top, .horizontal])
       }
-      .hasScrollEnabledScrollView(isScrollable)
       .navigationBarHidden(true)
     }
   }
