@@ -43,7 +43,7 @@ struct PlaceholderTextField: View {
       if text.isEmpty || !text.isEmpty { placeholder }
       TextField("", text: $text)
         .autocapitalization(.none)
-      HorizontalLine(color: .black)
+      HorizontalLine(color: .primary)
     }
   }
 }
@@ -59,7 +59,7 @@ struct SecurePlaceholderTextField: View {
       if text.isEmpty || !text.isEmpty { placeholder }
       SecureField("", text: $text)
         .autocapitalization(.none)
-      HorizontalLine(color: .black)
+      HorizontalLine(color: .primary)
     }
   }
 }

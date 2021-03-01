@@ -24,9 +24,9 @@ struct MainView: View {
         .tabItem {
           Image(systemName: "gearshape")
           Text("설정")
-
         }
     }
+    .accentColor(Color("primaryLightColor"))
   }
 
 }

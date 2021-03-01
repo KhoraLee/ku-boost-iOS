@@ -28,7 +28,7 @@ struct LoginView: View {
           }
           Spacer()
         }.frame(minHeight: 55.0, maxHeight: 55.0)
-          .background(Color.green)
+          .background(Color("primaryColor"))
           .cornerRadius(15)
           .padding(.top, 77.0)
 
@@ -51,15 +51,20 @@ struct LoginView: View {
   }
 
   var titleView: some View {
-    VStack(alignment: .leading) {
-      Text("건국대학교 부스트").fontWeight(.bold).foregroundColor(.green)
-    }.padding(EdgeInsets(top: 44.0, leading: .zero, bottom: .zero, trailing: .zero))
+    VStack(alignment: .center) {
+      Image("Logo")
+        .renderingMode(.template)
+        .resizable()
+        .scaledToFit()
+        .frame(width: 100, height: 100)
+        .foregroundColor(Color("LogoColor"))
+    }.padding(EdgeInsets(top: 14.0, leading: .zero, bottom: 10, trailing: .zero))
   }
 
   var body: some View {
     NavigationView {
       LoadingView(isShowing: .constant(viewModel.isLoading)) {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
           self.titleView
           self.placeHolderTextView
           self.passwordTextView
