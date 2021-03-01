@@ -138,10 +138,10 @@ class GradeViewModel: ObservableObject, Identifiable {
       let sem = "\(grade.year)년도 \(semesterConverter[grade.semester]!)학기"
       if !semesters.contains(sem) {
         semesters.append(sem)
-        selectedSemester = sem
       }
     }
     semesters.sort(by: { $0 > $1 })
+    selectedSemester = semesters[0]
   }
 
   func makeSelectedGradeEntries(semester: String) -> [[PieChartDataEntry]] {
