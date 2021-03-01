@@ -44,12 +44,12 @@ enum LibraryRouter: URLRequestConvertible {
 
     switch self {
     case .login:
-      let ud: UserDefaults = .standard
+      let keyChain = KeyChain.shared
       request = try JSONParameterEncoder()
         .encode(
           LibLoginRequest(
-            loginId: ud.string(forKey: "id")!,
-            password: ud.string(forKey: "pw")!,
+            loginId: UserDefaults.id,
+            password: keyChain.getPassword()!,
             isMobile: true),
           into: request)
     default:
