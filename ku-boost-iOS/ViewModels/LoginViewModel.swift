@@ -17,14 +17,17 @@ class LoginViewModel: ObservableObject, Identifiable {
     let isAutoLogin = UserDefaults.standard.bool(forKey: "autologin")
 
     if isAutoLogin {
-      username = UserDefaults.standard.string(forKey: "id")!
-      password = UserDefaults.standard.string(forKey: "pw")!
+      username = UserDefaults.id
+      guard let pw = keyChain.getPassword() else { return }
+      password = pw
       login()
     }
 
   }
 
   // MARK: Internal
+
+  static let shared = LoginViewModel()
 
   @Published var username = ""
   @Published var password = ""
@@ -36,6 +39,7 @@ class LoginViewModel: ObservableObject, Identifiable {
   @Published var gotError = false
 
   var authRepo = AuthRepository.shared
+  var keyChain = KeyChain.shared
 
   func login(){
     if username.isEmpty || password.isEmpty { return }
@@ -45,10 +49,8 @@ class LoginViewModel: ObservableObject, Identifiable {
     }.then{
       self.authRepo.makeUserInformationRequest()
     }.done{
-      let ud = UserDefaults.standard
-      ud.setValue(self.username, forKey: "id")
-      ud.setValue(self.password, forKey: "pw")
-      ud.setValue(true, forKey: "autologin")
+      UserDefaults.id = self.username
+      self.keyChain.storePassword(password: self.password)
       self.username = ""
       self.password = ""
       self.isLoading = false

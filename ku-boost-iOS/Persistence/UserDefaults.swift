@@ -27,6 +27,9 @@ struct UserDefault<Value> {
 
 extension UserDefaults {
 
+  @UserDefault(key:"id", defaultValue:"")
+  static var id: String
+
   @UserDefault(key:"cookie", defaultValue:"")
   static var cookie: String
 
@@ -70,8 +73,10 @@ extension UserDefaults {
 
   static func clearAll() {
     setUserInfo(name: "", stdNo: "", state: "", dept: "", code: "")
+    UserDefaults.id = ""
     UserDefaults.cookie = ""
     UserDefaults.authToken = ""
     UserDefaults.hasData = false
+    KeyChain.shared.deletePassword()
   }
 }
