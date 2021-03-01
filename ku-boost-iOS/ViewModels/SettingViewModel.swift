@@ -41,7 +41,7 @@ class SettingViewModel: ObservableObject, Identifiable {
     firstly{
       authRepo.makeStudentInformationRequest()
     }.done{
-      let encoded = UserDefaults.standard.string(forKey: "photo") ?? ""
+      let encoded = UserDefaults.photo
       self.profileImage = UIImage(data: Data(base64Encoded: encoded)!)!
     }.catch{ err in
       print(err)

@@ -93,7 +93,7 @@ class AuthRepository {
 
   func makeStudentInformationRequest() -> Promise<Void> {
     api.requestPromise(AuthRouter.PersonalInfo).done{ (result: StudentInfoResponse) in
-      UserDefaults.standard.setValue(result.profilePhoto.profilePhoto, forKey: "photo")
+      UserDefaults.photo = result.profilePhoto.profilePhoto
     }
   }
 

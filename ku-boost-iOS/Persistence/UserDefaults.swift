@@ -48,6 +48,9 @@ extension UserDefaults {
   @UserDefault(key:"code", defaultValue:"")
   static var code: String
 
+  @UserDefault(key: "photo", defaultValue: "")
+  static var photo: String
+
   @UserDefault(key:"hasData", defaultValue:false)
   static var hasData: Bool
 
@@ -74,6 +77,7 @@ extension UserDefaults {
   static func clearAll() {
     setUserInfo(name: "", stdNo: "", state: "", dept: "", code: "")
     UserDefaults.id = ""
+    UserDefaults.photo = ""
     UserDefaults.cookie = ""
     UserDefaults.authToken = ""
     UserDefaults.hasData = false
