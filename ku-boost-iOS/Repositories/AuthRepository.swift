@@ -34,6 +34,10 @@ class AuthRepository {
 
   func makeLogoutRequset() {
     UserDefaults.clearAll()
+    LoginViewModel.shared.isLogon = false
+    GradeViewModel.shared.fetched = false
+    SimulationViewModel.shared.fetched = false
+    SettingViewModel.shared.fetched = false
   }
 
   func makeChangePasswordRequest(username: String, password: String) -> Promise<Void> {

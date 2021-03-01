@@ -20,9 +20,12 @@ class SettingViewModel: ObservableObject, Identifiable {
   let libRepo = LibraryRepository.shared
 
   var libLogon = false
+  var fetched = false
 
   @Published var profileImage = UIImage()
   @Published var qrImg = UIImage()
+
+  func isFetched() -> Bool { fetched }
 
   func fetchQRData() {
     qrImg = UIImage()
@@ -38,11 +41,13 @@ class SettingViewModel: ObservableObject, Identifiable {
   }
 
   func getProfileImage() {
+    if isFetched() { return }
     firstly{
       authRepo.makeStudentInformationRequest()
     }.done{
       let encoded = UserDefaults.photo
       self.profileImage = UIImage(data: Data(base64Encoded: encoded)!)!
+      self.fetched = true
     }.catch{ err in
       print(err)
     }
