@@ -13,7 +13,7 @@ struct LoginView: View {
 
   // MARK: Internal
 
-  @ObservedObject var viewModel = LoginViewModel()
+  @ObservedObject var viewModel = LoginViewModel.shared
 
   var loginButton: some View {
     NavigationLink(

@@ -13,6 +13,7 @@
 		B1767A3225D9132300266027 /* GradeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767A3125D9132300266027 /* GradeDetailView.swift */; };
 		B17CFA3125D970A200EEEF7C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CFA3025D970A200EEEF7C /* View.swift */; };
 		B17CFA3525D9710500EEEF7C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CFA3425D9710500EEEF7C /* String.swift */; };
+		B18120FC25EB7CC6004AD711 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18120FB25EB7CC6004AD711 /* KeyChain.swift */; };
 		B1812AD325E174280014A751 /* GradeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1812AD225E174280014A751 /* GradeRepository.swift */; };
 		B1812AD725E174E80014A751 /* RealmRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1812AD625E174E80014A751 /* RealmRank.swift */; };
 		B1812AE125E1772E0014A751 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1812AE025E1772E0014A751 /* UserDefaults.swift */; };
@@ -88,6 +89,7 @@
 		B1767A3125D9132300266027 /* GradeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDetailView.swift; sourceTree = "<group>"; };
 		B17CFA3025D970A200EEEF7C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		B17CFA3425D9710500EEEF7C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		B18120FB25EB7CC6004AD711 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		B1812AD225E174280014A751 /* GradeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeRepository.swift; sourceTree = "<group>"; };
 		B1812AD625E174E80014A751 /* RealmRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRank.swift; sourceTree = "<group>"; };
 		B1812AE025E1772E0014A751 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				B182C37F25E3A0B50034926E /* GraduationSimulationDAO.swift */,
 				B182C38325E3A20A0034926E /* RankDAO.swift */,
 				B1812AE025E1772E0014A751 /* UserDefaults.swift */,
+				B18120FB25EB7CC6004AD711 /* KeyChain.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				B182D82025DAD1CE00582851 /* MyError.swift in Sources */,
 				B191687025EA3C1B00B17D1D /* SimulationViewModel.swift in Sources */,
 				B19428E825D1B2B80045A32F /* LibLoginResponse.swift in Sources */,
+				B18120FC25EB7CC6004AD711 /* KeyChain.swift in Sources */,
 				B18B805325D03F8900662FC1 /* LoginFailure.swift in Sources */,
 				B18B804C25D03F5E00662FC1 /* LoginResponse.swift in Sources */,
 				B17CFA3525D9710500EEEF7C /* String.swift in Sources */,

@@ -32,9 +32,8 @@ class AuthRepository {
     }
   }
 
-  func makeLogoutRequset() -> Promise<Void> {
+  func makeLogoutRequset() {
     UserDefaults.clearAll()
-    return Promise()
   }
 
   func makeChangePasswordRequest(username: String, password: String) -> Promise<Void> {
