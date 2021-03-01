@@ -14,15 +14,10 @@ class LoginViewModel: ObservableObject, Identifiable {
   // MARK: Lifecycle
 
   init() {
-    let isAutoLogin = UserDefaults.standard.bool(forKey: "autologin")
-
-    if isAutoLogin {
-      username = UserDefaults.id
-      guard let pw = keyChain.getPassword() else { return }
-      password = pw
-      login()
-    }
-
+    guard let pw = keyChain.getPassword() else { return }
+    username = UserDefaults.id
+    password = pw
+    login()
   }
 
   // MARK: Internal
