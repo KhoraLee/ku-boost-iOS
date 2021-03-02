@@ -39,7 +39,9 @@ class GradeRepository {
     let format = DateFormatter()
     format.dateFormat = "yyyy"
     let endYear = Int(format.string(from: Date())) ?? 2021
-    let semesters = [5,2,4,1]
+    let semesters = [5, 2, 4, 1]
+
+    var isLastSemesterQueried = false
 
     return Promise { seal in
       for year in startYear...endYear {
@@ -47,17 +49,25 @@ class GradeRepository {
           firstly{
             api.requestPromise(GradeRouter.RegularGrade(year: year, semester: semester))
           }.done{ (result: GradeResponse) in
+            if year == endYear && !isLastSemesterQueried && !result.grades.isEmpty {
+              self.gradeDao.removeGrades(
+                stdNo: UserDefaults.stdNo,
+                year: year,
+                semester: semesterConverter[semester]!)
+              isLastSemesterQueried = true
+              print("Last Semester : \(year)-\(semester)")
+            }
             for grade in result.grades {
               let rGrade = RealmGrade()
               rGrade.setup(year: year, semester: semesterConverter[semester]!, grade: grade)
               self.gradeDao.insertGrade(grade: rGrade)
             }
-            seal.fulfill(())
           }.catch{ err in
             seal.reject(err)
           }
         }
       }
+      seal.fulfill(())
       UserDefaults.hasData = true
     }
 

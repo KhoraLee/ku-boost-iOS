@@ -52,7 +52,9 @@ struct GradeCardView: View {
           }
           List{
             ForEach(grades, id: \.compoundKey ){grade in
-              GradeRow(grade: grade)
+              if !grade.isInvalidated {
+                GradeRow(grade: grade)
+              }
             }
           }
           .hasScrollEnabled(false)
