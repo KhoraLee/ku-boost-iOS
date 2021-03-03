@@ -17,12 +17,15 @@ struct TotalGradeDetailView: View {
     GeometryReader{ p in
       VStack {
         ZStack{
-          Menu("\(viewModel.selectedSemester)"){
+          Menu {
             ForEach(viewModel.semesters, id: \.self) { sem in
               Button("\(sem)", action: {
                 viewModel.selectedSemester = sem
               })
             }
+          } label: {
+            Text(viewModel.selectedSemester)
+              .fixedSize(horizontal: true, vertical: false)
           }.frame(width: 200, height: 50, alignment: .center)
             .background(Color("primaryLightColor"))
             .foregroundColor(Color.white)
