@@ -36,13 +36,13 @@ class ChartUtils {
     var sum: Float = 0
     var count: Float = 0
     for grade in grades {
+      if grade.evaluationMethod == "P/N평가" { continue }
       if isMajor {
         if grade.classification == "전필" || grade.classification == "전선" {
           sum += (grade.grade.value ?? 0) * Float(grade.subjectPoint.value ?? 0)
           count += Float(grade.subjectPoint.value ?? 0)
         }
       } else {
-        if grade.evaluationMethod == "P/N평가" { continue }
         sum += (grade.grade.value ?? 0) * Float(grade.subjectPoint.value ?? 0)
         count += Float(grade.subjectPoint.value ?? 0)
       }
