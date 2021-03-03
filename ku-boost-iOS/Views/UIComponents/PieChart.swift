@@ -91,6 +91,7 @@ struct PieChart: UIViewRepresentable {
     pieChart.transparentCircleRadiusPercent = 0
     pieChart.legend.enabled = false // legend 비활성화
     pieChart.entryLabelFont = NSUIFont.systemFont(ofSize: NSUIFont.smallSystemFontSize)
+    pieChart.entryLabelColor = NSUIColor(Color.primary)
   }
 
   func formatCenter(_ pieChart: PieChartView) {
