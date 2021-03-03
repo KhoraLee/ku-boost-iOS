@@ -75,15 +75,16 @@ class ChartUtils {
     }
 
     let sorted = sum.sorted { $0.key < $1.key }
-
     var lineEntries = [ChartDataEntry]()
 
+    var xValue = 0
     for (key,value) in sorted {
       let avg = value / count[key]!
       if value == 0 && count[key] == 0 { continue }
       lineEntries.append(ChartDataEntry(
-        x: Double(key) ?? 0,
+        x: Double(xValue),
         y: Double(floor(Float(avg) * 100) / 100)))
+      xValue += 1
     }
     return lineEntries
   }
