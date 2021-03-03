@@ -22,7 +22,7 @@ class SettingViewModel: ObservableObject, Identifiable {
   var libLogon = false
   var fetched = false
 
-  @Published var profileImage = UIImage()
+  @Published var profileImage = UIImage(data: Data(base64Encoded: UserDefaults.photo)!) ?? UIImage()
   @Published var qrImg = UIImage()
 
   func isFetched() -> Bool { fetched }

@@ -14,6 +14,7 @@ class LoginViewModel: ObservableObject, Identifiable {
   // MARK: Lifecycle
 
   init() {
+    if UserDefaults.id.isEmpty { return }
     guard let pw = keyChain.getPassword() else { return }
     username = UserDefaults.id
     password = pw
