@@ -73,7 +73,7 @@ class ChangePasswordViewModel: ObservableObject, Identifiable {
     var regexCheck = false
     do{
       let regex = try NSRegularExpression(
-        pattern: "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,20}$")
+        pattern: "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[~!@#$%>^&*])[A-Za-z\\d$~!@#$%>^&*]{8,20}$")
       regexCheck = regex.firstMatch(
         in: afPassword1,
         range: NSRange(location: 0, length: afPassword1.utf16.count)) != nil
