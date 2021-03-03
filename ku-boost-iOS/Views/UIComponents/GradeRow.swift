@@ -22,6 +22,7 @@ struct GradeRow: View {
         Spacer()
         Text(grade.professor)
           .font(.callout)
+          .lineLimit(1)
         Text(String(grade.subjectPoint.value ?? 0))
           .font(.callout)
         Text(grade.classification)
