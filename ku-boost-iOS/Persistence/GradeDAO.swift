@@ -19,9 +19,9 @@ class GradeDAO {
     }
   }
 
-  func validateGrade(stdNo: String, subjectId: String) {
+  func validateGrade(stdNo: String, year: String, semester: Int, subjectId: String) {
     let grade = realm.objects(RealmGrade.self)
-      .filter("stdNo == '\(stdNo)' && subjectId == '\(subjectId)'")
+      .filter("stdNo == '\(stdNo)' && year == \(year) && semester == \(semester) && subjectId == '\(subjectId)'")
       .first!
     try? realm.write {
       grade.validate()
@@ -73,7 +73,7 @@ class GradeDAO {
 
   func getGradeBySubjectNumber(stdNo: String, subjectNumber: String) -> RealmGrade {
     realm.objects(RealmGrade.self)
-      .filter("stdNo == '\(stdNo)' && subjectId == '\(subjectNumber)'")
+      .filter("stdNo == '\(stdNo)' && subjectNumber == '\(subjectNumber)'")
       .first!
   }
 

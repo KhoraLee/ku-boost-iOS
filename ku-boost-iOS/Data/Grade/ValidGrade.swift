@@ -9,8 +9,12 @@ import Foundation
 
 struct ValidGrade: Codable {
   let subjectId: String
+  let year: String
+  let semesterCode: String
 
   enum CodingKeys: String, CodingKey {
     case subjectId = "SBJT_ID"
+    case year = "YY"
+    case semesterCode = "SHTM"
   }
 }

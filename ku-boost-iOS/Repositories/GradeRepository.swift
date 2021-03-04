@@ -16,6 +16,7 @@ class GradeRepository {
   let gradeDao = GradeDAO.shared
   let simulDao = GraduationSimulationDAO.shared
   let stdNo = UserDefaults.stdNo
+  let semesterConverter = [1 : 1, 4 : 2, 2 : 3, 5 : 4]
 
   func makeGraduationSimulationRequest() -> Promise<Void> {
     firstly{
@@ -34,7 +35,6 @@ class GradeRepository {
   }
 
   func makeAllGradesRequest() -> Promise<Void> {
-    let semesterConverter = [1 : 1, 4 : 2, 2 : 3, 5 : 4]
     let startYear = Int(UserDefaults.stdNo.prefix(4)) ?? 2021
     let format = DateFormatter()
     format.dateFormat = "yyyy"
@@ -53,13 +53,13 @@ class GradeRepository {
               self.gradeDao.removeGrades(
                 stdNo: UserDefaults.stdNo,
                 year: year,
-                semester: semesterConverter[semester]!)
+                semester: self.semesterConverter[semester]!)
               isLastSemesterQueried = true
               print("Last Semester : \(year)-\(semester)")
             }
             for grade in result.grades {
               let rGrade = RealmGrade()
-              rGrade.setup(year: year, semester: semesterConverter[semester]!, grade: grade)
+              rGrade.setup(year: year, semester: self.semesterConverter[semester]!, grade: grade)
               self.gradeDao.insertGrade(grade: rGrade)
             }
           }.catch{ err in
@@ -78,7 +78,11 @@ class GradeRepository {
       api.requestPromise(GradeRouter.ValidGrade)
     }.done{ (result: ValidGradeResponse) in
       for grade in result.validGrades{
-        self.gradeDao.validateGrade(stdNo: self.stdNo, subjectId: grade.subjectId)
+        self.gradeDao.validateGrade(
+          stdNo: self.stdNo,
+          year: grade.year,
+          semester: self.semesterConverter[Int(grade.semesterCode.dropFirst(5))!]!,
+          subjectId: grade.subjectId)
       }
     }
   }
