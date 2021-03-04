@@ -6,19 +6,19 @@
 //
 
 public enum MyError: Error {
-    
-    // MARK: - Internal errors
-    case noInternet
-       
-    // MARK: - Unknown errors
-    case unknown
-    
-    // MARK: - Json decoding fail errors
-    case jsonDecodeFail
-    
-    // MARK: - Received response that user need to change password
-    case changePwRequired
-    
-    // MARK: - Error that contain error message
-    case errWithMSG(msg: String)
+
+  // MARK: - Internal errors
+  case noInternet
+
+  // MARK: - Unknown errors
+  case unknown
+
+  // MARK: - Json decoding fail errors
+  case jsonDecodeFail
+
+  // MARK: - Received response that user need to change password
+  case changePwRequired
+
+  // MARK: - Error that contain error message
+  case errWithMSG(msg: String)
 }

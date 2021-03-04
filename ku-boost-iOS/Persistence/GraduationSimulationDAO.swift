@@ -8,19 +8,25 @@
 import RealmSwift
 
 class GraduationSimulationDAO {
-    static let shared = GraduationSimulationDAO()
-    
-    private let realm = try! Realm()
-    
-    func insertGraduationSimulation(simul: RealmSimulation) {
-        try? realm.write {
-            realm.add(simul, update: .modified)
-        }
+
+  // MARK: Internal
+
+  static let shared = GraduationSimulationDAO()
+
+  func insertGraduationSimulation(simul: RealmSimulation) {
+    try? realm.write {
+      realm.add(simul, update: .modified)
     }
-    
-    func loadGraduationSimulation(stdNo: String) -> [RealmSimulation]{
-        return realm.objects(RealmSimulation.self)
-            .filter("stdNo == '\(stdNo)'")
-            .toArray(ofType: RealmSimulation.self)
-    }
+  }
+
+  func loadGraduationSimulation(stdNo: String) -> [RealmSimulation]{
+    realm.objects(RealmSimulation.self)
+      .filter("stdNo == '\(stdNo)'")
+      .toArray(ofType: RealmSimulation.self)
+      .sorted(by: { $0.index < $1.index })
+  }
+
+  // MARK: Private
+
+  private let realm = try! Realm()
 }

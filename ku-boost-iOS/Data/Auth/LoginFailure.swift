@@ -6,6 +6,6 @@
 //
 
 struct LoginFailure: Codable{
-    let ERRMSG: String
-    let STATUSCODE: Int
+  let ERRMSG: String
+  let STATUSCODE: Int
 }

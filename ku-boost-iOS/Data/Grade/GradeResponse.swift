@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct GradeResponse : Codable {
-    let grades: [Grade]
-    
-    enum CodingKeys: String, CodingKey {
-        case grades = "DS_GRADEOFSTUDENT"
-    }
+struct GradeResponse: Codable {
+  let grades: [Grade]
+
+  enum CodingKeys: String, CodingKey {
+    case grades = "DS_GRADEOFSTUDENT"
+  }
 }

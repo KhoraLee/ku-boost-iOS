@@ -7,14 +7,19 @@
 
 import Foundation
 
+// MARK: - QRResponse
+
 struct QRResponse: Codable {
-    let qrdata: qrdata?
-    
-    enum CodingKeys: String, CodingKey {
-        case qrdata = "data"
-    }
+  let qrdata: qrdata?
+
+  enum CodingKeys: String, CodingKey {
+    case qrdata = "data"
+  }
 }
 
+// MARK: - qrdata
+
+// swiftlint:disable:next type_name
 struct qrdata: Codable {
-    let membershipCard: String
+  let membershipCard: String
 }

@@ -7,10 +7,15 @@
 
 import Foundation
 
+// MARK: - LibLoginResponse
+
 struct LibLoginResponse: Codable {
-    let data: data?
+  let data: data?
 }
 
+// MARK: - data
+
+// swiftlint:disable:next type_name
 struct data: Codable {
-    let accessToken: String
+  let accessToken: String
 }

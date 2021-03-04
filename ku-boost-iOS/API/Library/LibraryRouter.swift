@@ -5,49 +5,57 @@
 //  Created by 승윤이 on 2021/02/09.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 enum LibraryRouter: URLRequestConvertible {
 
-    case login
-    case getMobileQRCode
+  case login
+  case getMobileQRCode
 
-    var baseURL: URL {
-        return URL(string: "https://library.konkuk.ac.kr/")!
+  // MARK: Internal
+
+  var baseURL: URL {
+    URL(string: "https://library.konkuk.ac.kr/")!
+  }
+
+  var method: HTTPMethod {
+    switch self {
+    case .login:
+      return .post
+    case .getMobileQRCode:
+      return .get
+    }
+  }
+
+  var endPoint: String {
+    switch self {
+    case .login:
+      return "pyxis-api/api/login"
+    case .getMobileQRCode:
+      return "pyxis-api/9/api/my-membership-card"
+    }
+  }
+
+  func asURLRequest() throws -> URLRequest {
+    let url = baseURL.appendingPathComponent(endPoint)
+    var request = URLRequest(url: url)
+    request.method = method
+
+    switch self {
+    case .login:
+      let keyChain = KeyChain.shared
+      request = try JSONParameterEncoder()
+        .encode(
+          LibLoginRequest(
+            loginId: UserDefaults.id,
+            password: keyChain.getPassword()!,
+            isMobile: true),
+          into: request)
+    default:
+      break
     }
 
-    var method: HTTPMethod {
-        switch self {
-        case .login:
-            return .post
-        case .getMobileQRCode:
-            return .get
-        }
-    }
-
-    var endPoint: String {
-        switch self {
-        case .login:
-            return "pyxis-api/api/login"
-        case .getMobileQRCode:
-            return "pyxis-api/9/api/my-membership-card"
-        }
-    }
-
-    func asURLRequest() throws -> URLRequest {
-        let url = baseURL.appendingPathComponent(endPoint)
-        var request = URLRequest(url: url)
-        request.method = method
-
-        switch self {
-            case .login:
-                let ud: UserDefaults = .standard
-                request = try JSONParameterEncoder().encode(LibLoginRequest(loginId: ud.string(forKey: "id")!, password: ud.string(forKey: "pw")!, isMobile: true), into: request)
-            default:
-                break
-        }
-        
-        return request
-    }
+    return request
+  }
 }

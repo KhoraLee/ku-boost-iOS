@@ -8,7 +8,7 @@
 import Foundation
 
 struct LibLoginRequest: Codable{
-    let loginId: String
-    let password: String
-    let isMobile: Bool
+  let loginId: String
+  let password: String
+  let isMobile: Bool
 }

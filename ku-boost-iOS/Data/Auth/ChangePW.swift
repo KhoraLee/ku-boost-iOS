@@ -7,14 +7,19 @@
 
 import Foundation
 
+// MARK: - ChangePW
+
 struct ChangePW: Codable {
-    let dmRes:dmRes
+  let dmRes: dmRes
 }
 
+// MARK: - dmRes
+
+// swiftlint:disable:next type_name
 struct dmRes: Codable{
-    let flag: String
-    
-    enum CodingKeys: String, CodingKey {
-        case flag = "FLAG"
-    }
+  let flag: String
+
+  enum CodingKeys: String, CodingKey {
+    case flag = "FLAG"
+  }
 }
