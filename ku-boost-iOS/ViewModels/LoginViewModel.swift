@@ -33,6 +33,7 @@ class LoginViewModel: ObservableObject, Identifiable {
 
   @Published var errMsg = ""
   @Published var gotError = false
+  @Published var error: MyError? = nil
 
   var authRepo = AuthRepository.shared
   var keyChain = KeyChain.shared
@@ -68,12 +69,27 @@ class LoginViewModel: ObservableObject, Identifiable {
         } else {
           self.errMsg = "네트워크 연결이 없습니다."
         }
-      //TODO: change pw or change after 90 days
+      case .changePwRequired:
+        UserDefaults.id = self.username
+        self.errMsg = "비밀번호를 변경한지 90일이 지났습니다."
       default:
         print("error : \(error)")
         self.errMsg = "알수없는 오류\n관리자에게 문의 바랍니다."
       }
       self.gotError = true
+      self.error = error
+    }
+  }
+
+  func changeAfter90Days() {
+    isLoading = true
+    firstly{
+      authRepo.makeChangePasswordRequest(username: username, password: password)
+    }.done{
+      self.isLoading = false
+      print("after 90 done")
+    }.catch{ err in
+      print(err)
     }
   }
 
