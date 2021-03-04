@@ -115,6 +115,7 @@
 		B18B804E25D03F7700662FC1 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		B18B805225D03F8900662FC1 /* LoginFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailure.swift; sourceTree = "<group>"; };
 		B18B805525D0478200662FC1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		B18E996625F13F560070419E /* PrivacyPolicy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PrivacyPolicy.md; sourceTree = "<group>"; };
 		B191685925EA277700B17D1D /* SimulationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationCardView.swift; sourceTree = "<group>"; };
 		B191685C25EA28CC00B17D1D /* SimulRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulRow.swift; sourceTree = "<group>"; };
 		B191686C25EA3C0500B17D1D /* SimulationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationDetailView.swift; sourceTree = "<group>"; };
@@ -272,6 +273,7 @@
 		B1989ECC25B1AB6600BC612D = {
 			isa = PBXGroup;
 			children = (
+				B18E996625F13F560070419E /* PrivacyPolicy.md */,
 				EF6ECE6FB6190EE5800642AF /* Frameworks */,
 				B1989ED725B1AB6600BC612D /* ku-boost-iOS */,
 				6422D1CB5CF6AD8F792BC0A0 /* Pods */,
