@@ -141,7 +141,7 @@ class GradeViewModel: ObservableObject, Identifiable {
       }
     }
     semesters.sort(by: { $0 > $1 })
-    selectedSemester = semesters[0]
+    selectedSemester = semesters.first ?? ""
   }
 
   func makeSelectedGradeEntries(semester: String) -> [[PieChartDataEntry]] {
