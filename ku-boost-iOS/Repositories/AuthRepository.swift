@@ -15,20 +15,21 @@ class AuthRepository {
 
   func makeLoginRequest(username: String, password: String) -> Promise<Void> {
     Promise{ seal in
-      api.requestPromise(AuthRouter.Login(id: username, pw: password))
-        .done{ (result: LoginResponse) in
-          let loginSuccess = result.loginSuccess
-          let loginFailure = result.loginFailure
-          if loginSuccess?.success == true {
-            seal.fulfill(())
-          } else if loginSuccess == nil && loginFailure != nil {
-            seal.reject(MyError.errWithMSG(msg: loginFailure!.ERRMSG))
-          } else {
-            seal.reject(MyError.unknown)
-          }
-        }.catch{ err in
-          seal.reject(err)
-        }
+      api.request(AuthRouter.Index).response{ _ in
+        seal.fulfill(())
+      }
+    }.then{
+      self.api.requestPromise(AuthRouter.Login(id: username, pw: password))
+    }.done{ (result: LoginResponse) in
+      let loginSuccess = result.loginSuccess
+      let loginFailure = result.loginFailure
+      if loginSuccess?.success == true {
+        return
+      } else if loginSuccess == nil && loginFailure != nil {
+        throw MyError.errWithMSG(msg: loginFailure!.ERRMSG)
+      } else {
+        throw MyError.unknown
+      }
     }
   }
 
