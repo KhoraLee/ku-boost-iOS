@@ -40,7 +40,7 @@ class ChangePasswordViewModel: ObservableObject, Identifiable {
   func changePassword() {
     firstly{
       authRepo.makeChangePasswordRequest(
-        username: UserDefaults.standard.string(forKey: "id")!,
+        username: UserDefaults.id,
         before: bfPassword,
         after: afPassword1)
     }.done{

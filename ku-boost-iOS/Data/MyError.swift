@@ -5,7 +5,7 @@
 //  Created by 승윤이 on 2021/02/16.
 //
 
-public enum MyError: Error {
+public enum MyError: Error, Equatable {
 
   // MARK: - Internal errors
   case noInternet
