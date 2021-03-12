@@ -10,6 +10,7 @@ import Foundation
 
 enum AuthRouter: URLRequestConvertible {
 
+  case Index
   case Login(id: String, pw: String)
   case UserInfo
   case ChangePassword(id: String, before: String, after: String)
@@ -28,6 +29,8 @@ enum AuthRouter: URLRequestConvertible {
 
   var endPoint: String {
     switch self {
+    case .Index:
+      return "index.do"
     case .Login:
       return "Login/login.do"
     case .UserInfo:

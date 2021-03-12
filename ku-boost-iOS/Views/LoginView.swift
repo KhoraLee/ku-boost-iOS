@@ -14,6 +14,7 @@ struct LoginView: View {
   // MARK: Internal
 
   @ObservedObject var viewModel = LoginViewModel.shared
+  @State var changePW = false
 
   var loginButton: some View {
     NavigationLink(
@@ -36,7 +37,22 @@ struct LoginView: View {
       self.loginUser()
     })
       .alert(isPresented: $viewModel.gotError) {
-        Alert(title: Text("오류"), message: Text("\(viewModel.errMsg)"))
+        if viewModel.error == .changePwRequired {
+          return Alert(
+            title: Text("오류"),
+            message: Text("\(viewModel.errMsg)"),
+            primaryButton: .default(
+              Text("90일뒤 변경"),
+              action: {
+                viewModel.changeAfter90Days()
+              }),
+            secondaryButton:.default(
+              Text("비밀번호 변경"), action: {
+                changePW = true
+              }))
+        } else {
+          return Alert(title: Text("오류"), message: Text("\(viewModel.errMsg)"))
+        }
       }
   }
 
@@ -64,14 +80,22 @@ struct LoginView: View {
   var body: some View {
     NavigationView {
       LoadingView(isShowing: .constant(viewModel.isLoading)) {
-        VStack(alignment: .center) {
-          self.titleView
-          self.placeHolderTextView
-          self.passwordTextView
-          self.loginButton
-          Spacer()
-          Spacer()
-        }.padding(22.0)
+        ZStack{
+          VStack(alignment: .center) {
+            self.titleView
+            self.placeHolderTextView
+            self.passwordTextView
+            self.loginButton
+            Spacer()
+            Spacer()
+          }.padding(22.0)
+          NavigationLink(
+            destination: ChangePasswordView(),
+            isActive: $changePW,
+            label: {
+              EmptyView()
+            })
+        }
       }
     }
 

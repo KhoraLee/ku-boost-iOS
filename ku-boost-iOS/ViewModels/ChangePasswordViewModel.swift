@@ -40,12 +40,13 @@ class ChangePasswordViewModel: ObservableObject, Identifiable {
   func changePassword() {
     firstly{
       authRepo.makeChangePasswordRequest(
-        username: UserDefaults.standard.string(forKey: "id")!,
+        username: UserDefaults.id,
         before: bfPassword,
         after: afPassword1)
     }.done{
       self.errMsg = ""
       self.alert = true
+      LoginViewModel.shared.password = ""
     }.catch{ err in
       guard let error = err as? MyError else {
         self.errMsg = "알수없는 오류\n관리자에게 문의 바랍니다."
