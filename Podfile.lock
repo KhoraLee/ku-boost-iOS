@@ -1,24 +1,24 @@
 PODS:
-  - Alamofire (5.4.1)
+  - Alamofire (5.4.3)
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
-  - PromiseKit (6.13.1):
-    - PromiseKit/CorePromise (= 6.13.1)
-    - PromiseKit/Foundation (= 6.13.1)
-    - PromiseKit/UIKit (= 6.13.1)
-  - PromiseKit/CorePromise (6.13.1)
-  - PromiseKit/Foundation (6.13.1):
+  - PromiseKit (6.15.0):
+    - PromiseKit/CorePromise (= 6.15.0)
+    - PromiseKit/Foundation (= 6.15.0)
+    - PromiseKit/UIKit (= 6.15.0)
+  - PromiseKit/CorePromise (6.15.0)
+  - PromiseKit/Foundation (6.15.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.13.1):
+  - PromiseKit/UIKit (6.15.0):
     - PromiseKit/CorePromise
-  - Realm (10.5.1):
-    - Realm/Headers (= 10.5.1)
-  - Realm/Headers (10.5.1)
-  - RealmSwift (10.5.1):
-    - Realm (= 10.5.1)
-  - SwiftFormat/CLI (0.47.12)
-  - SwiftLint (0.42.0)
+  - Realm (10.7.6):
+    - Realm/Headers (= 10.7.6)
+  - Realm/Headers (10.7.6)
+  - RealmSwift (10.7.6):
+    - Realm (= 10.7.6)
+  - SwiftFormat/CLI (0.48.3)
+  - SwiftLint (0.43.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -39,13 +39,13 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
-  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
-  Realm: 77fcb4e0b9f2963ea06f584749a0d7dc9cab95e1
-  RealmSwift: 6abe6aa6cd8b70cc1a87afcb9232cabea74ff1ac
-  SwiftFormat: 68cac6de69aafb44b60ae49a919600966b0dcabe
-  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  PromiseKit: 5d5ea54ef16215b8aa1c1cc35dc5d18f3053dec9
+  Realm: ed860452717c8db8f4bf832b6807f7f2ce708839
+  RealmSwift: e31c4ddbcc42ac879313d656b86f9ca539f6f4f4
+  SwiftFormat: 996933a4030607ae07c4f94fdb66dcf4f473b355
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
 PODFILE CHECKSUM: a8facba13bb4a9d7e2df176243f1a19f7fde4608
 
